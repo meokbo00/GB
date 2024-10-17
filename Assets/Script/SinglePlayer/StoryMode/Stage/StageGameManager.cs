@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
 public class StageGameManager : MonoBehaviour
 {
@@ -11,19 +6,24 @@ public class StageGameManager : MonoBehaviour
     public float StageClearID;
     public bool isending = false;
 
+    private float stageClearIDCache; // PlayerPrefs 값을 캐싱
+    private bool isEndingCache;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            LoadStageClearID();
-            LoadIsEnding();
+            // PlayerPrefs에서 값 불러오고 캐시에 저장
+            stageClearIDCache = PlayerPrefs.GetFloat("StageClearID", 0f);
+            isEndingCache = PlayerPrefs.GetInt("IsEnding", 0) == 1;
+            StageClearID = stageClearIDCache;
+            isending = isEndingCache;
         }
         else
         {
-            if (instance != this)
-                Destroy(this.gameObject);
+            Destroy(gameObject); // 중복 방지
         }
     }
 
@@ -39,29 +39,21 @@ public class StageGameManager : MonoBehaviour
 
     public void SaveStageClearID()
     {
-        PlayerPrefs.SetFloat("StageClearID", StageClearID);
-        PlayerPrefs.Save();
+        if (stageClearIDCache != StageClearID)  // 값이 변경된 경우에만 저장
+        {
+            PlayerPrefs.SetFloat("StageClearID", StageClearID);
+            PlayerPrefs.Save();
+            stageClearIDCache = StageClearID;  // 캐시 업데이트
+        }
     }
 
     public void SaveIsEnding()
     {
-        PlayerPrefs.SetInt("IsEnding", isending ? 1 : 0);
-        PlayerPrefs.Save();
-    }
-
-    private void LoadStageClearID()
-    {
-        if (PlayerPrefs.HasKey("StageClearID"))
+        if (isEndingCache != isending)  // 값이 변경된 경우에만 저장
         {
-            StageClearID = PlayerPrefs.GetFloat("StageClearID");
-        }
-    }
-
-    private void LoadIsEnding()
-    {
-        if (PlayerPrefs.HasKey("IsEnding"))
-        {
-            isending = PlayerPrefs.GetInt("IsEnding") == 1;
+            PlayerPrefs.SetInt("IsEnding", isending ? 1 : 0);
+            PlayerPrefs.Save();
+            isEndingCache = isending;  // 캐시 업데이트
         }
     }
 }
