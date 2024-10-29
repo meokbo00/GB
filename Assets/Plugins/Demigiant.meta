@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Plugins/Demigiant.meta
 guid: ba0b98b253dd05d4f8d71ebee23f1d82
 folderAsset: yes
 DefaultImporter:
+========
+guid: a55084d06fe1956408285d837ea130ad
+NativeFormatImporter:
+>>>>>>>> 5f02a7ff868b787ae91e249a03eeef53ac5e14de:Assets/UniversalRenderPipelineGlobalSettings.asset.meta
   externalObjects: {}
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
