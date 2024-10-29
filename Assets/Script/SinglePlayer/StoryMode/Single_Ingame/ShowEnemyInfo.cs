@@ -28,6 +28,7 @@ public class ShowEnemyInfo : MonoBehaviour
                         if (enemyID == StageState.chooseStage)
                         {
                             InstantiateEnemyInfo(enemyInfo);
+                            gameObject.SetActive(false);
                             break; // 일치하는 항목을 찾으면 루프 종료
                         }
                     }

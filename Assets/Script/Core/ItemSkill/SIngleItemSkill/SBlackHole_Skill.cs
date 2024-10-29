@@ -85,7 +85,10 @@ public class SBlackHole_Skill : MonoBehaviour
     }
     void StartExpansion()
     {
-        bGMControl.SoundEffectPlay(1);
+        if (bGMControl.SoundEffectSwitch)
+        {
+            bGMControl.SoundEffectPlay(1);
+        }
         targetScale = initialScale * 10;
         isExpanding = true;
     }
@@ -104,7 +107,7 @@ public class SBlackHole_Skill : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!isExpanding)
+        if (!isExpanding && bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(0);
         }

@@ -84,7 +84,7 @@ public class FEnemyBulletControl : MonoBehaviour
         if (rb.velocity.magnitude > 0.1f) return;
         if (Input.GetMouseButton(0)) return;
 
-        if (!hasExpanded)
+        if (!hasExpanded && bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(1);
         }
@@ -94,7 +94,7 @@ public class FEnemyBulletControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (!hasExpanded)
+        if (!hasExpanded && bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(0);
         }

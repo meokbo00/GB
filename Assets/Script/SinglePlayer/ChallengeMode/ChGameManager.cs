@@ -13,7 +13,6 @@ public class ChallengeGameManager : MonoBehaviour
     public GameObject fireitem;
 
     private Vector3 clickPosition;
-    private StageGameManager gameManager;
     public bool isDragging = false;
     public static float shotDistance;
     public static Vector3 shotDirection;
@@ -22,38 +21,34 @@ public class ChallengeGameManager : MonoBehaviour
     public int scorenum;
     public TMP_Text maxscoretext;
     public TMP_Text scoretext;
+
     public static class GameData
     {
         public static int CurrentScore;
     }
+
+    private int totalBalls; // 전체 공 개수 저장
+
     private void Start()
     {
         // 게임 시작 시 저장된 maxscorenum 불러오기
         maxscorenum = PlayerPrefs.GetInt("MaxScore", 0);
         maxscoretext.text = "Best : " + maxscorenum.ToString();
 
-        P1firezone.gameObject.SetActive(true);
+        P1firezone.SetActive(true);
+
+        // 초기화
+        UpdateTotalBalls();
     }
 
-    public void PrintDestroyedicontag(string icontag)
-    {
-        this.fireitem = null;
-        switch (icontag)
-        {
-            case "Item_Big": fireitem = FireItemPrefab[0]; break;
-            case "Item_Small": fireitem = FireItemPrefab[1]; break;
-            case "Item_Twice": fireitem = FireItemPrefab[2]; break;
-            case "Item_BlackHole": fireitem = FireItemPrefab[3]; break;
-            case "Item_Invincible": fireitem = FireItemPrefab[4]; break;
-        }
-    }
+   
 
     private void Update()
     {
+        // 점수가 변경되었을 때만 PlayerPrefs에 저장
         if (maxscorenum < scorenum)
         {
             maxscorenum = scorenum;
-            // maxscorenum이 갱신될 때마다 저장
             PlayerPrefs.SetInt("MaxScore", maxscorenum);
             PlayerPrefs.Save();
         }
@@ -94,14 +89,15 @@ public class ChallengeGameManager : MonoBehaviour
         {
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             currentPosition.z = 0f;
-            GameManager.shotDistance = Vector3.Distance(clickPosition, currentPosition)*2;
+            shotDistance = Vector3.Distance(clickPosition, currentPosition) * 2;
             Vector3 dragDirection = (currentPosition - clickPosition).normalized;
-            GameManager.shotDirection = dragDirection;
+            shotDirection = dragDirection;
             isDragging = false;
         }
 
-        int totalBalls = GameObject.FindGameObjectsWithTag("EnemyBall").Length +
-                       GameObject.FindGameObjectsWithTag("P1ball").Length;
+        // 총알 개수 업데이트
+        UpdateTotalBalls();
+
         if (totalBalls > 15)
         {
             GameData.CurrentScore = scorenum;
@@ -109,4 +105,9 @@ public class ChallengeGameManager : MonoBehaviour
         }
     }
 
+    private void UpdateTotalBalls()
+    {
+        totalBalls = GameObject.FindGameObjectsWithTag("EnemyBall").Length +
+                     GameObject.FindGameObjectsWithTag("P1ball").Length;
+    }
 }

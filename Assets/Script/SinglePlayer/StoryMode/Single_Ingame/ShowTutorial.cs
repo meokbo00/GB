@@ -24,6 +24,10 @@ public class ShowTutorial : MonoBehaviour
         {
             ShowTutorialImages(SecondTutorial);
         }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     void ShowTutorialImages(GameObject[] tutorialArray)
@@ -69,6 +73,7 @@ public class ShowTutorial : MonoBehaviour
             foreach (GameObject tutorial in instantiatedImages)
             {
                 tutorial.SetActive(false);
+                gameObject.SetActive(false);
             }
             stageGameManager.ResumeGame(); // 게임 재개
         }

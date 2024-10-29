@@ -101,7 +101,10 @@ public class ExBallController : MonoBehaviour
 
     void StartExpansion()
     {
-        bGMControl.SoundEffectPlay(1);
+        if (bGMControl.SoundEffectSwitch)
+        {
+            bGMControl.SoundEffectPlay(1);
+        }
         targetScale = initialScale * PlusScale; 
         isExpanding = true;
     }
@@ -121,7 +124,7 @@ public class ExBallController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!isExpanding)
+        if(!isExpanding && bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(0);
         }

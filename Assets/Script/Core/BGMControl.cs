@@ -1,5 +1,5 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BGMControl : MonoBehaviour
 {
@@ -11,36 +11,28 @@ public class BGMControl : MonoBehaviour
     {
         // 게임 시작 시 저장된 상태를 불러오기
         LoadAudioSettings();
+        UpdateAudioSources(); // 초기 상태 반영
     }
 
-    void Update()
-    {
-        UpdateAudioSources();
-    }
-
-    void UpdateAudioSources()
+    // 소스의 활성화 상태를 업데이트합니다.
+    public void UpdateAudioSources()
     {
         ToggleAudioSources(SoundEffect, SoundEffectSwitch);
     }
 
+    // 소스의 활성화 상태를 토글합니다.
     void ToggleAudioSources(AudioSource[] sources, bool isEnabled)
     {
         foreach (var source in sources)
         {
-            if (!isEnabled && source.isPlaying)
+            if (isEnabled && !source.enabled)
             {
-                source.Stop();
+                source.enabled = true; // 활성화 상태로 변경
             }
-            source.enabled = isEnabled;
-        }
-    }
-    private void StopAllAudio(AudioSource[] sources)
-    {
-        foreach (var source in sources)
-        {
-            if (source.isPlaying)
+            else if (!isEnabled && source.isPlaying)
             {
-                source.Stop();
+                source.Stop(); // 비활성화 상태에서 재생 중이면 정지
+                source.enabled = false; // 비활성화 상태로 변경
             }
         }
     }
@@ -71,5 +63,11 @@ public class BGMControl : MonoBehaviour
         {
             Debug.LogWarning("SoundEffectPlay: Index out of range.");
         }
+    }
+
+    // BGMSwitch 또는 SoundEffectSwitch가 변경되었을 때 호출하세요.
+    public void OnAudioSettingChanged()
+    {
+        UpdateAudioSources(); // 음향 설정 업데이트
     }
 }

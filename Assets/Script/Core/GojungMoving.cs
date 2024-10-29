@@ -1,44 +1,38 @@
-using System.Collections;
 using UnityEngine;
 
 public class GojungMoving : MonoBehaviour
 {
-    public float speed = 1.5f; 
-    public float distance = 1.7f; 
+    [SerializeField]
+    private float speed = 1.5f; 
+    [SerializeField]
+    private float distance = 1.7f; 
+    private Vector3 targetPosition;
     private bool movingLeft = true;
 
     void Start()
     {
-        StartCoroutine(Move());
+        // 초기 목표 위치 설정
+        targetPosition = transform.position + Vector3.right * distance;
     }
 
-    IEnumerator Move()
+    void Update()
     {
-        Vector3 startPosition = transform.position;
-        Vector3 leftPosition = startPosition + Vector3.left * distance;
-        Vector3 rightPosition = startPosition + Vector3.right * distance;
+        // 목표 위치로 이동
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        while (true)
+        // 목표 위치에 도달했는지 확인
+        if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
         {
+            // 이동 방향 전환
             if (movingLeft)
             {
-                yield return StartCoroutine(MoveToPosition(leftPosition));
-                movingLeft = false;
+                targetPosition = transform.position + Vector3.left * distance;
             }
             else
             {
-                yield return StartCoroutine(MoveToPosition(rightPosition));
-                movingLeft = true;
+                targetPosition = transform.position + Vector3.right * distance;
             }
-        }
-    }
-
-    IEnumerator MoveToPosition(Vector3 targetPosition)
-    {
-        while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-            yield return null;
+            movingLeft = !movingLeft; // 방향 전환
         }
     }
 }

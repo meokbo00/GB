@@ -3011,7 +3011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d080cc2a0477f4b9323aef3278e59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageClearID: 0
+  StageClearID: 7
   isending: 0
 --- !u!114 &1132099137
 MonoBehaviour:
@@ -3560,6 +3560,7 @@ GameObject:
   - component: {fileID: 1268559581}
   - component: {fileID: 1268559583}
   - component: {fileID: 1268559582}
+  - component: {fileID: 1268559584}
   m_Layer: 5
   m_Name: FadeIn
   m_TagString: Untagged
@@ -3599,7 +3600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3624,6 +3625,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268559580}
   m_CullTransparentMesh: 1
+--- !u!225 &1268559584
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268559580}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1289533182
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,7 +3694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCC4C\uB9B0\uC9C0 \uBAA8\uB4DC"
+  m_text: "\uC5F0\uC2B5\uD558\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 064928367d0872b4da7404799e8eeb6f, type: 2}
   m_sharedMaterial: {fileID: 4496936557231279810, guid: 064928367d0872b4da7404799e8eeb6f, type: 2}
@@ -4098,7 +4111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SinglePlaySetting: {fileID: 1381510417}
-  FadeIn: {fileID: 1268559582}
+  fadeCanvasGroup: {fileID: 1268559584}
   X: {fileID: 1322816251}
   NewBtn: {fileID: 2029345027}
   ContinueBtn: {fileID: 1004423560}

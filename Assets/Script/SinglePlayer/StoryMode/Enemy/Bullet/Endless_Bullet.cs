@@ -29,7 +29,10 @@ public class Endless_Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        bGMControl.SoundEffectPlay(0);
+        if (bGMControl.SoundEffectSwitch)
+        {
+            bGMControl.SoundEffectPlay(0);
+        }
         Vector2 normal = collision.contacts[0].normal;
         Vector2 reflectDirection = Vector2.Reflect(lastVelocity.normalized, normal);
 

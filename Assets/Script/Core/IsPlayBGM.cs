@@ -9,7 +9,7 @@ public class IsPlayBGM : MonoBehaviour
 
     void Start()
     {
-        bGMControl = FindObjectOfType<BGMControl>();
+        bGMControl = FindAnyObjectByType<BGMControl>();
 
         if (bGMControl != null)
         {

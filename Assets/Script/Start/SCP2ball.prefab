@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5103949075740025544}
   - component: {fileID: 7387887998377467258}
   - component: {fileID: 569950362156945474}
-  - component: {fileID: 8449603253807253414}
+  - component: {fileID: -6794988934269395972}
   m_Layer: 0
   m_Name: SCP2ball
   m_TagString: P2ball
@@ -110,7 +110,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &8449603253807253414
+--- !u!114 &-6794988934269395972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,5 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fb0a4106de17c40a19fc8af8d29c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increase: 4
-  hasExpanded: 0
+  isExpanding: 0
+  bouncyMaterial: {fileID: 6200000, guid: 43641f4149fa2474d85f99016b4819d5, type: 2}
+  fontsize: 4
+  PlusScale: 10

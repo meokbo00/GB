@@ -84,15 +84,13 @@ public class Ch1_2Story : MonoBehaviour
 
         while (color.a < 1f)
         {
-            color.a += Time.deltaTime / 5; // 2�ʿ� ���� ���̵� ��
+            color.a += Time.deltaTime / 5; 
             fadeImage.color = color;
             yield return null;
         }
 
-        // ���İ��� 1�� �Ǹ� 3�� ���
         yield return new WaitForSeconds(3f);
 
-        // "Main Stage"�� �� ��ȯ
         SceneManager.LoadScene("Main Stage");
     }
 }

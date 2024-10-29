@@ -66,7 +66,7 @@ public class MultiStopButtonManager : MonoBehaviour
             {
                 SceneManager.LoadScene("Story-InGame");
             }
-            else
+            if (SceneManager.GetActiveScene().name == "Main Scene")
             {
                 SceneManager.LoadScene("Main Scene");
             }

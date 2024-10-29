@@ -22,12 +22,7 @@ public class ChfailManager : MonoBehaviour
             SceneManager.LoadScene("Start Scene");
         });
 
-        int maxScore = PlayerPrefs.GetInt("MaxScore", 0); // ÀúÀåµÈ ½ºÄÚ¾î °¡Á®¿À±â
+        int maxScore = PlayerPrefs.GetInt("MaxScore", 0); // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         scoretext.text = "Best Score : " + maxScore +  "\nScore : " + GameData.CurrentScore.ToString();
-    }
-
-    void Update()
-    {
-        
     }
 }
