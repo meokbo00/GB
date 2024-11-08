@@ -6,13 +6,13 @@ public class Enemy6center : MonoBehaviour
 {
     SPGameManager spGameManager;
     BGMControl bGMControl;
-    Rigidbody2D rigid;
     public float increase = 4f;
     public bool hasExpanded = false;
-    public int randomNumber;
+    public int durability;
     private TextMeshPro textMesh;
     public Enemy1Fire[] enemy1Fires; // ���� Enemy1Fire ������ ���� �迭
-
+    private const string SPTwiceFName = "SPTwiceF(Clone)";
+    private const string SPEndlessFName = "SPEndlessF(Clone)";
     public int MaxHP;
     public int MinHP;
     public float MaxFireTime;
@@ -22,12 +22,11 @@ public class Enemy6center : MonoBehaviour
     {
         spGameManager = FindObjectOfType<SPGameManager>();
         bGMControl = FindObjectOfType<BGMControl>();
-        rigid = GetComponent<Rigidbody2D>();
         GameObject textObject = new GameObject("TextMeshPro");
         textObject.transform.parent = transform;
         textMesh = textObject.AddComponent<TextMeshPro>();
-        randomNumber = Random.Range(MinHP, MaxHP);
-        textMesh.text = randomNumber.ToString();
+        durability = Random.Range(MinHP, MaxHP);
+        textMesh.text = durability.ToString();
         textMesh.fontSize = 6;
         textMesh.alignment = TextAlignmentOptions.Center;
         textMesh.autoSizeTextContainer = true;
@@ -40,35 +39,31 @@ public class Enemy6center : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "P1ball" || coll.gameObject.tag == "P2ball" || coll.gameObject.tag == "P1Item" || coll.gameObject.tag == "P2Item" || (coll.gameObject.tag == "Item" && coll.gameObject.name != "SPEndlessF(Clone)"))
-        {
-            if (randomNumber > 0)
-            {
-                randomNumber--;
-                textMesh.text = randomNumber.ToString();
-            }
-            if (randomNumber <= 0)
-            {
-                bGMControl.SoundEffectPlay(4);
-                spGameManager.RemoveEnemy();
+        if (coll.gameObject.tag == "EnemyBall") return;
+        if (coll.gameObject.tag == "Gojung") return;
+        if (coll.gameObject.tag == "Wall") return;
 
-                Destroy(transform.parent.gameObject); // �θ� ������Ʈ ����
-            }
+        if (coll.gameObject.name != SPEndlessFName)
+        {
+            TakeDamage(1);
         }
-        if (coll.gameObject.name == "SPTwiceF(Clone)")
+        if (coll.gameObject.name == SPTwiceFName)
         {
-            randomNumber -= 1;
-            if (randomNumber > 0)
-            {
-                textMesh.text = randomNumber.ToString();
-            }
-            if (randomNumber <= 0)
+            TakeDamage(1);
+        }
+    }
+    public void TakeDamage(int damage)
+    {
+        durability -= damage;
+        textMesh.text = durability.ToString();
+        if (durability <= 0)
+        {
+            if (bGMControl.SoundEffectSwitch)
             {
                 bGMControl.SoundEffectPlay(4);
-                spGameManager.RemoveEnemy();
-
-                Destroy(gameObject);
             }
+            spGameManager.RemoveEnemy();
+            Destroy(gameObject);
         }
     }
 
@@ -76,7 +71,6 @@ public class Enemy6center : MonoBehaviour
     {
         while (true)
         {
-            // 5�� ���� ����
             yield return new WaitForSeconds(Random.Range(MinFireTime, MaxFireTime));
 
             if (enemy1Fires != null)

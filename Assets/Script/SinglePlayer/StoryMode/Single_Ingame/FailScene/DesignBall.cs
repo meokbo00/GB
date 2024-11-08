@@ -3,13 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class MovingSphere : MonoBehaviour
 {
-    public float speed = 20f;
+    public float speed = 200f;
     public float moveDuration = 0.1f; // 이동 시간
     private Vector2 moveDirection;
     private float moveTimer = 0f;
+    private Rigidbody2D rb;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         SetRandomDirection();
     }
 
@@ -17,7 +19,8 @@ public class MovingSphere : MonoBehaviour
     {
         moveTimer += Time.deltaTime;
 
-        transform.Translate(moveDirection * speed * Time.deltaTime);
+        // Move the Rigidbody
+        rb.MovePosition(rb.position + moveDirection * speed * Time.deltaTime);
 
         if (moveTimer >= moveDuration)
         {
@@ -28,6 +31,7 @@ public class MovingSphere : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // Optionally implement an async scene loading here if needed
         SceneManager.LoadScene("Start Scene");
     }
 

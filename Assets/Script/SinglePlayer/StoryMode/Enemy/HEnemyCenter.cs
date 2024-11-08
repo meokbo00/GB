@@ -7,13 +7,12 @@ public class HEnemyCenter : MonoBehaviour
     BGMControl bGMControl;
     public float radius;
     public float interval;
-    public int segments = 50; // ���� �׸� �� ����� ���׸�Ʈ ��
+    public int segments = 50; // 원주 세그먼트 수
     private LineRenderer lineRenderer;
 
     void Start()
     {
         bGMControl = FindObjectOfType<BGMControl>();
-        // LineRenderer ������Ʈ�� �ʱ�ȭ
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = segments + 1;
         lineRenderer.useWorldSpace = false;
@@ -24,16 +23,19 @@ public class HEnemyCenter : MonoBehaviour
         lineRenderer.endColor = Color.red;
 
         CreateCircle();
-
         StartCoroutine(IncrementRandomNumberRoutine());
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "P1ball" || coll.gameObject.tag == "P2ball" || coll.gameObject.tag == "P1Item" || coll.gameObject.tag == "P2Item" || (coll.gameObject.tag == "Item" && coll.gameObject.name != "SPEndlessF(Clone)"))
-        {
-            bGMControl.SoundEffectPlay(4);
+        if (coll.gameObject.tag == "Gojung") return;
 
+        if (coll.gameObject.CompareTag("P1ball") || coll.gameObject.CompareTag("P2ball") || coll.gameObject.CompareTag("P1Item") || coll.gameObject.CompareTag("P2Item") || (coll.gameObject.CompareTag("Item") && coll.gameObject.name != "SPEndlessF(Clone)"))
+        {
+            if (bGMControl.SoundEffectSwitch)
+            {
+                bGMControl.SoundEffectPlay(4);
+            }
             Destroy(gameObject);
         }
     }
@@ -56,10 +58,7 @@ public class HEnemyCenter : MonoBehaviour
     {
         while (true)
         {
-            // interval ��ŭ ���
             yield return new WaitForSeconds(interval);
-
-            // �ݰ� �ȿ� �ִ� ��� ������Ʈ�� ������
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, radius);
 
             foreach (var hitCollider in hitColliders)
@@ -67,21 +66,16 @@ public class HEnemyCenter : MonoBehaviour
                 if (hitCollider.CompareTag("EnemyCenter"))
                 {
                     Enemy1center enemyCenter = hitCollider.GetComponent<Enemy1center>();
-
-                    if (enemyCenter != null)
+                    if (enemyCenter != null && enemyCenter.durability < enemyCenter.initialRandomNumber)
                     {
-                        if (enemyCenter.randomNumber < enemyCenter.initialRandomNumber)
+                        enemyCenter.durability++;
+
+                        if (enemyCenter.isShowHP)
                         {
-                            enemyCenter.randomNumber++;
-
-                            if (enemyCenter.isShowHP)
-                            {
-                                enemyCenter.textMesh.text = enemyCenter.randomNumber.ToString();
-                            }
-
-                            // ����� �޽���: randomNumber ����
-                            Debug.Log($"Increased randomNumber for {hitCollider.name} to {enemyCenter.randomNumber}");
+                            enemyCenter.textMesh.text = enemyCenter.durability.ToString();
                         }
+
+                        Debug.Log($"Increased randomNumber for {hitCollider.name} to {enemyCenter.durability}");
                     }
                 }
             }

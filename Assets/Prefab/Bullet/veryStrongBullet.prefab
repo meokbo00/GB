@@ -163,7 +163,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 6
   hasExpanded: 0
+  PlusScale: 20
   fontsize: 2
   BallMinHP: 20
   BallMaxHP: 30
   bouncyMaterial: {fileID: 6200000, guid: 43641f4149fa2474d85f99016b4819d5, type: 2}
+  isExpanding: 0

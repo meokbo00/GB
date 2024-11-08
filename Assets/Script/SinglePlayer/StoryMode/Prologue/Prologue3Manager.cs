@@ -11,11 +11,6 @@ public class Prologue3Manager : MonoBehaviour
         StartCoroutine(ActivateCirclesRandomly());
     }
 
-    void Update()
-    {
-
-    }
-
     IEnumerator ActivateCirclesRandomly()
     {
         yield return new WaitForSeconds(5f); // 5초 대기

@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement; // 씬 매니지먼트 네임스페이스 추가
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PrologueManager : MonoBehaviour
@@ -9,59 +9,63 @@ public class PrologueManager : MonoBehaviour
     public Image secondImage;
     public Image FadeIn;
 
+    private TextManager textManager;
+    private ShowText showTextScript;
     private int currentChatId;
 
     void Start()
     {
+        // TextManager와 ShowText 스크립트를 한 번만 찾고 캐시
+        textManager = FindObjectOfType<TextManager>();
+        if (textManager != null)
+        {
+            showTextScript = textManager.Linebox.GetComponent<ShowText>();
+        }
+
         StartCoroutine(FadeInAndOut(firstImage));
     }
 
     IEnumerator FadeInAndOut(Image image)
     {
+        Color color = image.color;
+
+        // 페이드 인
         for (float alpha = 0; alpha <= 1; alpha += Time.deltaTime * 0.5f)
         {
-            SetImageAlpha(image, alpha);
+            color.a = alpha;
+            image.color = color;
             yield return null;
         }
-        SetImageAlpha(image, 1);
+        color.a = 1;
+        image.color = color;
 
         yield return new WaitForSeconds(1);
+
+        // 페이드 아웃
         for (float alpha = 1; alpha >= 0; alpha -= Time.deltaTime * 0.5f)
         {
-            SetImageAlpha(image, alpha);
+            color.a = alpha;
+            image.color = color;
             yield return null;
         }
-        SetImageAlpha(image, 0);
+        color.a = 0;
+        image.color = color;
         image.gameObject.SetActive(false);
         secondImage.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(4.5f);
 
+        // 두 번째 이미지에 대한 오디오 및 텍스트 처리
         AudioSource audioSource = secondImage.GetComponent<AudioSource>();
-        if (audioSource != null)
+        if (audioSource != null && showTextScript != null)
         {
-            TextManager textManager = FindObjectOfType<TextManager>();
             audioSource.Stop();
 
-            ShowText showTextScript = textManager.Linebox.GetComponent<ShowText>();
-            if (showTextScript != null)
-            {
-                showTextScript.OnChatComplete.AddListener(OnChatComplete);
-                currentChatId = 1; // 현재 채팅 ID 저장
-                textManager.GiveMeTextId(currentChatId);
-            }
-            else
-            {
-                Debug.LogError("ShowText script not found on Linebox.");
-            }
+            // OnChatComplete 이벤트 리스너 등록
+            showTextScript.OnChatComplete.AddListener(OnChatComplete);
+            currentChatId = 1; // 현재 채팅 ID 설정
+            textManager.GiveMeTextId(currentChatId);
         }
-    }
-
-    void SetImageAlpha(Image image, float alpha)
-    {
-        Color color = image.color;
-        color.a = alpha;
-        image.color = color;
     }
 
     void OnChatComplete(int chatId)
@@ -70,6 +74,9 @@ public class PrologueManager : MonoBehaviour
         if (chatId == 1)
         {
             StartCoroutine(FadeInImage(FadeIn));
+
+            // 이벤트 리스너 해제하여 메모리 관리 및 최적화
+            showTextScript.OnChatComplete.RemoveListener(OnChatComplete);
         }
     }
 
@@ -80,10 +87,15 @@ public class PrologueManager : MonoBehaviour
         color.a = 0;
         image.color = color;
 
-        for (float alpha = 0; alpha <= 1; alpha += Time.deltaTime / 3f)
+        float fadeDuration = 3f;
+        float timeElapsed = 0f;
+
+        // 페이드 인
+        while (timeElapsed < fadeDuration)
         {
-            color.a = alpha;
+            color.a = Mathf.Lerp(0, 1, timeElapsed / fadeDuration);
             image.color = color;
+            timeElapsed += Time.deltaTime;
             yield return null;
         }
 

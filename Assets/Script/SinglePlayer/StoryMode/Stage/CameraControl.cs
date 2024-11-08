@@ -2,35 +2,33 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour 
 {
-    GameObject player;
-    GameObject mainPlayer;
-    public RectTransform stage1RectTransform;
+    private GameObject player;
+    private GameObject mainPlayer;
     public Camera mainCamera;
 
-    void Start()
+    private Vector3 offsetMainPlayer = new Vector3(0, 1.1f, 0);
+    private Vector3 offsetPlayer = new Vector3(0, 5, 0);
+
+    void Awake()
     {
-        this.player = GameObject.Find("Player");
-        this.mainPlayer = GameObject.Find("Main Player");
+        player = GameObject.Find("Player");
+        mainPlayer = GameObject.Find("Main Player");
     }
 
-    void Update()
+    void LateUpdate()
     {
         Vector3 targetPos;
-        
+
         if (mainPlayer != null)
         {
-            targetPos = mainPlayer.transform.position;
-            transform.position = new Vector3(targetPos.x, targetPos.y + 1.1f, transform.position.z);
+            targetPos = mainPlayer.transform.position + offsetMainPlayer;
+            transform.position = new Vector3(targetPos.x, targetPos.y, transform.position.z);
         }
         else if (player != null)
         {
-            targetPos = player.transform.position;
-            transform.position = new Vector3(targetPos.x, targetPos.y + 5, transform.position.z);
+            targetPos = player.transform.position + offsetPlayer;
+            transform.position = new Vector3(targetPos.x, targetPos.y, transform.position.z);
         }
-        else
-        {
-            return;
-        }
-
+        // No else needed; simply return if both players are null.
     }
 }

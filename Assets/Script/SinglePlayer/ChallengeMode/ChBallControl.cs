@@ -23,6 +23,7 @@ public class ChBallControl : MonoBehaviour
     private TextMeshPro textMesh;
     private const string GojungTag = "Gojung";
     private const string WallTag = "Wall";
+    private Vector3 velocity = Vector3.zero;
 
     public int fontsize;
     public int PlusScale;
@@ -109,7 +110,7 @@ public class ChBallControl : MonoBehaviour
     {
         if (Vector3.Distance(transform.localScale, targetScale) > 0.01f)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * expandSpeed);
+            transform.localScale = Vector3.SmoothDamp(transform.localScale, targetScale,ref velocity, Time.deltaTime * expandSpeed);
         }
         else
         {

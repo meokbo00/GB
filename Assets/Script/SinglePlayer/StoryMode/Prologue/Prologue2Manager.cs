@@ -15,11 +15,6 @@ public class Prologue2Manager : MonoBehaviour
         StartCoroutine(ActivateSunObjects());
     }
 
-    void Update()
-    {
-
-    }
-
     IEnumerator AdjustCameraSize()
     {
         yield return new WaitForSeconds(7f);

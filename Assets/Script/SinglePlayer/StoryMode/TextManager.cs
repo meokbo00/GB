@@ -15,14 +15,6 @@ public class TextManager : MonoBehaviour
             {
                 showTextScript.DisplayChatById(chatId);
             }
-            else
-            {
-                Debug.LogError("ShowText script not found on Linebox.");
-            }
-        }
-        else
-        {
-            Debug.LogError("Linebox is not assigned.");
         }
     }
 }

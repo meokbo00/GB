@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6350379193036845528}
   m_Layer: 0
   m_Name: TEnemy1
-  m_TagString: Untagged
+  m_TagString: EnemyCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

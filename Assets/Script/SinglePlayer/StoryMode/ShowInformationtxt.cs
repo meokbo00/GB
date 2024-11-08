@@ -10,13 +10,13 @@ public class ShowInformationtxt : MonoBehaviour
     public TextMeshProUGUI stageTitleText;
 
     private Information[] stageInfos;
-
+    StageGameManager gameManager;
     private void Start()
     {
         // JSON 파일에서 데이터 로드
         string jsonString = JsonFile.text;
         stageInfos = JsonConvert.DeserializeObject<Information[]>(jsonString);
-
+        gameManager = FindAnyObjectByType<StageGameManager>();
         // 초기 텍스트 설정
         informationText.text = "";
         stageTitleText.text = "";
@@ -29,8 +29,6 @@ public class ShowInformationtxt : MonoBehaviour
 
     public void UpdateStageInfo()
     {
-        StageGameManager gameManager = FindObjectOfType<StageGameManager>();
-
         int stageID = StageState.chooseStage;
         float stageClearID = gameManager.StageClearID;
 

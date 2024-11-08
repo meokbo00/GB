@@ -59,10 +59,11 @@ public class Ch1_2Story : MonoBehaviour
 
     void Update()
     {
-        showText = FindObjectOfType<ShowText>();
 
-        if (showText != null && stageGameManager.StageClearID == 6f)
+        if (stageGameManager.StageClearID == 6f)
         {
+            showText = FindObjectOfType<ShowText>();
+
             if (showText.logTextIndex > 38)
             {
                 stageBallController.enabled = true;

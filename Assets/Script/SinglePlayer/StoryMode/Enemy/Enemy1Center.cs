@@ -7,16 +7,16 @@ public class Enemy1center : MonoBehaviour
 {
     SPGameManager spGameManager;
     BGMControl bGMControl;
-    Rigidbody2D rigid;
     public float increase = 4f;
     public bool hasExpanded = false;
-    public int randomNumber;
+    public int durability;
     public int initialRandomNumber; // 초기 randomNumber 값을 저장할 변수
     public TextMeshPro textMesh;
     public Enemy1Fire[] enemy1Fires; // 여러 Enemy1Fire 참조를 위한 배열
     public bool isShowHP;
     public bool isHide;
-
+    private const string SPTwiceFName = "SPTwiceF(Clone)";
+    private const string SPEndlessFName = "SPEndlessF(Clone)";
     public int MaxHP;
     public int MinHP;
     public float MaxFireTime;
@@ -27,17 +27,16 @@ public class Enemy1center : MonoBehaviour
 
     private void Start()
     {
-        spGameManager = FindObjectOfType<SPGameManager>();
-        bGMControl = FindObjectOfType<BGMControl>();
-        rigid = GetComponent<Rigidbody2D>();
+        spGameManager = FindAnyObjectByType<SPGameManager>();
+        bGMControl = FindAnyObjectByType<BGMControl>();
         GameObject textObject = new GameObject("TextMeshPro");
         textObject.transform.parent = transform;
         textMesh = textObject.AddComponent<TextMeshPro>();
-        randomNumber = Random.Range(MinHP, MaxHP);
-        initialRandomNumber = randomNumber; // 초기 randomNumber 값을 저장
+        durability = Random.Range(MinHP, MaxHP);
+        initialRandomNumber = durability; // 초기 randomNumber 값을 저장
         if (isShowHP)
         {
-            textMesh.text = randomNumber.ToString();
+            textMesh.text = durability.ToString();
         }
         textMesh.fontSize = fontsize;
         textMesh.alignment = TextAlignmentOptions.Center;
@@ -57,46 +56,39 @@ public class Enemy1center : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "P1ball" || coll.gameObject.tag == "P2ball" || coll.gameObject.tag == "P1Item" || coll.gameObject.tag == "P2Item"
-            || (coll.gameObject.tag == "Item" && coll.gameObject.name != "SPEndlessF(Clone)"))
+        if (coll.gameObject.tag == "EnemyBall") return;
+        if (coll.gameObject.tag == "Gojung") return;
+        if (coll.gameObject.name != SPEndlessFName)
         {
-            if (randomNumber > 0)
-            {
-                randomNumber--;
-                if (isShowHP)
-                {
-                    textMesh.text = randomNumber.ToString();
-                }
-            }
-            if (randomNumber <= 0)
-            {
-                bGMControl.SoundEffectPlay(4);
-                spGameManager.RemoveEnemy();
-
-                Destroy(transform.parent.gameObject); // 부모 오브젝트 삭제
-            }
+            TakeDamage(1);
         }
-        if (coll.gameObject.name == "SPTwiceF(Clone)")
+        if (coll.gameObject.name == SPTwiceFName)
         {
-            randomNumber -= 1;
-            if (randomNumber > 0)
-            {
-                textMesh.text = randomNumber.ToString();
-            }
-            if (randomNumber <= 0)
+            TakeDamage(1);
+        }
+    }
+    void TakeDamage(int damage)
+    {
+        durability -= damage;
+        if (isShowHP)
+        {
+            textMesh.text = durability.ToString();
+        }
+        if (durability <= 0)
+        {
+            if (bGMControl.SoundEffectSwitch)
             {
                 bGMControl.SoundEffectPlay(4);
-                spGameManager.RemoveEnemy();
-
-                Destroy(gameObject);
             }
+            spGameManager.RemoveEnemy();
+            Destroy(gameObject);
         }
     }
     private IEnumerator RotateObject()
     {
         while (true)
         {
-            // 5초 동안 정지
+            // 랜덤한 대기 시간
             yield return new WaitForSeconds(Random.Range(MinFireTime, MaxFireTime));
 
             // 회전할 각도 설정
@@ -114,19 +106,24 @@ public class Enemy1center : MonoBehaviour
                 yield return null;
             }
 
-            // 회전이 끝난 후 1초 뒤에 총알 발사
-            yield return new WaitForSeconds(1f);
+            // 회전이 끝난 후 총알 발사
+            FireBullets();
+        }
+    }
 
-            if (enemy1Fires != null)
+    // 총알 발사 메서드
+    private void FireBullets()
+    {
+        if (enemy1Fires != null)
+        {
+            foreach (var enemy1Fire in enemy1Fires)
             {
-                foreach (var enemy1Fire in enemy1Fires)
-                {
-                    spGameManager.AddBall();
-                    enemy1Fire.SpawnBullet();
-                }
+                spGameManager.AddBall();
+                enemy1Fire.SpawnBullet();
             }
         }
     }
+
 
     private void ChangeObjectColor(Transform parentTransform)
     {

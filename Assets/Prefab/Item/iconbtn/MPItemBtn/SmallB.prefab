@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7162666875505522168}
   - component: {fileID: 6213000807919080278}
   - component: {fileID: 8445791452918667455}
-  - component: {fileID: -2981364271582566933}
+  - component: {fileID: -1051642920614082394}
   m_Layer: 5
-  m_Name: ChSmallB
+  m_Name: SmallB
   m_TagString: Item_Small
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-2981364271582566933
+--- !u!114 &-1051642920614082394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,6 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3647509544521638733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba9d2d9439e797a45896f5a3eaee5fee, type: 3}
+  m_Script: {fileID: 11500000, guid: 5980ab353e057a74db0f59cb6443b619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

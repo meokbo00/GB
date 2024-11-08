@@ -22,32 +22,13 @@ public class SpawnEnemy : MonoBehaviour
 
     void Start()
     {
-        if (jsonFile == null)
-        {
-            Debug.LogError("JSON file not set in the inspector.");
-            return;
-        }
-
         int stage = GlobalData.SelectedStage;
         string jsonData = jsonFile.text; // JSON 데이터를 TextAsset에서 가져옵니다.
         List<EnemyData> enemyDataList = JsonConvert.DeserializeObject<List<EnemyData>>(jsonData);
 
-        if (enemyDataList == null)
-        {
-            Debug.LogError("Failed to deserialize JSON data.");
-            return;
-        }
-
-        // 해당 stage의 데이터를 찾습니다.
         EnemyData data = enemyDataList.Find(d => d.id == stage);
         if (data != null)
         {
-            if (data.enemies == null)
-            {
-                Debug.LogError("No enemies data found for the selected stage.");
-                return;
-            }
-
             foreach (var enemy in data.enemies)
             {
                 if (!string.IsNullOrEmpty(enemy.type))
@@ -55,10 +36,6 @@ public class SpawnEnemy : MonoBehaviour
                     InstantiateEnemy(enemy.type, enemy.x, enemy.y);
                 }
             }
-        }
-        else
-        {
-            Debug.LogError("No data found for the selected stage.");
         }
     }
 

@@ -68,9 +68,9 @@ public class Ch2Story : MonoBehaviour
 
     void Update()
     {
-        showText = FindObjectOfType<ShowText>();
-        if (showText != null && stageGameManager.StageClearID == 6)
+        if (stageGameManager.StageClearID == 6)
         {
+            showText = FindObjectOfType<ShowText>();
             if (showText.logTextIndex == 3)
             {
                 Fadein.SetActive(false);

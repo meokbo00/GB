@@ -39,7 +39,6 @@ public class StageBallManager : MonoBehaviour
             Vector3 dragDirection = (currentPosition - clickPosition).normalized;
             shotDirection = -dragDirection;
             isDragging = false;
-            Debug.Log("���� ������ �����մϴ�");
         }
     }
     private bool IsPointerOverUIObject()

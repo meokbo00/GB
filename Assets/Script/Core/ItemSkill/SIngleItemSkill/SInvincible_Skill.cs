@@ -21,6 +21,7 @@ public class SInvincible_Skill : MonoBehaviour
     private float expandSpeed = 1f; // 팽창 속도
     private Vector3 initialScale; // 초기 공 크기
     private Vector3 targetScale; // 목표 크기
+    private Vector3 velocity = Vector3.zero;
 
     private const string WallTag = "Wall";
     private void Start()
@@ -86,12 +87,9 @@ public class SInvincible_Skill : MonoBehaviour
     }
     void ExpandBall()
     {
-        if (Vector3.Distance(transform.localScale, targetScale) > 0.01f)
-        {
-            hasExpanded = true;
-            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * expandSpeed);
-        }
-        else
+        transform.localScale = Vector3.SmoothDamp(transform.localScale, targetScale, ref velocity, expandSpeed);
+
+        if (Vector3.Distance(transform.localScale, targetScale) < 0.01f)
         {
             transform.localScale = targetScale; // 목표 크기에 도달하면 팽창 완료
             isExpanding = false; // 팽창 중단

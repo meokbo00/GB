@@ -22,11 +22,11 @@ public class FEnemyBulletControl : MonoBehaviour
     public PhysicsMaterial2D bouncyMaterial;
     private Vector3 initialScale; // 초기 공 크기
     private Vector3 targetScale; // 목표 크기
-    private const string SPTwiceFName = "SPTwiceF(Clone)";
-    private const string TwiceBulletName = "TwiceBullet(Clone)";
-    private const string GojungTag = "Gojung";
-    private const string WallTag = "Wall";
-    private const string EnemyCenterTag = "EnemyCenter";
+    public bool isExpanding = false; // 공이 팽창 중인지 여부
+    private float decelerationThreshold = 0.4f;
+    public int PlusScale;
+    private float expandSpeed = 1f; // 팽창 속도
+    private Vector3 velocity = Vector3.zero;
 
 
 
@@ -56,81 +56,78 @@ public class FEnemyBulletControl : MonoBehaviour
             collider.sharedMaterial = bouncyMaterial;
         }
 
-        //initialScale = transform.localScale;
+        initialScale = transform.localScale;
     }
 
+    private void FixedUpdate()
+    {
+        if (!isStopped)
+        {
+            SlowDownBall();
+        }
+    }
     private void Update()
     {
-        Move();
-        expand();
-    }
-
-    void Move()
-    {
-        if (rb == null || isStopped) return;
-
-        lastVelocity = rb.velocity;
-        rb.velocity -= rb.velocity.normalized * deceleration * Time.deltaTime;
-
-        if (rb.velocity.magnitude <= 0.01f && hasExpanded)
+        if (isExpanding)
         {
-            isStopped = true;
+            ExpandBall();
         }
     }
 
-    void expand()
+    void SlowDownBall()
     {
-        if (rb == null || iscolliding) return;
-        if (rb.velocity.magnitude > 0.1f) return;
-        if (Input.GetMouseButton(0)) return;
+        if (rb == null) return;
 
-        if (!hasExpanded && bGMControl.SoundEffectSwitch)
+        rb.velocity *= 1f - (Time.deltaTime * (deceleration * 0.4f)); // drag 효과 줄이기
+        if (rb.velocity.magnitude <= decelerationThreshold)
+        {
+            rb.velocity = Vector2.zero;
+            isStopped = true;
+            StartExpansion();
+        }
+    }
+
+
+
+    void StartExpansion()
+    {
+        if (bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(1);
         }
-        transform.localScale += Vector3.one * increase * Time.deltaTime;
-        hasExpanded = true;
+        targetScale = initialScale * PlusScale;
+        isExpanding = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D coll)
+    void ExpandBall()
     {
-        if (!hasExpanded && bGMControl.SoundEffectSwitch)
+        transform.localScale = Vector3.SmoothDamp(transform.localScale, targetScale, ref velocity, expandSpeed);
+
+        if (Vector3.Distance(transform.localScale, targetScale) < 0.01f)
+        {
+            transform.localScale = targetScale; // 목표 크기에 도달하면 팽창 완료
+            isExpanding = false; // 팽창 중단
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!isExpanding && bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(0);
         }
-        if (!coll.collider.isTrigger && hasExpanded)
+        if (!collision.collider.isTrigger && isExpanding)
         {
-            hasExpanded = true; // 팽창 중단
+            isExpanding = false; // 팽창 중단
             transform.localScale = transform.localScale; // 현재 크기에서 멈춤
             DestroyRigidbody(); // Rigidbody 제거
         }
-        if (coll.gameObject.name == "SPInvincibleF(Clone)")
-        {
-            ChallengeGameManager chmanager = FindObjectOfType<ChallengeGameManager>();
-            chmanager.scorenum++;
-            Destroy(gameObject);
-        }
 
-        if ((coll.collider.name != SPTwiceFName || coll.collider.name != TwiceBulletName) && rb == null)
+        if (collision.collider.tag == "EnemyBall")
         {
-            if (coll.collider.CompareTag(GojungTag)) return;
-            if (coll.collider.CompareTag(WallTag)) return;
-            if (coll.collider.CompareTag(EnemyCenterTag)) return;
-
             TakeDamage(1);
             textMesh.text = durability.ToString();
         }
-        if ((coll.collider.name == SPTwiceFName || coll.collider.name == TwiceBulletName) && rb == null)
-        {
-            TakeDamage(2);
-            textMesh.text = durability.ToString();
-        }
-        this.iscolliding = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        this.iscolliding = false;
     }
     void TakeDamage(int damage)
     {

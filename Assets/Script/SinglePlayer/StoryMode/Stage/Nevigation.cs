@@ -10,25 +10,42 @@ public class Navigation : MonoBehaviour
     public GameObject Left;
     public GameObject Right;
 
+    private Vector3 lastClearherePosition;
+
     void Start()
     {
         mainPlayerObject = GameObject.Find("Main Player");
-        if (mainPlayerObject == null)
+
+        // Clearhere가 이미 존재한다면 찾기
+        clearhereObject = GameObject.Find("Clearhere(Clone)");
+        if (clearhereObject != null)
         {
-            Debug.LogError("Main Player ������Ʈ�� ã�� �� �����ϴ�.");
+            lastClearherePosition = clearhereObject.transform.position;
+            UpdateActivation();
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        // Clearhere 오브젝트를 찾지 못했을 경우 한 번만 찾기 시도
         if (clearhereObject == null)
         {
             clearhereObject = GameObject.Find("Clearhere(Clone)");
+            if (clearhereObject != null)
+            {
+                lastClearherePosition = clearhereObject.transform.position;
+                UpdateActivation();
+            }
         }
-
-        if (clearhereObject != null)
+        else
         {
-            UpdateActivation();
+            // 위치가 변경되었을 때만 업데이트
+            Vector3 currentClearherePosition = clearhereObject.transform.position;
+            if (currentClearherePosition != lastClearherePosition)
+            {
+                lastClearherePosition = currentClearherePosition;
+                UpdateActivation();
+            }
         }
     }
 
@@ -46,6 +63,5 @@ public class Navigation : MonoBehaviour
         Bottom.SetActive(isBottom);
         Left.SetActive(isLeft);
         Right.SetActive(isRight);
-
     }
 }

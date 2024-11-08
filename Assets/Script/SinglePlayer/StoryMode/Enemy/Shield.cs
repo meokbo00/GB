@@ -6,25 +6,28 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
     Rigidbody2D rigid;
-    public int ShieldHP;
+    public int durability;
     public int initialRandomNumber; // 초기 randomNumber 값을 저장할 변수
     public TextMeshPro textMesh;
     public bool isShowHP;
     public bool isHide;
-
+    private const string SPTwiceFName = "SPTwiceF(Clone)";
+    private const string SPEndlessFName = "SPEndlessF(Clone)";
     public int MaxHP;
     public int MinHP;
+    BGMControl bGMControl;
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         GameObject textObject = new GameObject("TextMeshPro");
+        bGMControl = FindAnyObjectByType<BGMControl>();
         textObject.transform.parent = transform;
         textMesh = textObject.AddComponent<TextMeshPro>();
-        ShieldHP = Random.Range(MinHP, MaxHP);
-        initialRandomNumber = ShieldHP; // 초기 randomNumber 값을 저장
+        durability = Random.Range(MinHP, MaxHP);
+        initialRandomNumber = durability; // 초기 randomNumber 값을 저장
         if (isShowHP)
         {
-            textMesh.text = ShieldHP.ToString();
+            textMesh.text = durability.ToString();
         }
         textMesh.fontSize = 3;
         textMesh.alignment = TextAlignmentOptions.Center;
@@ -39,35 +42,32 @@ public class Shield : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D coll)
+     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "P1ball" || coll.gameObject.tag == "P2ball" || coll.gameObject.tag == "P1Item" || coll.gameObject.tag == "P2Item"
-            || (coll.gameObject.tag == "Item" && coll.gameObject.name != "SPEndlessF(Clone)"))
+        if (coll.gameObject.tag == "EnemyBall") return;
+        if (coll.gameObject.name != SPEndlessFName)
         {
-            if (ShieldHP > 0)
-            {
-                ShieldHP--;
-                if (isShowHP)
-                {
-                    textMesh.text = ShieldHP.ToString();
-                }
-            }
-            if (ShieldHP <= 0)
-            {
-                Destroy(gameObject); // 부모 오브젝트 삭제
-            }
+            TakeDamage(1);
         }
-        if (coll.gameObject.name == "SPTwiceF(Clone)")
+        if (coll.gameObject.name == SPTwiceFName)
         {
-            ShieldHP -= 1;
-            if (ShieldHP > 0)
+            TakeDamage(1);
+        }
+    }
+    void TakeDamage(int damage)
+    {
+        durability -= damage;
+        if (isShowHP)
+        {
+            textMesh.text = durability.ToString();
+        }
+        if (durability <= 0)
+        {
+            if (bGMControl.SoundEffectSwitch)
             {
-                textMesh.text = ShieldHP.ToString();
+                bGMControl.SoundEffectPlay(4);
             }
-            if (ShieldHP <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 

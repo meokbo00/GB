@@ -30,9 +30,10 @@ public class Ch3Story : MonoBehaviour
 
     void Update()
     {
-        showText = FindObjectOfType<ShowText>();
-        if (showText != null && stageGameManager.StageClearID == 65)
+        if (stageGameManager.StageClearID == 65)
         {
+            showText = FindObjectOfType<ShowText>();
+
             if (showText.logTextIndex == 8 && !isZooming)
             {
                 StartCoroutine(SmoothZoom(5f, 1700f));

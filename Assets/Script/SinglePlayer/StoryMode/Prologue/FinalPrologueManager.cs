@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // UnityEngine.UI를 사용하여 Button을 포함합니다.
-using TMPro; // TextMeshPro를 포함합니다.
 
 public class FinalPrologueManager : MonoBehaviour
 {
@@ -11,21 +9,20 @@ public class FinalPrologueManager : MonoBehaviour
     public Button transitionButton; // TMP 버튼은 일반 Button과 함께 사용됩니다.
 
     private Coroutine deactivateButtonCoroutine;
+    private CanvasGroup[] canvasGroups;
 
     void Start()
     {
-        foreach (GameObject image in images)
+        // CanvasGroup을 캐시합니다.
+        canvasGroups = new CanvasGroup[images.Length];
+        for (int i = 0; i < images.Length; i++)
         {
-            CanvasGroup canvasGroup = image.GetComponent<CanvasGroup>();
-            if (canvasGroup == null)
-            {
-                canvasGroup = image.AddComponent<CanvasGroup>();
-            }
-            canvasGroup.alpha = 0f;
+            canvasGroups[i] = images[i].GetComponent<CanvasGroup>() ?? images[i].AddComponent<CanvasGroup>();
+            canvasGroups[i].alpha = 0f;
         }
 
         transitionButton.gameObject.SetActive(false); // 시작할 때 버튼 비활성화
-
+        transitionButton.onClick.AddListener(OnButtonClick); // 버튼 클릭 시 이벤트 추가
         StartCoroutine(ShowImagesSequentially());
     }
 
@@ -43,59 +40,47 @@ public class FinalPrologueManager : MonoBehaviour
 
         foreach (GameObject image in images)
         {
-            yield return StartCoroutine(FadeIn(image));
+            yield return StartCoroutine(Fade(image, true, 2f)); // 페이드 인
             yield return new WaitForSeconds(waitTime); // 대기 시간 설정
-            yield return StartCoroutine(FadeOut(image));
+            yield return StartCoroutine(Fade(image, false, 1f)); // 페이드 아웃
         }
 
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Stage");
     }
 
-    IEnumerator FadeIn(GameObject image)
+    IEnumerator Fade(GameObject image, bool fadeIn, float duration)
     {
         CanvasGroup canvasGroup = image.GetComponent<CanvasGroup>();
-        float duration = 2f;
-        float elapsed = 0f;
-
         image.SetActive(true);
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Clamp01(elapsed / duration);
-            yield return null;
-        }
-        canvasGroup.alpha = 1f;
-    }
-
-    IEnumerator FadeOut(GameObject image)
-    {
-        CanvasGroup canvasGroup = image.GetComponent<CanvasGroup>();
-        float duration = 1f;
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
-            elapsed += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Clamp01(1f - (elapsed / duration));
+            elapsed += Time.unscaledDeltaTime;
+            canvasGroup.alpha = Mathf.Clamp01(fadeIn ? (elapsed / duration) : (1f - (elapsed / duration)));
             yield return null;
         }
-        canvasGroup.alpha = 0f;
 
-        image.SetActive(false);
+        canvasGroup.alpha = fadeIn ? 1f : 0f; // 최종 alpha 값 설정
+
+        if (!fadeIn)
+        {
+            image.SetActive(false); // 페이드 아웃 후 비활성화
+        }
     }
 
     void ActivateButton()
     {
-        transitionButton.gameObject.SetActive(true); // 버튼 활성화
-        transitionButton.onClick.AddListener(OnButtonClick); // 버튼 클릭 시 이벤트 추가
-
-        if (deactivateButtonCoroutine != null)
+        if (!transitionButton.gameObject.activeSelf) // 이미 활성화되어 있는지 확인
         {
-            StopCoroutine(deactivateButtonCoroutine);
+            transitionButton.gameObject.SetActive(true); // 버튼 활성화
+            if (deactivateButtonCoroutine != null)
+            {
+                StopCoroutine(deactivateButtonCoroutine);
+            }
+            deactivateButtonCoroutine = StartCoroutine(DeactivateButtonAfterDelay());
         }
-        deactivateButtonCoroutine = StartCoroutine(DeactivateButtonAfterDelay());
     }
 
     IEnumerator DeactivateButtonAfterDelay()
