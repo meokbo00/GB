@@ -58,13 +58,13 @@ public class Enemy1center : MonoBehaviour
     {
         if (coll.gameObject.tag == "EnemyBall") return;
         if (coll.gameObject.tag == "Gojung") return;
-        if (coll.gameObject.name != SPEndlessFName)
+        if (coll.gameObject.name != SPEndlessFName && coll.gameObject.name != SPTwiceFName)
         {
             TakeDamage(1);
         }
         if (coll.gameObject.name == SPTwiceFName)
         {
-            TakeDamage(1);
+            TakeDamage(2);
         }
     }
     void TakeDamage(int damage)

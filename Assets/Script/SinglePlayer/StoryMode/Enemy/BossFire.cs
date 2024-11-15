@@ -10,7 +10,7 @@ public class BossFire : MonoBehaviour
 
     public void SpawnBullet()
     {
-        GameObject selectedBulletPrefab = enemyBulletPrefabs[Random.Range(0, enemyBulletPrefabs.Length)];
+        GameObject selectedBulletPrefab = enemyBulletPrefabs[Random.Range(0, 1)];
         GameObject bullet = Instantiate(selectedBulletPrefab, transform.position, Quaternion.identity);
         Vector2 shotDirection = -transform.up;
         float shotPower = Random.Range(MinPower, MaxPower);

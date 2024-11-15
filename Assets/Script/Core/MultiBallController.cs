@@ -4,125 +4,163 @@ using UnityEngine;
 
 public class MultiBallController : MonoBehaviour
 {
-    Rigidbody2D rigid;
-    Vector2 lastVelocity;
-    float deceleration = 2f;
-    public float increase = 4f;
-    private bool iscolliding = false;
-    public bool hasExpanded = false;
-    private bool isStopped = false;
-    private int randomNumber;
-    private TextMeshPro textMesh;
-    private bool hasBeenReleased = false;
-    public float fontsize;
+    GameManager gameManager;
+    Rigidbody2D rb;
     BGMControl bGMControl;
+    bool hasBeenLaunched = false;
+    public bool isExpanding = false; // 공이 팽창 중인지 여부
+    bool isStopped = false; // 공이 완전히 멈췄는지 여부
+    private float decelerationThreshold = 0.4f;
+    private float dragAmount = 1.1f;
+    private float expandSpeed = 1f; // 팽창 속도
+    private Vector3 initialScale; // 초기 공 크기
+    private Vector3 targetScale; // 목표 크기
+    private int durability; // 공의 내구도
+    private const string TwiceFName = "TwiceF(Clone)";
+    public PhysicsMaterial2D bouncyMaterial;
+    private TextMeshPro textMesh;
+    private const string GojungTag = "Gojung";
+    private const string WallTag = "Wall";
+    private Vector3 velocity = Vector3.zero;
 
-    private void Start()
+    public int fontsize;
+    public int PlusScale;
+
+
+    void Start()
     {
         bGMControl = FindAnyObjectByType<BGMControl>();
-        rigid = GetComponent<Rigidbody2D>();
+        gameManager = FindAnyObjectByType<GameManager>();
+        rb = GetComponent<Rigidbody2D>();
+
         GameObject textObject = new GameObject("TextMeshPro");
-        textObject.transform.parent = transform;
+        textObject.transform.parent = transform; // 구체의 자식으로 설정
+        durability = Random.Range(1, 6);
+
         textMesh = textObject.AddComponent<TextMeshPro>();
-        randomNumber = Random.Range(1, 6);
-        textMesh.text = randomNumber.ToString();
+        textMesh.text = durability.ToString();
         textMesh.fontSize = fontsize;
         textMesh.alignment = TextAlignmentOptions.Center;
         textMesh.autoSizeTextContainer = true;
-        textMesh.rectTransform.localPosition = Vector3.zero;
-        textMesh.sortingOrder = 1;
-    }
+        textMesh.rectTransform.localPosition = Vector3.zero; // 구체 중심에 텍스트 배치
+        textMesh.sortingOrder = 1; // 레이어 순서를 조정하여 구체 위에 배치
 
-    private void Update()
-    {
-        // 최초 클릭 이후에만 힘이 가해지도록 설정
-        if (Input.GetMouseButtonUp(0) && rigid != null && !hasBeenReleased)
+        rb.drag = 0f;
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null && bouncyMaterial != null)
         {
-            rigid.velocity = GameManager.shotDirection * GameManager.shotDistance; // GameManager에서 값 가져와서 구체 발사
-            hasBeenReleased = true; // 최초 클릭이 되었음을 표시
+            collider.sharedMaterial = bouncyMaterial;
         }
-        Move();
-        expand();
+
+        initialScale = transform.localScale;
     }
 
-    void Move()
+    void Update()
     {
-        if (rigid == null || isStopped) return;
-
-        lastVelocity = rigid.velocity;
-        rigid.velocity -= rigid.velocity.normalized * deceleration * Time.deltaTime;
-
-        if (rigid.velocity.magnitude <= 0.01f && hasExpanded)
+        if (!hasBeenLaunched && !gameManager.isDragging)
         {
+            LaunchBall();
+        }
+
+        if (hasBeenLaunched && !isStopped)
+        {
+            SlowDownBall();
+        }
+
+        if (isExpanding)
+        {
+            ExpandBall();
+        }
+    }
+
+    void LaunchBall()
+    {
+        Vector2 launchForce = GameManager.shotDirection * (GameManager.shotDistance * 1.4f);
+        rb.AddForce(launchForce, ForceMode2D.Impulse);
+
+        rb.drag = dragAmount;
+        hasBeenLaunched = true;
+    }
+
+    void SlowDownBall()
+    {
+        if (rb == null) return;
+
+        if (rb.velocity.magnitude <= decelerationThreshold)
+        {
+            rb.velocity = Vector2.zero;
             isStopped = true;
-            StartCoroutine(DestroyRigidbodyDelayed());
+            StartExpansion();
         }
     }
-    void expand()
-    {
-        if (rigid == null || iscolliding) return;
-        if (rigid.velocity.magnitude > 0.1f) return;
-        if (Input.GetMouseButton(0)) return;
 
-        if (!hasExpanded)
+    void StartExpansion()
+    {
+        if (bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(1);
         }
-        transform.localScale += Vector3.one * increase * Time.deltaTime;
-        hasExpanded = true;
+        targetScale = initialScale * PlusScale;
+        isExpanding = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D coll)
+    void ExpandBall()
     {
-        if (!hasExpanded)
+        transform.localScale = Vector3.SmoothDamp(transform.localScale, targetScale, ref velocity, expandSpeed);
+
+        if (Vector3.Distance(transform.localScale, targetScale) < 0.01f)
+        {
+            transform.localScale = targetScale; // 목표 크기에 도달하면 팽창 완료
+            isExpanding = false; // 팽창 중단
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!isExpanding && bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(0);
         }
-        if ((coll.gameObject.tag == "P1ball" || coll.gameObject.tag == "P2ball" || coll.gameObject.tag == "P1Item" || coll.gameObject.tag == "P2Item"
-            || coll.gameObject.tag == "EnemyBall" || coll.gameObject.tag == "Item") && rigid == null)
+        if (!collision.collider.isTrigger && isExpanding)
         {
-            if (randomNumber > 0)
-            {
-                randomNumber--;
-                textMesh.text = randomNumber.ToString();
-            }
-            if (randomNumber <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-        if ((coll.gameObject.name == "SPTwiceF(Clone)" && rigid == null) || (coll.gameObject.name == "TwiceBullet(Clone)" && rigid == null))
-        {
-            randomNumber -= 1;
-            if (randomNumber > 0)
-            {
-                textMesh.text = randomNumber.ToString();
-            }
-            if (randomNumber <= 0)
-            {
-                Destroy(gameObject);
-            }
+            isExpanding = false; // 팽창 중단
+            transform.localScale = transform.localScale; // 현재 크기에서 멈춤
+            DestroyRigidbody(); // Rigidbody 제거
         }
 
-
-        if (coll.contacts != null && coll.contacts.Length > 0)
+        if ((collision.collider.name != TwiceFName) && rb == null)
         {
-            Vector2 dir = Vector2.Reflect(lastVelocity.normalized, coll.contacts[0].normal);
-            if (rigid != null)
-                rigid.velocity = dir * Mathf.Max(lastVelocity.magnitude, 0f); // 감속하지 않고 반사만 진행
+            if (collision.collider.CompareTag(GojungTag)) return;
+            if (collision.collider.CompareTag(WallTag)) return;
+
+            TakeDamage(1);
+            textMesh.text = durability.ToString();
         }
-        this.iscolliding = true;
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        this.iscolliding = false;
+        if ((collision.collider.name == TwiceFName) && rb == null)
+        {
+            TakeDamage(2);
+            textMesh.text = durability.ToString();
+        }
     }
 
-    IEnumerator DestroyRigidbodyDelayed()
+    void TakeDamage(int damage)
     {
-        yield return new WaitForSeconds(0.8f);
-        if (rigid != null)
-            Destroy(rigid);
+        durability -= damage;
+        if (durability <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void DestroyRigidbody()
+    {
+        if (rb != null)
+        {
+            Destroy(rb);
+            rb = null;
+        }
     }
 }
-

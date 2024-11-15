@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstImage: {fileID: 285628826}
   secondImage: {fileID: 1786878007}
-  FadeIn: {fileID: 785014513}
+  fadeImage: {fileID: 785014513}
 --- !u!4 &719769629
 Transform:
   m_ObjectHideFlags: 0

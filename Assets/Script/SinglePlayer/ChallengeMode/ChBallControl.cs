@@ -101,18 +101,19 @@ public class ChBallControl : MonoBehaviour
 
     void StartExpansion()
     {
-        bGMControl.SoundEffectPlay(1);
+        if (bGMControl.SoundEffectSwitch)
+        {
+            bGMControl.SoundEffectPlay(1);
+        }
         targetScale = initialScale * PlusScale;
         isExpanding = true;
     }
 
     void ExpandBall()
     {
-        if (Vector3.Distance(transform.localScale, targetScale) > 0.01f)
-        {
-            transform.localScale = Vector3.SmoothDamp(transform.localScale, targetScale,ref velocity, Time.deltaTime * expandSpeed);
-        }
-        else
+        transform.localScale = Vector3.SmoothDamp(transform.localScale, targetScale, ref velocity, expandSpeed);
+
+        if (Vector3.Distance(transform.localScale, targetScale) < 0.01f)
         {
             transform.localScale = targetScale; // 목표 크기에 도달하면 팽창 완료
             isExpanding = false; // 팽창 중단

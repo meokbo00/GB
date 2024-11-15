@@ -23,17 +23,18 @@ public class Ch1Story : MonoBehaviour
         TextManager textManager = FindAnyObjectByType<TextManager>();
         stageBallController = FindAnyObjectByType<StageBallController>();
         randomMovements = FindObjectsOfType<ContinuousRandomMovement>();
+        Debug.Log(stageGameManager.StageClearID);
+        if(stageGameManager.StageClearID == 1 )
+        {
+            stageBallController.enabled = false;
+            textManager.GiveMeTextId(1);
+            showText = FindAnyObjectByType<ShowText>();
 
+            StartCoroutine(HandleStage1());
+        }
         // 초기 조건에 따라 필요한 작업을 실행하는 코루틴을 시작
         switch (stageGameManager.StageClearID)
         {
-            case 1:
-                stageBallController.enabled = false;
-                textManager.GiveMeTextId(1);
-                showText = FindAnyObjectByType<ShowText>();
-
-                StartCoroutine(HandleStage1());
-                break;
             case 2:
                 textManager.GiveMeTextId(2);
                 break;
@@ -50,6 +51,7 @@ public class Ch1Story : MonoBehaviour
                 break;
         }
     }
+   
 
     private IEnumerator HandleStage1()
     {

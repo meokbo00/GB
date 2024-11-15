@@ -19,12 +19,6 @@ public class SPRandomGenerate : MonoBehaviour
         stageGameManager = FindObjectOfType<StageGameManager>();
         backgroundCollider = background.GetComponent<Collider2D>();
 
-        if (stageGameManager == null)
-        {
-            Debug.LogError("StageGameManager를 찾을 수 없습니다.");
-            return;
-        }
-
         SetMaxIndex();
 
         // 지정된 간격으로 SpawnSphere를 호출
@@ -39,7 +33,7 @@ public class SPRandomGenerate : MonoBehaviour
 
         if (stageID <= 6)
         {
-            CancelInvoke("SpawnSphere"); // StageClearID가 6 이하일 때는 스폰을 중지
+            maxIndex = -1;
         }
         else if (stageID <= 10)
         {

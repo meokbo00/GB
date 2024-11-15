@@ -315,7 +315,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC5EC\uAE30\uAE4C\uC9C0 \uC624\uB290\uB77C\n\uC218\uACE0\uB9CE\uC558\uC2B5\uB2C8\uB2E4"
+  m_text: "<\uCD5C\uC885 \uBCF4\uC2A4>\n\n\uC5EC\uAE30\uAE4C\uC9C0 \uC624\uB290\uB77C\n\uC218\uACE0
+    \uB9CE\uC558\uC2B5\uB2C8\uB2E4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
   m_sharedMaterial: {fileID: 2326276519201562975, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}

@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245eb70a8cb90b444b6711fa03527af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increase: 4
-  hasExpanded: 0
+  isExpanding: 0
+  bouncyMaterial: {fileID: 6200000, guid: 43641f4149fa2474d85f99016b4819d5, type: 2}
   fontsize: 4
+  PlusScale: 10

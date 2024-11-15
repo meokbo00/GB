@@ -26,7 +26,6 @@ public class StageGameManager : MonoBehaviour
             Destroy(gameObject); // 중복 방지
         }
     }
-
     public void PauseGame()
     {
         Time.timeScale = 0f; // 게임 일시정지

@@ -21,7 +21,11 @@ public class BlackHole_Bullet : MonoBehaviour
     private const string GojungTag = "Gojung";
     private const string WallTag = "Wall";
     private const string EnemyCenterTag = "EnemyCenter";
-
+    public bool isExpanding = false; // 공이 팽창 중인지 여부
+    private float expandSpeed = 1f; // 팽창 속도
+    private float decelerationThreshold = 0.4f;
+    private Vector3 velocity = Vector3.zero;
+    public int PlusScale;
 
 
     private void Start()
@@ -30,6 +34,7 @@ public class BlackHole_Bullet : MonoBehaviour
         bGMControl = FindAnyObjectByType<BGMControl>();
         rb = GetComponent<Rigidbody2D>();
         GameObject textObject = new GameObject("TextMeshPro");
+        StartCoroutine(DestroyObjectDelayed(Random.Range(15f, 25f)));
 
         textObject.transform.parent = transform;
 
@@ -46,71 +51,78 @@ public class BlackHole_Bullet : MonoBehaviour
         initialScale = transform.localScale;
     }
 
+    private void FixedUpdate()
+    {
+        if (!isStopped)
+        {
+            SlowDownBall();
+        }
+    }
     private void Update()
     {
-        Move();
-        expand();
-    }
-
-    void Move()
-    {
-        if (rb == null || isStopped) return;
-
-        lastVelocity = rb.velocity;
-        rb.velocity -= rb.velocity.normalized * deceleration * Time.deltaTime;
-
-        if (rb.velocity.magnitude <= 0.01f && hasExpanded)
+        if (isExpanding)
         {
-            isStopped = true;
+            ExpandBall();
         }
     }
 
-    void expand()
+    void SlowDownBall()
     {
-        if (rb == null || iscolliding) return;
-        if (rb.velocity.magnitude > 0.1f) return;
-        if (Input.GetMouseButton(0)) return;
+        if (rb == null) return;
 
-        if (!hasExpanded && bGMControl.SoundEffectSwitch)
+        rb.velocity *= 1f - (Time.deltaTime * (deceleration * 0.4f)); // drag 효과 줄이기
+        if (rb.velocity.magnitude <= decelerationThreshold)
+        {
+            rb.velocity = Vector2.zero;
+            isStopped = true;
+            StartExpansion();
+        }
+    }
+
+    void StartExpansion()
+    {
+        if (bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(1);
         }
-        transform.localScale += Vector3.one * increase * Time.deltaTime;
-        hasExpanded = true;
+        targetScale = initialScale * PlusScale;
+        isExpanding = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D coll)
+    void ExpandBall()
     {
-        if (!hasExpanded && bGMControl.SoundEffectSwitch)
+        transform.localScale = Vector3.SmoothDamp(transform.localScale, targetScale, ref velocity, expandSpeed);
+
+        if (Vector3.Distance(transform.localScale, targetScale) < 0.01f)
+        {
+            transform.localScale = targetScale; // 목표 크기에 도달하면 팽창 완료
+            isExpanding = false; // 팽창 중단
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!isExpanding && bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(0);
         }
-        if (!coll.collider.isTrigger && hasExpanded)
+        if (!collision.collider.isTrigger && isExpanding)
         {
-            hasExpanded = true; // 팽창 중단
+            isExpanding = false; // 팽창 중단
             transform.localScale = transform.localScale; // 현재 크기에서 멈춤
             DestroyRigidbody(); // Rigidbody 제거
         }
-        if (coll.gameObject.name == "SPInvincibleF(Clone)")
-        {
-            ChallengeGameManager chmanager = FindObjectOfType<ChallengeGameManager>();
-            chmanager.scorenum++;
-            Destroy(gameObject);
-        }
 
-        if ((!coll.collider.CompareTag(GojungTag) || !coll.collider.CompareTag(WallTag)) && rb == null)
+        if ((!collision.collider.CompareTag(GojungTag) && rb == null))
         {
+            if (collision.gameObject.tag == WallTag) return;
+            if (collision.gameObject.tag == EnemyCenterTag) return;
+
             spGameManager.RemoveBall();
-            if (coll.collider.CompareTag(WallTag)) return;
-            Destroy(coll.gameObject);
+            Destroy(collision.gameObject);
         }
         this.iscolliding = true;
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        this.iscolliding = false;
-    }
-
     void DestroyRigidbody()
     {
         if (rb != null)
@@ -118,5 +130,11 @@ public class BlackHole_Bullet : MonoBehaviour
             Destroy(rb);
             rb = null;
         }
+    }
+    IEnumerator DestroyObjectDelayed(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        spGameManager.RemoveBall();
+        Destroy(gameObject);
     }
 }

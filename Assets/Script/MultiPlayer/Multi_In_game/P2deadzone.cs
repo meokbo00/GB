@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +10,7 @@ public class P2Deadzone : MonoBehaviour
         if (collision.gameObject.tag == "P2ball")
         {
             MultiBallController ball = collision.GetComponent<MultiBallController>();
-            if (!ball.hasExpanded)
+            if (!ball.isExpanding)
                 SceneManager.LoadScene("P1 Win");
         }
 
@@ -20,31 +21,23 @@ public class P2Deadzone : MonoBehaviour
             {
                 case "BlackHoleF(Clone)":
                     BlackHole_Skill skill = collision.GetComponent<BlackHole_Skill>();
-                    this.isExpand = skill.hasExpanded;
-                    break;
-                case "DurabilityF(Clone)":
-                    Durability_Skill skill2 = collision.GetComponent<Durability_Skill>();
-                    this.isExpand = skill2.hasExpanded;
-                    break;
-                case "FastenF(Clone)":
-                    Fasten_Skill skill3 = collision.GetComponent<Fasten_Skill>();
-                    this.isExpand = skill3.hasExpanded;
-                    break;
-                case "ForceF(Clone)":
-                    Force_Skill skill4 = collision.GetComponent<Force_Skill>();
-                    this.isExpand = skill4.hasExpanded;
+                    this.isExpand = skill.isExpanding;
                     break;
                 case "InvincibleF(Clone)":
                     Invincible_Skill skill5 = collision.GetComponent<Invincible_Skill>();
-                    this.isExpand = skill5.hasExpanded;
+                    this.isExpand = skill5.isExpanding;
                     break;
-                case "Random_numberF(Clone)":
-                    Random_number_Skill skill6 = collision.GetComponent<Random_number_Skill>();
-                    this.isExpand = skill6.hasExpanded;
+                case "BigF(Clone)":
+                    MultiBallController bigitem = collision.GetComponent<MultiBallController>();
+                    this.isExpand = bigitem.isExpanding;
                     break;
-                case "ReductionF(Clone)":
-                    Reduction_Skill skill7 = collision.GetComponent<Reduction_Skill>();
-                    this.isExpand = skill7.hasExpanded;
+                case "SmallF(Clone)":
+                    MultiBallController smallitem = collision.GetComponent<MultiBallController>();
+                    this.isExpand = smallitem.isExpanding;
+                    break;
+                case "TwiceF(Clone)":
+                    MultiBallController twiceitem = collision.GetComponent<MultiBallController>();
+                    this.isExpand = twiceitem.isExpanding;
                     break;
             }
             if (isExpand == false)

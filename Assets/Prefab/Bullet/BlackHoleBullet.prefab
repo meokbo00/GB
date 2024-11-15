@@ -164,3 +164,5 @@ MonoBehaviour:
   increase: 4
   hasExpanded: 0
   bouncyMaterial: {fileID: 6200000, guid: 43641f4149fa2474d85f99016b4819d5, type: 2}
+  isExpanding: 0
+  PlusScale: 20

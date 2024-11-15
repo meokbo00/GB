@@ -1,30 +1,33 @@
+using System.Collections;
 using UnityEngine;
 
 public class SphereSpawner : MonoBehaviour
 {
-    public GameObject[] spherePrefabs; 
-    public GameObject background; 
-    public float minSpawnTime = 7f; 
-    public float maxSpawnTime = 12f; 
+    public GameObject[] spherePrefabs;
+    public GameObject background;
+    public float minSpawnTime = 7f;
+    public float maxSpawnTime = 12f;
 
-    private float nextSpawnTime;
     private Collider2D backgroundCollider;
     BGMControl bGMControl;
 
     void Start()
     {
         bGMControl = FindObjectOfType<BGMControl>();
-        nextSpawnTime = Time.time + Random.Range(minSpawnTime, maxSpawnTime);
         backgroundCollider = background.GetComponent<Collider2D>();
+        StartCoroutine(SpawnSphereRoutine());
     }
-    void Update()
+
+    IEnumerator SpawnSphereRoutine()
     {
-        if (Time.time >= nextSpawnTime)
+        while (true)
         {
-            SpawnSphere(); 
-            nextSpawnTime = Time.time + Random.Range(minSpawnTime, maxSpawnTime);
+            float waitTime = Random.Range(minSpawnTime, maxSpawnTime);
+            yield return new WaitForSeconds(waitTime);
+            SpawnSphere();
         }
     }
+
     void SpawnSphere()
     {
         Vector2 min = backgroundCollider.bounds.min;

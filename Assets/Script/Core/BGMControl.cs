@@ -59,10 +59,6 @@ public class BGMControl : MonoBehaviour
         {
             SoundEffect[index].Play();
         }
-        else
-        {
-            Debug.LogWarning("SoundEffectPlay: Index out of range.");
-        }
     }
 
     // BGMSwitch 또는 SoundEffectSwitch가 변경되었을 때 호출하세요.

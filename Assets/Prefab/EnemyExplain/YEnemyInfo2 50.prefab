@@ -314,9 +314,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uC774\uBC88 \uC2A4\uD14C\uC774\uC9C0\uC5D0\uC11C \uBCF4\uAC8C \uB420
-    \uC720\uB2DB\uC740\n\uBB34\uC2A8 \uC77C\uC774 \uC788\uC5B4\uB3C4, \uCD5C\uB300\uD55C
-    \uBE68\uB9AC,\n\uBE68\uB9AC \uC7A1\uC73C\uC138\uC694 \uAF2D\n\n....\uC800\uC791\uAD8C\uC774
-    \uB05D\uB0AC\uB2E4\uACE0\uB294 \uD558\uB294\uB370\n\uD639\uC2DC \uBAA8\uB974\uB2C8\uAE4C\uC694\n\n"
+    \uC720\uB2DB\uC740\n\uCD5C\uB300\uD55C \uBE68\uB9AC,\n\uBE68\uB9AC \uC7A1\uC73C\uC138\uC694
+    \uAF2D\n\n....\uC800\uC791\uAD8C\uC774 \uB05D\uB0AC\uB2E4\uACE0\uB294 \uD558\uB294\uB370\n\uD639\uC2DC
+    \uBAA8\uB974\uB2C8\uAE4C\uC694\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
   m_sharedMaterial: {fileID: 2326276519201562975, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}

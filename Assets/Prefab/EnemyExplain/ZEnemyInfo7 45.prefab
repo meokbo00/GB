@@ -315,9 +315,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB450\uBC88\uC9F8 \uCD5C\uC885\uBCF4\uC2A4 \uC785\uB2C8\uB2E4.\n\n\uCD1D\uC54C
-    \uAC1C\uC218 15\uAC1C \uB118\uC5B4\uAC00\uBA74 \n\uAC8C\uC784 \uC885\uB8CC\uC778\uAC70
-    \uC544\uC2DC\uC8E0?\n\n...\uC774\uBC88\uC5D4 \uC880 \uC5B4\uB824\uC6B8\uAC81\uB2C8\uB2E4"
+  m_text: "\uB450\uBC88\uC9F8 \uC911\uAC04\uBCF4\uC2A4 \uC785\uB2C8\uB2E4.\n\n\uCD1D\uC54C
+    15\uAC1C\uAC00 \uB118\uC5B4\uAC00\uBA74 \n\uAC8C\uC784 \uC885\uB8CC\uC778\uAC70
+    \uC544\uC2DC\uC8E0?\n\n\uCD1D\uAD6C\uB294 8\uAC1C\uC785\uB2C8\uB2E4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
   m_sharedMaterial: {fileID: 2326276519201562975, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}

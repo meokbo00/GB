@@ -18,7 +18,7 @@ public class SPGameManager : MonoBehaviour
     public static Vector3 shotDirection;
     public int chooseStagenum;
     private int totalBalls = 0;
-    private int totalEnemies;
+    public int totalEnemies;
 
 
     private void Start()
@@ -113,7 +113,7 @@ public class SPGameManager : MonoBehaviour
 
     private void StageClear()
     {
-        if (gameManager.StageClearID == StageState.chooseStage && gameManager.StageClearID != 5)
+        if (gameManager.StageClearID == StageState.chooseStage && gameManager.StageClearID != 5 && gameManager.StageClearID != 65)
         {
             gameManager.StageClearID += 1;
             gameManager.SaveStageClearID();

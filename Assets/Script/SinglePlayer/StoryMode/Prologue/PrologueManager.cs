@@ -2,12 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening; // DOTween 네임스페이스 추가
 
 public class PrologueManager : MonoBehaviour
 {
     public Image firstImage;
     public Image secondImage;
-    public Image FadeIn;
+    public Image fadeImage;
 
     private TextManager textManager;
     private ShowText showTextScript;
@@ -22,50 +23,44 @@ public class PrologueManager : MonoBehaviour
             showTextScript = textManager.Linebox.GetComponent<ShowText>();
         }
 
-        StartCoroutine(FadeInAndOut(firstImage));
+        // 첫 번째 이미지 페이드 인/아웃 시작
+        FadeInAndOutImage(firstImage);
     }
 
-    IEnumerator FadeInAndOut(Image image)
+    void FadeInAndOutImage(Image image)
     {
-        Color color = image.color;
+        // 페이드 인 (2초)
+        image.DOFade(1, 2f)
+            .SetUpdate(true)
+            .OnComplete(() =>
+            {
+                // 1초 대기 후 페이드 아웃
+                DOVirtual.DelayedCall(1f, () =>
+                {
+                    image.DOFade(0, 2f)
+                        .SetUpdate(true)
+                        .OnComplete(() =>
+                        {
+                            image.gameObject.SetActive(false);
+                            secondImage.gameObject.SetActive(true);
 
-        // 페이드 인
-        for (float alpha = 0; alpha <= 1; alpha += Time.deltaTime * 0.5f)
-        {
-            color.a = alpha;
-            image.color = color;
-            yield return null;
-        }
-        color.a = 1;
-        image.color = color;
+                            // 4.5초 대기 후 오디오 및 텍스트 처리 시작
+                            DOVirtual.DelayedCall(4.5f, () =>
+                            {
+                                AudioSource audioSource = secondImage.GetComponent<AudioSource>();
+                                if (audioSource != null && showTextScript != null)
+                                {
+                                    audioSource.Stop();
 
-        yield return new WaitForSeconds(1);
-
-        // 페이드 아웃
-        for (float alpha = 1; alpha >= 0; alpha -= Time.deltaTime * 0.5f)
-        {
-            color.a = alpha;
-            image.color = color;
-            yield return null;
-        }
-        color.a = 0;
-        image.color = color;
-        image.gameObject.SetActive(false);
-        secondImage.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(4.5f);
-
-        // 두 번째 이미지에 대한 오디오 및 텍스트 처리
-        AudioSource audioSource = secondImage.GetComponent<AudioSource>();
-        if (audioSource != null && showTextScript != null)
-        {
-            audioSource.Stop();
-
-            // OnChatComplete 이벤트 리스너 등록
-            showTextScript.OnChatComplete.AddListener(OnChatComplete);
-            currentChatId = 1; // 현재 채팅 ID 설정
-            textManager.GiveMeTextId(currentChatId);
-        }
+                                    // OnChatComplete 이벤트 리스너 등록
+                                    showTextScript.OnChatComplete.AddListener(OnChatComplete);
+                                    currentChatId = 1;
+                                    textManager.GiveMeTextId(currentChatId);
+                                }
+                            }).SetUpdate(true);
+                        });
+                }).SetUpdate(true);
+            });
     }
 
     void OnChatComplete(int chatId)
@@ -73,39 +68,28 @@ public class PrologueManager : MonoBehaviour
         Debug.Log($"아이디 {chatId}에 해당하는 문장을 출력완료했습니다.");
         if (chatId == 1)
         {
-            StartCoroutine(FadeInImage(FadeIn));
+            FadeInImage(fadeImage);
 
             // 이벤트 리스너 해제하여 메모리 관리 및 최적화
             showTextScript.OnChatComplete.RemoveListener(OnChatComplete);
         }
     }
 
-    IEnumerator FadeInImage(Image image)
+    void FadeInImage(Image image)
     {
         image.gameObject.SetActive(true);
-        Color color = image.color;
-        color.a = 0;
-        image.color = color;
+        image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
 
-        float fadeDuration = 3f;
-        float timeElapsed = 0f;
-
-        // 페이드 인
-        while (timeElapsed < fadeDuration)
-        {
-            color.a = Mathf.Lerp(0, 1, timeElapsed / fadeDuration);
-            image.color = color;
-            timeElapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        color.a = 1;
-        image.color = color;
-
-        // 알파값이 다 올라간 후 2.5초 대기
-        yield return new WaitForSeconds(2.5f);
-
-        // "Prologue1.5" 씬으로 전환
-        SceneManager.LoadScene("Prologue1.5");
+        // 페이드 인 (3초)
+        image.DOFade(1, 3f)
+            .SetUpdate(true)
+            .OnComplete(() =>
+            {
+                // 2.5초 대기 후 다음 씬으로 전환
+                DOVirtual.DelayedCall(2.5f, () =>
+                {
+                    SceneManager.LoadScene("Prologue1.5");
+                }).SetUpdate(true);
+            });
     }
 }

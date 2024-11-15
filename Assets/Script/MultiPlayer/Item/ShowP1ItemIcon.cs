@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//획득한 아이템을 아이템 인벤에 저장하는 스크립트
 
 public class ShowP1ItemIcon : MonoBehaviour
 {
     public GameObject[] P1IconPlaces;
     public GameObject[] P1Icon;
-    public AudioSource fullItemAudio;
 
     public void PrintDestroyedObjectTag(string objecttag)
     {
@@ -32,8 +30,6 @@ public class ShowP1ItemIcon : MonoBehaviour
                     return;
                 }
             }
-            fullItemAudio = GetComponent<AudioSource>();
-            fullItemAudio.Play();
         }
     }
 }

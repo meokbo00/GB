@@ -316,9 +316,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uCD1D\uC54C\uC758 \uB0B4\uAD6C\uB3C4\uAC00 \uC57D\uD55C \uB300\uC2E0\n\uAD49\uC7A5\uD788
-    \uAC15\uD55C \uC138\uAE30\uB85C \uBC1C\uC0AC\uD569\uB2C8\uB2E4.\n\n\uB2E4\uB978
-    \uCD1D\uC54C\uC744 \uC81C\uAC70\uD574\uC8FC\uB294\uB370 \uD6A8\uACFC\uC801\uC785\uB2C8\uB2E4.
-    \n\uC81C\uAC70 \uC21C\uC704\uC5D0\uC11C \uBBF8\uB8E8\uB294\uAC83\uC744 \uCD94\uCC9C\uD569\uB2C8\uB2E4."
+    \uAC15\uD55C \uC138\uAE30\uB85C \uBC1C\uC0AC\uD569\uB2C8\uB2E4.\n\n\n\uC81C\uAC70
+    \uC21C\uC704\uC5D0\uC11C \uBBF8\uB8E8\uB294\uAC83\uC744 \uCD94\uCC9C\uD569\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
   m_sharedMaterial: {fileID: 2326276519201562975, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
