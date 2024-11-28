@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -787,7 +788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c46a9f85d0ebb41b8364cb3e044592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage1RectTransform: {fileID: 1539269153}
   mainCamera: {fileID: 183999916}
 --- !u!1 &228680973
 GameObject:
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.01
@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -1587,7 +1587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.2
@@ -1756,7 +1756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -1949,7 +1949,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -2082,7 +2082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.04
@@ -2164,7 +2164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.4
@@ -2598,7 +2598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -2767,7 +2767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -2936,7 +2936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -3302,7 +3302,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 2}
+  m_LocalScale: {x: 8, y: 8, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -3321,7 +3321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.03
@@ -3517,7 +3517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -3763,7 +3763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.05
@@ -4083,7 +4083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -4274,7 +4274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -4518,7 +4518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -4821,7 +4821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.07
@@ -4990,7 +4990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -5446,7 +5446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -5615,7 +5615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -5785,7 +5785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -6043,7 +6043,6 @@ GameObject:
   m_Component:
   - component: {fileID: 785782805}
   - component: {fileID: 785782804}
-  - component: {fileID: 785782806}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6080,102 +6079,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &785782806
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785782803}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &788661270
 GameObject:
   m_ObjectHideFlags: 0
@@ -6252,7 +6155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.02
@@ -6619,7 +6522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -7133,7 +7036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.11
@@ -7237,7 +7140,6 @@ GameObject:
   - component: {fileID: 1050345479}
   - component: {fileID: 1050345481}
   - component: {fileID: 1050345480}
-  - component: {fileID: 1050345482}
   m_Layer: 0
   m_Name: Space3
   m_TagString: Untagged
@@ -7333,51 +7235,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1050345482
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050345478}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.6, y: 5.4}
-    newSize: {x: 930, y: 906}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 2
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 9.6, y: 5.4}
-  m_EdgeRadius: 0
 --- !u!1 &1127961277
 GameObject:
   m_ObjectHideFlags: 0
@@ -7454,7 +7311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.03
@@ -7806,7 +7663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.02
@@ -8093,7 +7950,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 2}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -8112,7 +7969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.06
@@ -8194,7 +8051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.002
@@ -8390,7 +8247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -8560,7 +8417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -8750,7 +8607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -9632,7 +9489,6 @@ GameObject:
   - component: {fileID: 1375299085}
   - component: {fileID: 1375299087}
   - component: {fileID: 1375299086}
-  - component: {fileID: 1375299088}
   m_Layer: 0
   m_Name: Space2
   m_TagString: Untagged
@@ -9728,51 +9584,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1375299088
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375299084}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.6, y: 5.4}
-    newSize: {x: 930, y: 906}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 2
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 9.6, y: 5.4}
-  m_EdgeRadius: 0
 --- !u!1 &1380546306
 GameObject:
   m_ObjectHideFlags: 0
@@ -9849,7 +9660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -10181,7 +9992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.009
@@ -10457,7 +10268,6 @@ GameObject:
   - component: {fileID: 1446690499}
   - component: {fileID: 1446690501}
   - component: {fileID: 1446690500}
-  - component: {fileID: 1446690502}
   m_Layer: 0
   m_Name: Space4
   m_TagString: Untagged
@@ -10553,51 +10363,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1446690502
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446690498}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.6, y: 5.4}
-    newSize: {x: 930, y: 906}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 2
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 9.6, y: 5.4}
-  m_EdgeRadius: 0
 --- !u!1 &1455061358
 GameObject:
   m_ObjectHideFlags: 0
@@ -10675,7 +10440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.1
@@ -10913,7 +10678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.05
@@ -11219,7 +10984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -11257,9 +11022,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.006747945, y: -0.0052343295}
+  m_Offset: {x: -0.00487993, y: -0.0052343295}
   serializedVersion: 2
-  m_Radius: 0.03786333
+  m_Radius: 0.12067662
 --- !u!212 &1495372147
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11521,7 +11286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -11895,7 +11660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -12040,7 +11805,6 @@ GameObject:
   - component: {fileID: 1575696186}
   - component: {fileID: 1575696185}
   - component: {fileID: 1575696184}
-  - component: {fileID: 1575696187}
   m_Layer: 0
   m_Name: Space
   m_TagString: Untagged
@@ -12136,51 +11900,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 246155766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1575696187
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575696183}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.6, y: 5.4}
-    newSize: {x: 930, y: 906}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 2
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 9.6, y: 5.4}
-  m_EdgeRadius: 0
 --- !u!1 &1579080169
 GameObject:
   m_ObjectHideFlags: 0
@@ -12415,7 +12134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -12455,7 +12174,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.0055880095, y: 0}
   serializedVersion: 2
-  m_Radius: 0.056088395
+  m_Radius: 0.12911509
 --- !u!212 &1696212401
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12606,7 +12325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -12748,7 +12467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.02
@@ -12944,7 +12663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -13113,7 +12832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.1
@@ -13304,7 +13023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -14211,7 +13930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -14380,7 +14099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.07
@@ -14550,7 +14269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.4
@@ -14775,7 +14494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -15130,7 +14849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -15272,7 +14991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.04
@@ -15468,7 +15187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -15894,7 +15613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -16063,7 +15782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 1
@@ -16232,7 +15951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.02
@@ -16401,7 +16120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 0
   rotationSpeed: 0.03
@@ -16570,7 +16289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.08
@@ -16740,7 +16459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.01
@@ -16930,7 +16649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageStart: {fileID: 1539269152}
   StartButton: {fileID: 1264544616}
-  Clearhere: {fileID: 7129718720999224254, guid: e1694aef571efa244b1a98a7c086a1c9, type: 3}
+  Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
   rotationSpeed: 0.2

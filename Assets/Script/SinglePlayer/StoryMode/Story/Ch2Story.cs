@@ -62,11 +62,12 @@ public class Ch2Story : MonoBehaviour
                 break;
             case 66:
                 navigation.SetActive(false);
+                textManager.GiveMeTextId(11);
                 break;
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (stageGameManager.StageClearID == 6)
         {
@@ -77,7 +78,7 @@ public class Ch2Story : MonoBehaviour
             }
             if (showText.logTextIndex == 4)
             {
-                StartCoroutine(ChangeCameraSize(150, 4, 5f)); // 2�ʿ� ���� ī�޶� ������ ����
+                StartCoroutine(ChangeCameraSize(150, 4, 5f)); 
             }
             if (showText.logTextIndex == 36)
             {

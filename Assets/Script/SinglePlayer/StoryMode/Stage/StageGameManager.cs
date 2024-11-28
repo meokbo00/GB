@@ -3,10 +3,10 @@ using UnityEngine;
 public class StageGameManager : MonoBehaviour
 {
     public static StageGameManager instance = null;
-    public float StageClearID;
+    public int StageClearID;
     public bool isending = false;
 
-    private float stageClearIDCache; // PlayerPrefs 값을 캐싱
+    private int stageClearIDCache; // PlayerPrefs 값을 캐싱
     private bool isEndingCache;
 
     private void Awake()
@@ -16,7 +16,7 @@ public class StageGameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             // PlayerPrefs에서 값 불러오고 캐시에 저장
-            stageClearIDCache = PlayerPrefs.GetFloat("StageClearID", 0f);
+            stageClearIDCache = PlayerPrefs.GetInt("StageClearID", 0);
             isEndingCache = PlayerPrefs.GetInt("IsEnding", 0) == 1;
             StageClearID = stageClearIDCache;
             isending = isEndingCache;
@@ -40,7 +40,7 @@ public class StageGameManager : MonoBehaviour
     {
         if (stageClearIDCache != StageClearID)  // 값이 변경된 경우에만 저장
         {
-            PlayerPrefs.SetFloat("StageClearID", StageClearID);
+            PlayerPrefs.SetInt("StageClearID", StageClearID);
             PlayerPrefs.Save();
             stageClearIDCache = StageClearID;  // 캐시 업데이트
         }

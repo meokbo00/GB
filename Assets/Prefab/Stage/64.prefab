@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   enemy1Fires:
@@ -1975,14 +1975,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   enemy1Fires: []
   isShowHP: 1
   isHide: 0
-  MaxHP: 15
-  MinHP: 15
+  MaxHP: 10
+  MinHP: 10
   MaxFireTime: 25
   MinFireTime: 25
   MaxAngle: 360
@@ -2994,7 +2994,7 @@ Transform:
   m_GameObject: {fileID: 8383969168570253488}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.376122, z: 0}
+  m_LocalPosition: {x: 0, y: 2.27, z: 0}
   m_LocalScale: {x: 2.2, y: 2.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3539,7 +3539,7 @@ Transform:
   m_GameObject: {fileID: 8798986403843472309}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.58, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

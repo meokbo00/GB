@@ -16,6 +16,7 @@ public class Ch1_2Story : MonoBehaviour
     RemainTime remainTime;
     public Image fadeImage;
     public GameObject isplaybgm;
+    TextManager textManager;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class Ch1_2Story : MonoBehaviour
         showText = FindObjectOfType<ShowText>();
         fadeImage = Fadeinout.GetComponent<Image>();
         stageGameManager = FindObjectOfType<StageGameManager>();
-        TextManager textManager = FindObjectOfType<TextManager>();
+        textManager = FindObjectOfType<TextManager>();
         stageBallController = FindObjectOfType<StageBallController>();
 
         Color color = fadeImage.color;
@@ -57,7 +58,7 @@ public class Ch1_2Story : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         if (stageGameManager.StageClearID == 6f)
@@ -70,7 +71,7 @@ public class Ch1_2Story : MonoBehaviour
                 Fadeinout.SetActive(false);
                 isplaybgm.SetActive(false);
             }
-            if (showText.logTextIndex == 48)
+            if (showText.logTextIndex == 47)
             {
                 StartCoroutine(FadeIn());
             }

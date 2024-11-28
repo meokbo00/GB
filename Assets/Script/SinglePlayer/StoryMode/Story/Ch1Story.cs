@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,39 +12,38 @@ public class Ch1Story : MonoBehaviour
     public GameObject Stage;
     public GameObject RemainTime;
 
-    private ShowText showText;
+    public GameObject story1_2;
+
     private StageGameManager stageGameManager;
+    private ShowText showText;
     private StageBallController stageBallController;
     private ContinuousRandomMovement[] randomMovements;
-
     void Start()
     {
-        // `FindAnyObjectByType`로 필요한 객체를 한 번만 찾고 캐시
-        stageGameManager = FindAnyObjectByType<StageGameManager>();
-        TextManager textManager = FindAnyObjectByType<TextManager>();
-        stageBallController = FindAnyObjectByType<StageBallController>();
+        // 필요한 컴포넌트 미리 캐싱
+        stageGameManager = FindObjectOfType<StageGameManager>();
+        TextManager textManager = FindObjectOfType<TextManager>();
+        stageBallController = FindObjectOfType<StageBallController>();
+        showText = FindObjectOfType<ShowText>();
         randomMovements = FindObjectsOfType<ContinuousRandomMovement>();
-        Debug.Log(stageGameManager.StageClearID);
-        if(stageGameManager.StageClearID == 1 )
+        if(stageGameManager.StageClearID <6)
         {
-            stageBallController.enabled = false;
-            textManager.GiveMeTextId(1);
-            showText = FindAnyObjectByType<ShowText>();
-
-            StartCoroutine(HandleStage1());
+            story1_2.gameObject.SetActive(false);
         }
-        // 초기 조건에 따라 필요한 작업을 실행하는 코루틴을 시작
+        else {story1_2.gameObject.SetActive(true);}
+
         switch (stageGameManager.StageClearID)
         {
+            case 1:
+                stageBallController.enabled = false;
+                textManager.GiveMeTextId(1);
+                break;
             case 2:
                 textManager.GiveMeTextId(2);
                 break;
-            case 5.5f:
+            case 5:
                 Destroy(Stage);
                 textManager.GiveMeTextId(3);
-                showText = FindAnyObjectByType<ShowText>();
-
-                StartCoroutine(HandleStage5_5());
                 break;
             case 6:
                 Destroy(Stage);
@@ -51,65 +51,80 @@ public class Ch1Story : MonoBehaviour
                 break;
         }
     }
-   
 
-    private IEnumerator HandleStage1()
+    void FixedUpdate()
     {
-        // stageClearID가 1일 때 필요한 로직
-        while (showText.logTextIndex < 17)
+        if (showText == null) // 한 번만 탐색
         {
-            yield return null;
+            showText = FindAnyObjectByType<ShowText>();
+            if (showText == null) return;
         }
 
-        stageBallController.enabled = true;
-
-        // 이후의 조건 체크 및 동작
-        while (showText.logTextIndex < 41)
+        if (stageGameManager.StageClearID == 1 )
         {
-            Stage.SetActive(false);
-            yield return null;
+            HandleStage1();
         }
 
-        Stage.SetActive(true);
-        Clearhere.SetActive(true);
-    }
-
-    private IEnumerator HandleStage5_5()
-    {
-        // 특정 logTextIndex가 될 때까지 대기 후 카메라 사이즈 변경
-        while (showText.logTextIndex < 4)
+        if (stageGameManager.StageClearID == 5 )
         {
-            yield return null;
-        }
-
-        StartCoroutine(IncreaseCameraSize(mainCamera, 112, 5.5f));
-
-        // 추가 조건에 따른 동작 실행
-        while (showText.logTextIndex < 8)
-        {
-            yield return null;
-        }
-
-        ToggleRandomMovement(false);
-
-        while (showText.logTextIndex < 23)
-        {
-            yield return null;
-        }
-
-        ToggleRandomMovement(true);
-        StartCoroutine(HandleCameraAndFadeIn(mainCamera, 15, 7f));
-    }
-
-    private void ToggleRandomMovement(bool isEnabled)
-    {
-        foreach (ContinuousRandomMovement randomMovement in randomMovements)
-        {
-            randomMovement.enabled = isEnabled;
+            HandleStage5();
         }
     }
 
-    IEnumerator IncreaseCameraSize(Camera camera, float targetSize, float duration)
+
+    private void HandleStage1() // 1번 연출
+    {
+        if (showText.logTextIndex == 11)
+        {
+            stageBallController.enabled = true; // 플레이어 이동 허용
+        }
+        else if(showText.logTextIndex == 19)
+        {
+            stageBallController.enabled = false; // 플레이어 이동 불허
+        }
+        else if (showText.logTextIndex == 26)
+        {
+            Clearhere.SetActive(true);  // 클리어로고 활성화
+            Stage.SetActive(true);  // 스테이지 활성화
+        }
+        else if(showText.logTextIndex == 30)
+        {
+            stageBallController.enabled = true; // 플레이어 이동 허용
+        }
+        if (showText.logTextIndex < 25)
+        {
+            Stage.SetActive(false); // 스테이지 비활성화
+        }
+    }
+
+    private void HandleStage5() // 5번 연출
+    {
+        if (showText.logTextIndex == 4)
+        {
+            StartCoroutine(IncreaseCameraSize(mainCamera, 112, 5)); // 카메라 축소
+        }
+
+        if (showText.logTextIndex == 8)
+        {
+            ToggleRandomMovement(0); // 다른 구체들 정지
+        }
+
+        if (showText.logTextIndex == 24)
+        {
+            ToggleRandomMovement(5); // 다른 구체들 움직임
+            StartCoroutine(HandleCameraAndFadeIn(mainCamera, 15, 7f)); // 카메라 확대 + 시간 보여주고 씬변환
+        }
+    }
+
+    private void ToggleRandomMovement(int speed)
+    {
+        foreach (var randomMovement in randomMovements)
+        {
+            randomMovement.moveSpeed = speed;
+        }
+    }
+
+    private IEnumerator IncreaseCameraSize(Camera camera, float targetSize, float duration)
     {
         float startSize = camera.orthographicSize;
         float timeElapsed = 0f;
@@ -124,31 +139,20 @@ public class Ch1Story : MonoBehaviour
         camera.orthographicSize = targetSize;
     }
 
-    IEnumerator HandleCameraAndFadeIn(Camera camera, float targetSize, float duration)
+    private IEnumerator HandleCameraAndFadeIn(Camera camera, float targetSize, float duration)
     {
+        // 카메라 확대
         yield return StartCoroutine(IncreaseCameraSize(camera, targetSize, duration));
+
         RemainTime.SetActive(true);
         yield return new WaitForSeconds(15f);
 
         FadeIn.gameObject.SetActive(true);
-        Color fadeColor = FadeIn.color;
-        float fadeDuration = 2f;
-        float timeElapsed = 0f;
+        yield return new WaitForSeconds(4.5f);
 
-        while (timeElapsed < fadeDuration)
-        {
-            fadeColor.a = Mathf.Lerp(0, 1, timeElapsed / fadeDuration);
-            FadeIn.color = fadeColor;
-            timeElapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        fadeColor.a = 1;
-        FadeIn.color = fadeColor;
-        yield return new WaitForSeconds(3f);
-
-        stageGameManager.StageClearID += 0.5f;
+        stageGameManager.StageClearID += 1;
         stageGameManager.SaveStageClearID();
         SceneManager.LoadScene("Prologue 2");
     }
+
 }

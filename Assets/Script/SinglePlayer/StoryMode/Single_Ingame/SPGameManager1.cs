@@ -102,6 +102,7 @@ public class SPGameManager : MonoBehaviour
             SceneManager.LoadScene("Fail");
         }
     }
+
     public void RemoveEnemy()
     {
         totalEnemies--;
@@ -113,16 +114,12 @@ public class SPGameManager : MonoBehaviour
 
     private void StageClear()
     {
-        if (gameManager.StageClearID == StageState.chooseStage && gameManager.StageClearID != 5 && gameManager.StageClearID != 65)
+        if (gameManager.StageClearID == StageState.chooseStage && gameManager.StageClearID != 65)
         {
             gameManager.StageClearID += 1;
             gameManager.SaveStageClearID();
         }
-        if (gameManager.StageClearID == 5)
-        {
-            gameManager.StageClearID += 0.5f;
-            gameManager.SaveStageClearID();
-        }
+        
         SceneManager.LoadScene("Clear");
     }
 }

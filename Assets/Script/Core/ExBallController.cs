@@ -63,22 +63,23 @@ public class ExBallController : MonoBehaviour
 
     void Update()
     {
-        if (!hasBeenLaunched && !spgamemanager.isDragging)
-        {
-            LaunchBall();
-        }
-
-        if (hasBeenLaunched && !isStopped)
-        {
-            SlowDownBall();
-        }
-
         if (isExpanding)
         {
             ExpandBall(); 
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (!hasBeenLaunched && !spgamemanager.isDragging)
+        {
+            LaunchBall();
+        }
+        if (hasBeenLaunched && !isStopped)
+        {
+            SlowDownBall();
+        }
+    }
     void LaunchBall()
     {
         Vector2 launchForce = SPGameManager.shotDirection * (SPGameManager.shotDistance*1.4f);

@@ -436,14 +436,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   bossfires:
   - {fileID: 5795486403004021111}
   isShowHP: 0
-  MaxHP: 20
-  MinHP: 20
+  MaxHP: 15
+  MinHP: 15
   MaxFireTime: 2
   MinFireTime: 2
   MaxAngle: 60

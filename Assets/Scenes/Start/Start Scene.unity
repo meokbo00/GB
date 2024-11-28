@@ -698,7 +698,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isturn: 1
-  rotationSpeed: 1
+  rotationSpeed: 4.15
   radius: 2.5
   initialAngle: 0
 --- !u!1 &337408745
@@ -902,7 +902,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isturn: 1
-  rotationSpeed: 0.202
+  rotationSpeed: 0.034
   radius: 6.3
   initialAngle: 0
 --- !u!1 &486329558
@@ -1691,7 +1691,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -1795,7 +1795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isturn: 1
-  rotationSpeed: 0.622
+  rotationSpeed: 1
   radius: 3.4
   initialAngle: 0
 --- !u!1 &746381970
@@ -1950,7 +1950,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 421cd353525676a4e94d7f2f47340390, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2077,7 +2077,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d2fd6f686325ed74ba305af593fcaf08, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2173,7 +2173,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 850ccdcab2623f94c9acaa6f320f5ac3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2592,7 +2592,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isturn: 1
-  rotationSpeed: 0.113
+  rotationSpeed: 0.006
   radius: 9
   initialAngle: 0
 --- !u!1 &1120717642
@@ -2757,7 +2757,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -2861,7 +2861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isturn: 1
-  rotationSpeed: 0.273
+  rotationSpeed: 0.084
   radius: 5
   initialAngle: 0
 --- !u!1 &1132099131
@@ -3011,7 +3011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d080cc2a0477f4b9323aef3278e59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageClearID: 7
+  StageClearID: 65
   isending: 0
 --- !u!114 &1132099137
 MonoBehaviour:
@@ -3829,7 +3829,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -3933,7 +3933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isturn: 1
-  rotationSpeed: 0.142
+  rotationSpeed: 0.012
   radius: 7.1
   initialAngle: 0
 --- !u!1 &1322816249
@@ -4178,7 +4178,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -4282,7 +4282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isturn: 1
-  rotationSpeed: 0.731
+  rotationSpeed: 1.63
   radius: 3
   initialAngle: 0
 --- !u!1 &1428453331
@@ -5407,7 +5407,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -5511,7 +5511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isturn: 1
-  rotationSpeed: 0.503
+  rotationSpeed: 0.53
   radius: 4
   initialAngle: 0
 --- !u!1 &1992059792
@@ -5572,7 +5572,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -5676,7 +5676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isturn: 1
-  rotationSpeed: 0.622
+  rotationSpeed: 1
   radius: 3.3
   initialAngle: 0
 --- !u!1 &2029345025
@@ -5858,7 +5858,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0

@@ -15,14 +15,7 @@ public class Navigation : MonoBehaviour
     void Start()
     {
         mainPlayerObject = GameObject.Find("Main Player");
-
-        // Clearhere가 이미 존재한다면 찾기
-        clearhereObject = GameObject.Find("Clearhere(Clone)");
-        if (clearhereObject != null)
-        {
-            lastClearherePosition = clearhereObject.transform.position;
-            UpdateActivation();
-        }
+        clearhereObject = GameObject.Find("MainClearhere(Clone)");
     }
 
     void FixedUpdate()
@@ -30,7 +23,7 @@ public class Navigation : MonoBehaviour
         // Clearhere 오브젝트를 찾지 못했을 경우 한 번만 찾기 시도
         if (clearhereObject == null)
         {
-            clearhereObject = GameObject.Find("Clearhere(Clone)");
+            clearhereObject = GameObject.Find("MainClearhere(Clone)");
             if (clearhereObject != null)
             {
                 lastClearherePosition = clearhereObject.transform.position;
@@ -39,13 +32,7 @@ public class Navigation : MonoBehaviour
         }
         else
         {
-            // 위치가 변경되었을 때만 업데이트
-            Vector3 currentClearherePosition = clearhereObject.transform.position;
-            if (currentClearherePosition != lastClearherePosition)
-            {
-                lastClearherePosition = currentClearherePosition;
                 UpdateActivation();
-            }
         }
     }
 

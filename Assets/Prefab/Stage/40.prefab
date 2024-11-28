@@ -110,6 +110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TEnemy2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5691729759319563734, guid: c03a3f0a3422571498c3d2693b77205a, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6350379193036845528, guid: c03a3f0a3422571498c3d2693b77205a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6999999
@@ -179,6 +183,10 @@ PrefabInstance:
     - target: {fileID: 1574370344208338112, guid: c03a3f0a3422571498c3d2693b77205a, type: 3}
       propertyPath: m_Name
       value: TEnemy2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066584071547961451, guid: c03a3f0a3422571498c3d2693b77205a, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6350379193036845528, guid: c03a3f0a3422571498c3d2693b77205a, type: 3}
       propertyPath: m_LocalScale.x

@@ -9,10 +9,8 @@ public class EnemyBulletControl : MonoBehaviour
     SPGameManager spGameManager;
     Rigidbody2D rb;
     BGMControl bGMControl;
-    Vector2 lastVelocity;
     float deceleration = 2f;
     public float increase;
-    private bool iscolliding = false;
     public bool hasExpanded = false;
     private bool isStopped = false;
     private float decelerationThreshold = 0.4f;

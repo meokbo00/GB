@@ -134,7 +134,7 @@ public class ShowText : MonoBehaviour
     public void DisplayChatById(int chatId)
     {
         chatIdToDisplay = chatId;
-        var chat = chats.Find(c => c.id == chatId);
+        var chat = chats.Find(c => c.id == chatId); 
         if (chat != null)
         {
             currentChatIndex = chats.IndexOf(chat);
