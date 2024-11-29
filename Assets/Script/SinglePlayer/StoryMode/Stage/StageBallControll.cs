@@ -61,7 +61,7 @@ public class StageBallController : MonoBehaviour
     }
     void LaunchBall()
     {
-        Vector2 launchForce = StageBallManager.shotDirection * (StageBallManager.shotDistance * 1.4f);
+        Vector2 launchForce = StageBallManager.shotDirection * (StageBallManager.shotDistance * 2f);
         rb.AddForce(launchForce, ForceMode2D.Impulse);
         stageBallManager.isDragging = true;
         rb.drag = dragAmount;

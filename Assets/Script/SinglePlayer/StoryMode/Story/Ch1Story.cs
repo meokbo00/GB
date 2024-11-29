@@ -18,9 +18,11 @@ public class Ch1Story : MonoBehaviour
     private ShowText showText;
     private StageBallController stageBallController;
     private ContinuousRandomMovement[] randomMovements;
+    BGMControl bGMControl;
     void Start()
     {
         // 필요한 컴포넌트 미리 캐싱
+        bGMControl = FindAnyObjectByType<BGMControl>();
         stageGameManager = FindObjectOfType<StageGameManager>();
         TextManager textManager = FindObjectOfType<TextManager>();
         stageBallController = FindObjectOfType<StageBallController>();
@@ -148,6 +150,10 @@ public class Ch1Story : MonoBehaviour
         yield return new WaitForSeconds(15f);
 
         FadeIn.gameObject.SetActive(true);
+        if(bGMControl.SoundEffectSwitch)
+        {
+            bGMControl.SoundEffectPlay(5);
+        }
         yield return new WaitForSeconds(4.5f);
 
         stageGameManager.StageClearID += 1;
