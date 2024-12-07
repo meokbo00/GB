@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6181435661827838991}
   - component: {fileID: 751917413549186289}
   - component: {fileID: 5488672903359382794}
-  - component: {fileID: 1537012992998598499}
+  - component: {fileID: 4085749469635837027}
   m_Layer: 0
   m_Name: Center1
   m_TagString: Untagged
@@ -167,7 +167,7 @@ PolygonCollider2D:
       - {x: 0, y: -0.25}
       - {x: 0.5, y: 0}
   m_UseDelaunayMesh: 0
---- !u!114 &1537012992998598499
+--- !u!114 &4085749469635837027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,14 +176,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2539473322400084019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a40025093939c894684d36303719d2de, type: 3}
+  m_Script: {fileID: 11500000, guid: e76e43f0c9fdfe842bb48533fb0e2899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   isShowHP: 0
-  isHide: 0
   fontsize: 0
   MaxHP: 50
   MinHP: 50

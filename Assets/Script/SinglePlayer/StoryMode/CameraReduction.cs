@@ -1,17 +1,15 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
-using System;
 
 public class CameraReduction : MonoBehaviour
 {
-
     private Camera mainCamera;
     private int currentIndex = 0;
     private float[] sizes;
-    private string[] sizeTexts = { "100%", "75%", "50%", "15%", "1%"};
+    private string[] sizeTexts = { "100%", "75%", "50%", "15%", "1%" };
 
-    public TextMeshProUGUI buttonText; 
+    public TextMeshProUGUI buttonText;
+    public int gear; // Public으로 선언된 gear 변수
 
     void Start()
     {
@@ -22,16 +20,8 @@ public class CameraReduction : MonoBehaviour
             return;
         }
 
-        // 현재 씬에 따라 sizes 배열 설정
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        if (currentSceneName == "Stage")
-        {
-            sizes = new float[] { 10f, 20f, 30f,50f, 60f};
-        }
-        else if (currentSceneName == "Main Stage")
-        {
-            sizes = new float[] { 4f, 7f, 15f,30f, 45f };
-        }
+        sizes = new float[] { 4f, 7f, 15f, 30f, 45f };
+        UpdateGear(); // gear 값 업데이트
         UpdateButtonText(); // 초기 텍스트 업데이트
     }
 
@@ -41,6 +31,7 @@ public class CameraReduction : MonoBehaviour
         {
             currentIndex = (currentIndex + 1) % sizes.Length;
             mainCamera.orthographicSize = sizes[currentIndex]; // 카메라 크기 변경
+            UpdateGear(); // gear 값 업데이트
             UpdateButtonText();
         }
     }
@@ -51,5 +42,11 @@ public class CameraReduction : MonoBehaviour
         {
             buttonText.text = sizeTexts[currentIndex];
         }
+    }
+
+    private void UpdateGear()
+    {
+        // currentIndex가 0부터 시작하므로 gear는 1부터 시작하도록 설정
+        gear = currentIndex + 1;
     }
 }

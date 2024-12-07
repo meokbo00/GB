@@ -1104,7 +1104,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 5.5, y: 5.5, z: 2}
+  m_LocalScale: {x: 7, y: 7, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -1949,7 +1949,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 2}
+  m_LocalScale: {x: 6, y: 6, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -2118,7 +2118,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -195, y: -877, z: 0}
-  m_LocalScale: {x: 4.8, y: 4.8, z: 7}
+  m_LocalScale: {x: 8, y: 8, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1398692685}
@@ -2167,8 +2167,8 @@ MonoBehaviour:
   Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
-  rotationSpeed: 0.4
-  radius: 10
+  rotationSpeed: 0.06
+  radius: 15
   initialAngle: 0
 --- !u!58 &393665075
 CircleCollider2D:
@@ -3302,7 +3302,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 2}
+  m_LocalScale: {x: 9, y: 9, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -7950,7 +7950,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 5.5, y: 5.5, z: 2}
+  m_LocalScale: {x: 8, y: 8, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -8032,7 +8032,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 4.5, y: 4.5, z: 2}
+  m_LocalScale: {x: 6, y: 6, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -9973,7 +9973,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 5.5, y: 5.5, z: 2}
+  m_LocalScale: {x: 7, y: 7, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -10394,7 +10394,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1049, y: -958, z: 0}
-  m_LocalScale: {x: 14, y: 14, z: 7}
+  m_LocalScale: {x: 18, y: 18, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1398692685}
@@ -10443,7 +10443,7 @@ MonoBehaviour:
   Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
-  rotationSpeed: 0.1
+  rotationSpeed: 0.04
   radius: 47
   initialAngle: 0
 --- !u!58 &1455061362
@@ -10659,7 +10659,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 2}
+  m_LocalScale: {x: 5, y: 5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -12448,7 +12448,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 5.5, y: 5.5, z: 2}
+  m_LocalScale: {x: 6, y: 6, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -14972,7 +14972,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.71, y: 9.539999, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 2}
+  m_LocalScale: {x: 5, y: 5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575512001}
@@ -16603,7 +16603,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -195, y: -877, z: 0}
-  m_LocalScale: {x: 4.7, y: 4.7, z: 7}
+  m_LocalScale: {x: 12, y: 12, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1398692685}
@@ -16652,8 +16652,8 @@ MonoBehaviour:
   Clearhere: {fileID: 7129718720999224254, guid: be210bc1fa7820b43a1d05d1bbf23325, type: 3}
   stagenum: 0
   isturn: 1
-  rotationSpeed: 0.2
-  radius: 14
+  rotationSpeed: 0.1
+  radius: 24
   initialAngle: 0
 --- !u!58 &2144366741
 CircleCollider2D:

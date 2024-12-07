@@ -4452,15 +4452,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   enemy1Fires:
   - {fileID: 4006683212909529148}
   isShowHP: 1
   isHide: 0
-  MaxHP: 50
-  MinHP: 50
+  MaxHP: 5
+  MinHP: 5
   MaxFireTime: 0.02
   MinFireTime: 0.01
   MaxAngle: 360

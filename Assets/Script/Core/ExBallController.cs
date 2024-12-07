@@ -82,7 +82,7 @@ public class ExBallController : MonoBehaviour
     }
     void LaunchBall()
     {
-        Vector2 launchForce = SPGameManager.shotDirection * (SPGameManager.shotDistance*1.4f);
+        Vector2 launchForce = SPGameManager.shotDirection * (SPGameManager.shotDistance*1.45f);
         rb.AddForce(launchForce, ForceMode2D.Impulse);
 
         rb.drag = dragAmount;

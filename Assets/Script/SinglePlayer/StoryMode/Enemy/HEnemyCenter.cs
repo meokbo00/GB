@@ -5,6 +5,7 @@ using System.Collections;
 public class HEnemyCenter : MonoBehaviour
 {
     BGMControl bGMControl;
+    SPGameManager spGameManager;
     public float radius;
     public float interval;
     public int segments = 50; // 원주 세그먼트 수
@@ -12,6 +13,7 @@ public class HEnemyCenter : MonoBehaviour
 
     void Start()
     {
+        spGameManager = FindAnyObjectByType<SPGameManager>();
         bGMControl = FindObjectOfType<BGMControl>();
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = segments + 1;
@@ -36,6 +38,7 @@ public class HEnemyCenter : MonoBehaviour
             {
                 bGMControl.SoundEffectPlay(4);
             }
+            spGameManager.RemoveEnemy();
             Destroy(gameObject);
         }
     }

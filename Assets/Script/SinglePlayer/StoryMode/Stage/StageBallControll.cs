@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StageBallController : MonoBehaviour
 {
+    CameraReduction cameraReduction;
     Rigidbody2D rb;
     public GameObject StageStart;
     private StageGameManager stageGameManager;
@@ -19,9 +20,11 @@ public class StageBallController : MonoBehaviour
 
     private float randomX;
     private float randomY;
+    private float forcepower;
 
     private void Start()
     {
+        cameraReduction = FindAnyObjectByType<CameraReduction>();
         rb = GetComponent<Rigidbody2D>();
         stageBallManager = FindAnyObjectByType<StageBallManager>();
         stageGameManager = FindAnyObjectByType<StageGameManager>();
@@ -50,6 +53,19 @@ public class StageBallController : MonoBehaviour
 
     private void Update()
     {
+        switch (cameraReduction.gear)
+        {
+            case 1:
+                forcepower = 0.6f; break;
+            case 2:
+                forcepower = 0.6f; break;
+            case 3:
+                forcepower = 1; break;
+            case 4:
+                forcepower = 1.3f; break;
+            case 5:
+                forcepower = 1.7f; break;
+        }
         if (!stageBallManager.isDragging)
         {
             LaunchBall();
@@ -61,7 +77,7 @@ public class StageBallController : MonoBehaviour
     }
     void LaunchBall()
     {
-        Vector2 launchForce = StageBallManager.shotDirection * (StageBallManager.shotDistance * 2f);
+        Vector2 launchForce = StageBallManager.shotDirection * (StageBallManager.shotDistance * forcepower);
         rb.AddForce(launchForce, ForceMode2D.Impulse);
         stageBallManager.isDragging = true;
         rb.drag = dragAmount;

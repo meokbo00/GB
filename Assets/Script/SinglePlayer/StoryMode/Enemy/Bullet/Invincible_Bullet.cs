@@ -90,13 +90,22 @@ public class Invincible_Bullet : MonoBehaviour
             transform.localScale = transform.localScale; // 현재 크기에서 멈춤
             DestroyRigidbody(); // Rigidbody 제거
         }
-
         if (!coll.collider.CompareTag(WallTag))
         {
-            //ChallengeGameManager chmanager = FindObjectOfType<ChallengeGameManager>();
-            //chmanager.scorenum++;
-            Destroy(coll.gameObject);
-            spGameManager.RemoveBall();
+            if(coll.collider.tag == "EnemyBall" || coll.collider.tag == "P1ball")
+            {
+                spGameManager.RemoveBall();
+                Destroy(coll.gameObject);
+            }
+            else if(coll.collider.tag == "EnemyCenter")
+            {
+                spGameManager.RemoveEnemy();
+                Destroy(coll.gameObject);
+            }
+            else
+            {
+                Destroy(coll.gameObject);
+            }
             Destroy(gameObject);
             spGameManager.RemoveBall();
         }
