@@ -61,6 +61,7 @@ public class BEnemyCenter : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
+        if (coll.gameObject.tag == "Untagged") return;
         if (coll.gameObject.tag == "EnemyBall") return;
         if (coll.gameObject.tag == "Gojung") return;
         if (coll.gameObject.name != SPEndlessFName || coll.gameObject.name != SPTwiceFName)

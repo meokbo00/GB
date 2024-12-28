@@ -95,22 +95,34 @@ public class SInvincible_Skill : MonoBehaviour
             isExpanding = false; // 팽창 중단
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
         if (!isExpanding && bGMControl.SoundEffectSwitch)
         {
             bGMControl.SoundEffectPlay(0);
         }
-        if (!collision.collider.isTrigger && isExpanding)
+        if (!coll.collider.isTrigger && isExpanding)
         {
             isExpanding = false; // 팽창 중단
             transform.localScale = transform.localScale; // 현재 크기에서 멈춤
             DestroyRigidbody(); // Rigidbody 제거
         }
-        if (!collision.collider.CompareTag(WallTag))
+        if (!coll.collider.CompareTag(WallTag))
         {
-            Destroy(collision.gameObject);
-            spgamemanager.RemoveBall();
+            if (coll.collider.tag == "EnemyBall" || coll.collider.tag == "P1ball")
+            {
+                spgamemanager.RemoveBall();
+                Destroy(coll.gameObject);
+            }
+            else if (coll.collider.tag == "EnemyCenter")
+            {
+                spgamemanager.RemoveEnemy();
+                Destroy(coll.gameObject);
+            }
+            else
+            {
+                Destroy(coll.gameObject);
+            }
             Destroy(gameObject);
             spgamemanager.RemoveBall();
         }

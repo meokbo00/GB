@@ -441,8 +441,8 @@ MonoBehaviour:
   - {fileID: 0}
   isShowHP: 1
   isHide: 0
-  MaxHP: 3
-  MinHP: 3
+  MaxHP: 2
+  MinHP: 2
   MaxFireTime: 9
   MinFireTime: 5
   MaxAngle: 60
@@ -1167,8 +1167,8 @@ MonoBehaviour:
   - {fileID: 8083115414010995476}
   isShowHP: 1
   isHide: 0
-  MaxHP: 3
-  MinHP: 3
+  MaxHP: 2
+  MinHP: 2
   MaxFireTime: 5
   MinFireTime: 3
   MaxAngle: 60
@@ -1588,8 +1588,8 @@ MonoBehaviour:
   - {fileID: 4953116876994496484}
   isShowHP: 1
   isHide: 0
-  MaxHP: 3
-  MinHP: 3
+  MaxHP: 2
+  MinHP: 2
   MaxFireTime: 5
   MinFireTime: 3
   MaxAngle: 60
@@ -1767,8 +1767,8 @@ MonoBehaviour:
   - {fileID: 5104137312958579742}
   isShowHP: 1
   isHide: 0
-  MaxHP: 3
-  MinHP: 3
+  MaxHP: 2
+  MinHP: 2
   MaxFireTime: 5
   MinFireTime: 3
   MaxAngle: 60
@@ -3071,8 +3071,8 @@ MonoBehaviour:
   - {fileID: 1073911548526157179}
   isShowHP: 1
   isHide: 0
-  MaxHP: 3
-  MinHP: 3
+  MaxHP: 2
+  MinHP: 2
   MaxFireTime: 5
   MinFireTime: 3
   MaxAngle: 40
@@ -3298,8 +3298,8 @@ MonoBehaviour:
   - {fileID: 599873071379659462}
   isShowHP: 1
   isHide: 0
-  MaxHP: 3
-  MinHP: 3
+  MaxHP: 2
+  MinHP: 2
   MaxFireTime: 5
   MinFireTime: 3
   MaxAngle: 80

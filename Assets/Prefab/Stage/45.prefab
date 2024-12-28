@@ -44,6 +44,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZEnemy7
       objectReference: {fileID: 0}
+    - target: {fileID: 6122039035774432466, guid: e71203422e48a114a9d7aabe81547a86, type: 3}
+      propertyPath: MaxHP
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122039035774432466, guid: e71203422e48a114a9d7aabe81547a86, type: 3}
+      propertyPath: MinHP
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6350379193036845528, guid: e71203422e48a114a9d7aabe81547a86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

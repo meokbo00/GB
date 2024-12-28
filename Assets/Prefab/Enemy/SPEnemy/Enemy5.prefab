@@ -677,7 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   enemy1Fires:
@@ -688,7 +688,7 @@ MonoBehaviour:
   isShowHP: 1
   isHide: 0
   MaxHP: 3
-  MinHP: 1
+  MinHP: 2
   MaxFireTime: 10
   MinFireTime: 7
   MaxAngle: 360

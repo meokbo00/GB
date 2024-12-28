@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   enemy1Fires:
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   enemy1Fires:
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   enemy1Fires:
@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 7730343529190757391}
   m_Layer: 0
   m_Name: Enemy1 (2)
-  m_TagString: Enemy
+  m_TagString: EnemyCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1072,7 +1072,7 @@ GameObject:
   - component: {fileID: 7156545460755511272}
   m_Layer: 0
   m_Name: Enemy1 (1)
-  m_TagString: Enemy
+  m_TagString: EnemyCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1104,7 +1104,7 @@ GameObject:
   - component: {fileID: 9071236809114678367}
   m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Enemy
+  m_TagString: EnemyCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1450,7 +1450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   enemy1Fires: []
@@ -1632,7 +1632,7 @@ GameObject:
   - component: {fileID: 491642114532481647}
   m_Layer: 0
   m_Name: Enemy1 (3)
-  m_TagString: Enemy
+  m_TagString: EnemyCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1866,7 +1866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   enemy1Fires:
