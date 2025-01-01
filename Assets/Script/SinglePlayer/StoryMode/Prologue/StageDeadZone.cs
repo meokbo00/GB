@@ -13,16 +13,16 @@ public class StageDeadZone : MonoBehaviour
             switch (gameObject.name)
             {
                 case "B":
-                    rb.position += new Vector2(0, 270);
+                    rb.position += new Vector2(0, 170);
                     break;
                 case "T":
-                    rb.position += new Vector2(0, -270);
+                    rb.position += new Vector2(0, -170);
                     break;
                 case "L":
-                    rb.position += new Vector2(260, 0);
+                    rb.position += new Vector2(160, 0);
                     break;
                 case "R":
-                    rb.position += new Vector2(-260, 0);
+                    rb.position += new Vector2(-160, 0);
                     break;
             }
         }

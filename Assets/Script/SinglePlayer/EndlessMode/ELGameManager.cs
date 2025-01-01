@@ -115,6 +115,6 @@ public class ELGameManager : MonoBehaviour
         gameManager.ELlevel += 0.2f;
         gameManager.SaveELlevel();
 
-        SceneManager.LoadScene("Clear");
+        SceneManager.LoadScene("ELClear");
     }
 }

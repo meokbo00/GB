@@ -70,6 +70,10 @@ public class MultiStopButtonManager : MonoBehaviour
             {
                 SceneManager.LoadScene("Main Scene");
             }
+            if (SceneManager.GetActiveScene().name == "EndlessInGame")
+            {
+                SceneManager.LoadScene("EndlessInGame");
+            }
         });
 
         // 현재 씬 이름이 "ChallengeScene"이 아니면 BacktoStage 버튼에 이벤트 추가

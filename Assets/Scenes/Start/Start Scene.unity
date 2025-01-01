@@ -3013,6 +3013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageClearID: 0
+  ELlevel: 0
   isending: 0
 --- !u!114 &1132099137
 MonoBehaviour:

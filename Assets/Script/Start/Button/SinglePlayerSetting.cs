@@ -33,7 +33,7 @@ public class SinglePlayerSetting : MonoBehaviour
             }
             else
             {
-                ResetStageClearIDAndLoadScene(stageGameManager, "Prologue");
+                ResetStageClearIDAndLoadScene(stageGameManager, "Prologue1.5");
             }
         });
         ContinueBtn.onClick.AddListener(() =>
@@ -57,7 +57,7 @@ public class SinglePlayerSetting : MonoBehaviour
         });
         EndlessBtn.onClick.AddListener(() =>
         {
-            // 여기에 Endless 버튼에 대한 동작을 추가합니다.
+            StartFadeIn("EndlessInGame");
         });
         reallyNo.onClick.AddListener(() =>
         {
@@ -65,7 +65,7 @@ public class SinglePlayerSetting : MonoBehaviour
         });
         reallyYes.onClick.AddListener(() =>
         {
-            ResetStageClearIDAndLoadScene(stageGameManager, "Prologue");
+            ResetStageClearIDAndLoadScene(stageGameManager, "Prologue1.5");
         });
     }
 

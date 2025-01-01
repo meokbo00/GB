@@ -99,7 +99,16 @@ public class SPGameManager : MonoBehaviour
     {
         if (totalBalls > 16)
         {
-            SceneManager.LoadScene("Fail");
+            string currentSceneName = SceneManager.GetActiveScene().name;
+
+            if (currentSceneName == "Story-InGame")
+            {
+                SceneManager.LoadScene("Fail");
+            }
+            else if (currentSceneName == "EndlessInGame")
+            {
+                SceneManager.LoadScene("ELFail");
+            }
         }
     }
 
@@ -108,11 +117,21 @@ public class SPGameManager : MonoBehaviour
         totalEnemies--;
         if (totalEnemies <= 0)
         {
-            StageClear();
+            string currentSceneName = SceneManager.GetActiveScene().name;
+
+            if (currentSceneName == "Story-InGame")
+            {
+                StoryStageClear();
+            }
+            else if (currentSceneName == "EndlessInGame")
+            {
+                EndlessStageClear();
+            }
         }
     }
 
-    private void StageClear()
+
+    private void StoryStageClear()
     {
         if (gameManager.StageClearID == StageState.chooseStage && gameManager.StageClearID != 65)
         {
@@ -121,5 +140,13 @@ public class SPGameManager : MonoBehaviour
         }
         
         SceneManager.LoadScene("Clear");
+    }
+
+    private void EndlessStageClear()
+    {
+        gameManager.ELlevel += 0.2f;
+        gameManager.SaveELlevel();
+
+        SceneManager.LoadScene("ELClear");
     }
 }

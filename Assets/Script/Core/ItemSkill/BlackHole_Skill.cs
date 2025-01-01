@@ -112,6 +112,7 @@ public class BlackHole_Skill : MonoBehaviour
         }
         if ((!collision.collider.CompareTag(GojungTag) || !collision.collider.CompareTag(WallTag)) && rb == null)
         {
+            if (collision.gameObject.tag == "Wall") return;
             Destroy(collision.gameObject);
         }
         this.iscolliding = true;

@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 0}
+  gear: 0
 --- !u!1 &65812519
 GameObject:
   m_ObjectHideFlags: 0
@@ -3983,7 +3984,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 89.53351, y: -6.0439453}
+  m_Offset: {x: 70.105576, y: -6.0439453}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3994,7 +3995,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 71.931244, y: 437.07242}
+  m_Size: {x: 110.78712, y: 437.07242}
   m_EdgeRadius: 0
 --- !u!114 &508621788
 MonoBehaviour:
@@ -4483,7 +4484,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.0895996, y: -118.444016}
+  m_Offset: {x: -3.0895996, y: -89.08625}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4494,7 +4495,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 432.91138, y: 62.86313}
+  m_Size: {x: 432.91138, y: 121.57866}
   m_EdgeRadius: 0
 --- !u!114 &549155588
 MonoBehaviour:
@@ -8141,7 +8142,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.89875793, y: 92.75786}
+  m_Offset: {x: -0.89875793, y: 65.990486}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8152,7 +8153,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 431.05655, y: 53.128265}
+  m_Size: {x: 431.05655, y: 106.66301}
   m_EdgeRadius: 0
 --- !u!114 &1253993423
 MonoBehaviour:
@@ -11355,7 +11356,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -94.672226, y: -18.721115}
+  m_Offset: {x: -77.40294, y: -18.721115}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11366,7 +11367,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 73.63907, y: 436.37613}
+  m_Size: {x: 108.177635, y: 436.37613}
   m_EdgeRadius: 0
 --- !u!114 &1709157957
 MonoBehaviour:
@@ -14736,6 +14737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageClearID: 2
+  ELlevel: 0
   isending: 0
 --- !u!4 &2105216457
 Transform:

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6350379193036845528}
+  - component: {fileID: 9086519953453689427}
   m_Layer: 0
   m_Name: ZEnemy8
   m_TagString: Enemy
@@ -32,6 +33,19 @@ Transform:
   - {fileID: 8751840301217236581}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9086519953453689427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574370344208338112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c70d3b2f1b21d94cb9da8c8d8a58622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyStat: 9
 --- !u!1 &1710619579933550391
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
-  randomNumber: 0
+  durability: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
   bossfires:
