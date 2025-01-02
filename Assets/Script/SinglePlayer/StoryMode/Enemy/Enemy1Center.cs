@@ -2,9 +2,11 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy1center : MonoBehaviour
 {
+    StageGameManager stagegameManager;
     SPGameManager spGameManager;
     BGMControl bGMControl;
     public float increase = 4f;
@@ -27,12 +29,18 @@ public class Enemy1center : MonoBehaviour
 
     private void Start()
     {
+        stagegameManager = FindAnyObjectByType<StageGameManager>();
         spGameManager = FindAnyObjectByType<SPGameManager>();
         bGMControl = FindAnyObjectByType<BGMControl>();
+        string scenename = SceneManager.GetActiveScene().name;
         GameObject textObject = new GameObject("TextMeshPro");
         textObject.transform.parent = transform;
         textMesh = textObject.AddComponent<TextMeshPro>();
         durability = Random.Range(MinHP, MaxHP);
+        if(scenename == "EndlessInGame")
+        {
+            durability += stagegameManager.ELRound;
+        }
         initialRandomNumber = durability; // 초기 randomNumber 값을 저장
         if (isShowHP)
         {

@@ -2,10 +2,12 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BEnemyCenter : MonoBehaviour
 {
     SPGameManager spGameManager;
+    StageGameManager stagegameManager;
     BGMControl bGMControl;
     Rigidbody2D rigid;
     public float increase = 4f;
@@ -31,13 +33,19 @@ public class BEnemyCenter : MonoBehaviour
 
     private void Start()
     {
+        stagegameManager = FindAnyObjectByType<StageGameManager>();
         spGameManager = FindAnyObjectByType<SPGameManager>();
         bGMControl = FindAnyObjectByType<BGMControl>();
         rigid = GetComponent<Rigidbody2D>();
         GameObject textObject = new GameObject("TextMeshPro");
+        string scenename = SceneManager.GetActiveScene().name;
         textObject.transform.parent = transform;
         textMesh = textObject.AddComponent<TextMeshPro>();
         durability = Random.Range(MinHP, MaxHP);
+        if (scenename == "EndlessInGame")
+        {
+            durability += (stagegameManager.ELRound * 2);
+        }
         initialRandomNumber = durability; // �ʱ� randomNumber ���� ����
         if (isShowHP)
         {

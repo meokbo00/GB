@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -929.3}
-  m_SizeDelta: {x: 386.5905, y: 50}
+  m_AnchoredPosition: {x: 0, y: -925}
+  m_SizeDelta: {x: 1080, y: 61.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &55163338
 MonoBehaviour:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<\uC2A4\uD14C\uC774\uC9C0 100>"
+  m_text: 'Round : 5      Stage : 20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
   m_sharedMaterial: {fileID: 2326276519201562975, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
@@ -592,6 +592,22 @@ MonoBehaviour:
   - {fileID: 1574370344208338112, guid: c1d8e1754b0d19944a7536ef76ca776a, type: 3}
   - {fileID: 1574370344208338112, guid: 97bb57ff818b9d4448f33a1562e5498f, type: 3}
   - {fileID: 1574370344208338112, guid: e71203422e48a114a9d7aabe81547a86, type: 3}
+  GojungPrefabs:
+  - {fileID: 197735856533355763, guid: e61d922999edefd49b4df1d2d4649e52, type: 3}
+  - {fileID: 5826900823676043515, guid: d00d0352e2bab334eae143686bbdfc72, type: 3}
+  - {fileID: 686315132702096984, guid: 92beda8839850db4582459d0307448d0, type: 3}
+  - {fileID: 1214780033757626096, guid: c4d5b7070b529704bba88851c6b4684c, type: 3}
+  - {fileID: 629666123610152682, guid: 2fbb3be92ce32a844aceb10e8dff0d28, type: 3}
+  - {fileID: 5892692937035075040, guid: 427ff43c8826c154b865ffc6fea72666, type: 3}
+  - {fileID: 6018952498119693642, guid: 29b78ac6b800c8e4fb4f7d0f44658790, type: 3}
+  - {fileID: 2794462841306625913, guid: 787233bd5d8f72a4186ee2dcdfeeae26, type: 3}
+  - {fileID: 88117873878164106, guid: 430fe1c00b3e53a4283b1a3e07387413, type: 3}
+  - {fileID: 6995540901568561371, guid: ec93eed31d254af4fad4d6920cd041a0, type: 3}
+  - {fileID: 7884386072863352093, guid: 02b0185df4886f3498b1eb516f8290c4, type: 3}
+  - {fileID: 5988251587054630339, guid: 14701adea639abf4d982d4adf8d9596f, type: 3}
+  - {fileID: 3443649822580002918, guid: 21072224be0293c4192f49abf1a944aa, type: 3}
+  - {fileID: 197735856533355763, guid: ec7d60f0ecbd68a4ebf308f469925f17, type: 3}
+  BackGround: {fileID: 1286937753}
 --- !u!1 &300264279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,10 +1700,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1132099133}
   - component: {fileID: 1132099138}
-  - component: {fileID: 1132099145}
   - component: {fileID: 1132099146}
   - component: {fileID: 1132099143}
   - component: {fileID: 1132099144}
+  - component: {fileID: 1132099147}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Item_Durability
@@ -1847,30 +1863,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1132099145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132099131}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38d7821f37472594493c0006e2a4d307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  P1ballPrefab: {fileID: 1977937362943864785, guid: 0b16bbc3dd78e4844a35f5ff87828f80, type: 3}
-  FireItemPrefab:
-  - {fileID: 4801704420069890048, guid: 422319e6f0f6d634d846e8ed27a280af, type: 3}
-  - {fileID: 4801704420069890048, guid: 4561956e75b414647a0e9a7f76af0e6b, type: 3}
-  - {fileID: 6531571181281681212, guid: 1e9a11a69d108164fa08344c24d4879d, type: 3}
-  - {fileID: 3691755272866988324, guid: c15a4f5e4ca659d4fbf917d1016fbafb, type: 3}
-  - {fileID: 9219627083266486056, guid: 5fdb9eb59f153404cb128440afba3640, type: 3}
-  P1firezone: {fileID: 1634193082}
-  P1Itemsave: {fileID: 0}
-  fireitem: {fileID: 0}
-  isDragging: 0
-  totalEnemies: 0
 --- !u!114 &1132099146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1896,6 +1888,19 @@ MonoBehaviour:
   isDragging: 0
   chooseStagenum: 0
   totalEnemies: 0
+--- !u!114 &1132099147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132099131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac358f2c71854a94d80372d9f1b1c120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StageTitle: {fileID: 55163338}
 --- !u!1 &1224555837
 GameObject:
   m_ObjectHideFlags: 0

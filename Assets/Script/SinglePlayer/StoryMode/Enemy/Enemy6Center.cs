@@ -1,9 +1,11 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy6center : MonoBehaviour
 {
+    StageGameManager stagegameManager;
     SPGameManager spGameManager;
     BGMControl bGMControl;
     public float increase = 4f;
@@ -20,12 +22,18 @@ public class Enemy6center : MonoBehaviour
 
     private void Start()
     {
+        stagegameManager = FindAnyObjectByType<StageGameManager>();
         spGameManager = FindObjectOfType<SPGameManager>();
         bGMControl = FindObjectOfType<BGMControl>();
         GameObject textObject = new GameObject("TextMeshPro");
         textObject.transform.parent = transform;
         textMesh = textObject.AddComponent<TextMeshPro>();
+        string scenename = SceneManager.GetActiveScene().name;
         durability = Random.Range(MinHP, MaxHP);
+        if (scenename == "EndlessInGame")
+        {
+            durability += stagegameManager.ELRound;
+        }
         textMesh.text = durability.ToString();
         textMesh.fontSize = 6;
         textMesh.alignment = TextAlignmentOptions.Center;

@@ -4,6 +4,8 @@ using System.Collections.Generic; // List를 사용하기 위해 추가
 public class ELStageSpawn : MonoBehaviour
 {
     public GameObject[] EnemyPrefabs; // 생성할 적 프리팹 배열
+    public GameObject[] GojungPrefabs;
+    public GameObject BackGround;
     public static StageGameManager stageGameManager;
 
     private void Start()
@@ -13,37 +15,53 @@ public class ELStageSpawn : MonoBehaviour
         {
             SpawnEnemies(stageGameManager.ELlevel);
         }
+        SpawnRandomGojungPrefab();
+        RandomizeBackgroundColor();
     }
-
+    private void RandomizeBackgroundColor()
+    {
+        if (BackGround != null)
+        {
+            SpriteRenderer spriteRenderer = BackGround.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                // RGB 값을 랜덤으로 설정 (0.0f ~ 1.0f 범위)
+                float r = Random.Range(0f, 1f);
+                float g = Random.Range(0f, 1f);
+                float b = Random.Range(0f, 1f);
+                spriteRenderer.color = new Color(r, g, b);
+                Debug.Log($"Background color randomized to: R={r}, G={g}, B={b}");
+            }
+        }
+    }
+    private void SpawnRandomGojungPrefab()
+    {
+        if (GojungPrefabs.Length > 0)
+        {
+            GameObject selectedGojung = GojungPrefabs[Random.Range(0, GojungPrefabs.Length)];
+            Instantiate(selectedGojung, Vector3.zero, Quaternion.identity);
+        }
+    }
     public void SpawnEnemies(float targetLevel)
     {
         // ELlevel보다 작은 EnemyStat을 가진 프리팹 필터링
         List<GameObject> validPrefabs = new List<GameObject>();
-        Debug.Log("---- EnemyPrefabs 정보 출력 ----");
 
         foreach (var prefab in EnemyPrefabs)
         {
             ELEnemyStat stat = prefab.GetComponent<ELEnemyStat>();
             if (stat != null)
             {
-                // 각 프리팹의 EnemyStat 값을 출력
-                Debug.Log($"Prefab Name: {prefab.name}, EnemyStat: {stat.EnemyStat}");
-
                 if (stat.EnemyStat <= targetLevel)
                 {
                     validPrefabs.Add(prefab);
                 }
-            }
-            else
-            {
-                Debug.LogWarning($"Prefab Name: {prefab.name}에는 ELEnemyStat 컴포넌트가 없습니다!");
             }
         }
 
         foreach (var validPrefab in validPrefabs)
         {
             ELEnemyStat stat = validPrefab.GetComponent<ELEnemyStat>();
-            Debug.Log($"Valid Prefab Name: {validPrefab.name}, EnemyStat: {stat.EnemyStat}");
         }
 
         // 유효한 프리팹이 없는 경우

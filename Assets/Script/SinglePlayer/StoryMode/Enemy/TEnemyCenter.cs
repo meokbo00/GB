@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TEnemyCenter : MonoBehaviour
 {
+    StageGameManager stagegameManager;
+    SPGameManager spgameManager;
     BGMControl bGMControl;
     public int durability;
     public int initialRandomNumber; // 초기 randomNumber 값을 저장할 변수
@@ -18,11 +21,18 @@ public class TEnemyCenter : MonoBehaviour
     public int MinHP;
     private void Start()
     {
+        spgameManager = FindAnyObjectByType<SPGameManager>();
+        stagegameManager = FindAnyObjectByType<StageGameManager>();
         bGMControl = FindObjectOfType<BGMControl>();
+        string scenename = SceneManager.GetActiveScene().name;
         GameObject textObject = new GameObject("TextMeshPro");
         textObject.transform.parent = transform;
         textMesh = textObject.AddComponent<TextMeshPro>();
         durability = Random.Range(MinHP, MaxHP);
+        if (scenename == "EndlessInGame")
+        {
+            durability += stagegameManager.ELRound;
+        }
         initialRandomNumber = durability; // 초기 randomNumber 값을 저장
         if (isShowHP)
         {
@@ -41,9 +51,10 @@ public class TEnemyCenter : MonoBehaviour
         }
     }
 
-      private void OnCollisionEnter2D(Collision2D coll)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "EnemyBall") return;
+        if (coll.gameObject.tag == "Gojung") return;
         if (coll.gameObject.name != SPEndlessFName)
         {
             TakeDamage(1);
@@ -55,6 +66,7 @@ public class TEnemyCenter : MonoBehaviour
     }
     void TakeDamage(int damage)
     {
+        string scenename = SceneManager.GetActiveScene().name;
         durability -= damage;
         if (isShowHP)
         {
@@ -67,6 +79,10 @@ public class TEnemyCenter : MonoBehaviour
                 bGMControl.SoundEffectPlay(4);
             }
             Destroy(gameObject);
+            if (scenename == "EndlessInGame")
+            {
+                spgameManager.RemoveEnemy();
+            }
         }
     }
 

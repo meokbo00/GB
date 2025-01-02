@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c70d3b2f1b21d94cb9da8c8d8a58622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyStat: 0.4
+  EnemyStat: 0.3
 --- !u!1 &5012796764803496126
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,5 +372,5 @@ MonoBehaviour:
   isShowHP: 1
   isHide: 0
   fontsize: 3
-  MaxHP: 20
-  MinHP: 15
+  MaxHP: 12
+  MinHP: 10

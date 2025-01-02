@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c70d3b2f1b21d94cb9da8c8d8a58622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyStat: 0.6
+  EnemyStat: 0.5
 --- !u!1 &5696454244000739020
 GameObject:
   m_ObjectHideFlags: 0

@@ -144,8 +144,15 @@ public class SPGameManager : MonoBehaviour
 
     private void EndlessStageClear()
     {
-        gameManager.ELlevel += 0.2f;
-        gameManager.SaveELlevel();
+        gameManager.ELnum += 1;
+        gameManager.ELlevel += 0.4f;
+        if(gameManager.ELnum >= 25)
+        {
+            gameManager.ELRound += 1;
+            gameManager.ELnum = 1;
+            gameManager.ELlevel = 2;
+        }
+        gameManager.SaveELlevelAndELnum();
 
         SceneManager.LoadScene("ELClear");
     }
