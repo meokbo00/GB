@@ -36,7 +36,7 @@ public class FinalPrologueManager : MonoBehaviour
 
     IEnumerator ShowImagesSequentially()
     {
-        float waitTime = 4.5f;
+        float waitTime = 2.5f;
 
         foreach (GameObject image in images)
         {

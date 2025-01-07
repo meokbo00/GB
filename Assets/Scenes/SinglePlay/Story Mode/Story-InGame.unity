@@ -1295,6 +1295,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611316888}
   m_CullTransparentMesh: 1
+--- !u!1 &651394633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651394635}
+  - component: {fileID: 651394634}
+  m_Layer: 0
+  m_Name: translate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &651394634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651394633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc74aab2d5c1cce479642a5c8d4127b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &651394635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651394633}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540, y: 990, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670244114
 GameObject:
   m_ObjectHideFlags: 0
@@ -3266,8 +3310,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3295,7 +3339,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -99.049774, y: 0, z: -388.338, w: 0}
+  m_margin: {x: -293.67938, y: -4.423462, z: -204.76672, w: -59.715942}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3754,6 +3798,7 @@ MonoBehaviour:
   - {fileID: 8411032512308756578, guid: 31f78309d6c8458489ded1d4cc8c4933, type: 3}
   - {fileID: 8601215777145985822, guid: b8d9404c6f18ff947828f9e83b18f73a, type: 3}
   - {fileID: 1963292555498360652, guid: 1110e987b912f224dbb762c0bb538d61, type: 3}
+  - {fileID: 1963292555498360652, guid: b8f12e94f8526fb4c8a70c1fad11af41, type: 3}
   SecondTutorial:
   - {fileID: 1330488104799611686, guid: c915b1851563dd94a8fa674363ee9515, type: 3}
   - {fileID: 6746005930238398366, guid: 1aa16b65b5deed748bcd54892d7aeca1, type: 3}
@@ -4274,3 +4319,4 @@ SceneRoots:
   - {fileID: 1477448411}
   - {fileID: 173325674}
   - {fileID: 2115579545}
+  - {fileID: 651394635}

@@ -11,12 +11,15 @@ public class SettingButtonManager : MonoBehaviour
     public Button Sound_Effect_OFF;
     public Button Credit;
     public Button Back;
+    public Button korea;
+    public Button english;
     public AudioSource ButtonAudio;
 
     private BGMControl bGMControl;
-
+    StageGameManager stageGameManager;
     private void Start()
     {
+        stageGameManager = FindAnyObjectByType<StageGameManager>();
         bGMControl = FindObjectOfType<BGMControl>();
         LoadButtonStates();
 
@@ -47,6 +50,16 @@ public class SettingButtonManager : MonoBehaviour
         {
             ButtonAudio.Play();
             SceneManager.LoadScene("Start Scene");
+        });
+        korea.onClick.AddListener(() =>
+        {
+            stageGameManager.isenglish = false;
+            stageGameManager.SaveIsisenglish();
+        });
+        english.onClick.AddListener(() =>
+        {
+            stageGameManager.isenglish = true;
+            stageGameManager.SaveIsisenglish();
         });
     }
 

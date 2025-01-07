@@ -7,23 +7,37 @@ using DG.Tweening;
 public class SinglePlayerSetting : MonoBehaviour
 {
     public GameObject SinglePlaySetting;
+    public GameObject isreallyendless;
+    public GameObject neworcontinue;
     public CanvasGroup fadeCanvasGroup; // CanvasGroup 추가
-    public Button X;
+    public Button ELYes;
+    public Button ELNo;
+    public Button Back;
+    public Button StoryBtn;
     public Button NewBtn;
     public Button ContinueBtn;
     public Button ChallengeBtn;
     public Button EndlessBtn;
-
+    public Button Back2;
     public GameObject reallynew;
     public Button reallyYes;
     public Button reallyNo;
-
+    ShowTutorial showTutorial;
     void Start()
     {
         StageGameManager stageGameManager = FindObjectOfType<StageGameManager>();
-        X.onClick.AddListener(() =>
+        Back2.onClick.AddListener(() =>
+        {
+            neworcontinue.SetActive(false);
+        });
+        StoryBtn.onClick.AddListener(() =>
+        {
+            neworcontinue.SetActive(true);
+        });
+        Back.onClick.AddListener(() =>
         {
             SinglePlaySetting.SetActive(false);
+            neworcontinue.SetActive(false);
         });
         NewBtn.onClick.AddListener(() =>
         {
@@ -57,7 +71,22 @@ public class SinglePlayerSetting : MonoBehaviour
         });
         EndlessBtn.onClick.AddListener(() =>
         {
+            if((stageGameManager.StageClearID == 0) || (stageGameManager.StageClearID == 1))
+            {
+                isreallyendless.SetActive(true);
+            }
+            else
+            {
+                StartFadeIn("EndlessInGame");
+            }
+        });
+        ELYes.onClick.AddListener(() =>
+        {
             StartFadeIn("EndlessInGame");
+        });
+        ELNo.onClick.AddListener(() =>
+        {
+            isreallyendless.SetActive(false);
         });
         reallyNo.onClick.AddListener(() =>
         {
@@ -71,12 +100,16 @@ public class SinglePlayerSetting : MonoBehaviour
 
     void ResetStageClearIDAndLoadScene(StageGameManager stageGameManager, string sceneName)
     {
+        stageGameManager.firstTutorialShown = false;
+        stageGameManager.secondTutorialShown = false;
         stageGameManager.StageClearID = 1;
         stageGameManager.isending = false;
         PlayerPrefs.SetFloat("StageClearID", stageGameManager.StageClearID);
         PlayerPrefs.SetInt("isending", stageGameManager.isending ? 1 : 0);
         stageGameManager.SaveIsEnding();
         stageGameManager.SaveStageClearID();
+        stageGameManager.notfirstTutosave();
+        stageGameManager.notsecendtutosave();
         StartFadeIn(sceneName);
     }
 

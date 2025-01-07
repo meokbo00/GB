@@ -45,6 +45,7 @@ public class Shield : MonoBehaviour
      private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "EnemyBall") return;
+        if (coll.gameObject.tag == "EnemyCenter") return;
         if (coll.gameObject.name != SPEndlessFName)
         {
             TakeDamage(1);

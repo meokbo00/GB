@@ -50,6 +50,8 @@ public class Enemy6center : MonoBehaviour
         if (coll.gameObject.tag == "EnemyBall") return;
         if (coll.gameObject.tag == "Gojung") return;
         if (coll.gameObject.tag == "Wall") return;
+        if (coll.gameObject.tag == "EnemyCenter") return;
+
 
         if (coll.gameObject.name != SPEndlessFName)
         {

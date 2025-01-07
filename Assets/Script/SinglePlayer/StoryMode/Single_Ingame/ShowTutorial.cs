@@ -16,13 +16,17 @@ public class ShowTutorial : MonoBehaviour
     {
         stageGameManager = FindObjectOfType<StageGameManager>();
 
-        if (stageGameManager.StageClearID == 1)
+        if (stageGameManager.StageClearID == 1 && !stageGameManager.firstTutorialShown)
         {
             ShowTutorialImages(FirstTutorial);
+            stageGameManager.firstTutorialShown = true;
+            stageGameManager.firstTutosave();
         }
-        else if (stageGameManager.StageClearID == 7)
+        else if (stageGameManager.StageClearID == 7 && !stageGameManager.secondTutorialShown)
         {
             ShowTutorialImages(SecondTutorial);
+            stageGameManager.secondTutorialShown = true;
+            stageGameManager.secendtutosave();
         }
         else
         {

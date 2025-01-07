@@ -364,6 +364,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: User Interface_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e489b4a6b012d1c4a92f642ee58c5aea
+      internalID: 1006768441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -384,6 +405,7 @@ TextureImporter:
       Panel Black: 4229574389047005653
       Panel White: -4827201375843143100
       Talk Cursor: -4296635770777405670
+      User Interface_0: 1006768441
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
