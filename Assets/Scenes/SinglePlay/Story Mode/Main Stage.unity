@@ -292,6 +292,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &104159550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 104159552}
+  - component: {fileID: 104159551}
+  m_Layer: 0
+  m_Name: translate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &104159551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104159550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc74aab2d5c1cce479642a5c8d4127b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &104159552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104159550}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 559.485, y: 171.03143, z: -2.8826125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &109729926
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 499826408}
+  gear: 0
 --- !u!114 &183999919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6063,7 +6108,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageClearID: 6
+  ELRound: 0
+  ELnum: 0
+  ELlevel: 0
+  firstTutorialShown: 0
+  secondTutorialShown: 0
   isending: 0
+  isenglish: 0
 --- !u!4 &785782805
 Transform:
   m_ObjectHideFlags: 0
@@ -16757,3 +16808,4 @@ SceneRoots:
   - {fileID: 1776048557}
   - {fileID: 793557014}
   - {fileID: 111579206}
+  - {fileID: 104159552}

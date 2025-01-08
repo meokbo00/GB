@@ -312,6 +312,50 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &243357954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243357956}
+  - component: {fileID: 243357955}
+  m_Layer: 0
+  m_Name: translate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &243357955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243357954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc74aab2d5c1cce479642a5c8d4127b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &243357956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243357954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 582.7076, y: 944.47284, z: 1.5195929}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &262243799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,7 +1658,11 @@ Transform:
   m_GameObject: {fileID: 982519024}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 0, y: -4.1261, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: -4.069, z: 0}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 5.6308956, y: 1.2130476, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3298,7 +3346,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010216713, y: 0.30558276}
+  m_Offset: {x: -0.010216713, y: 0.33168745}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3309,7 +3357,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.638299, y: 0.17225885}
+  m_Size: {x: 5.638299, y: 0.22446823}
   m_EdgeRadius: 0
 --- !u!114 &2140296209
 MonoBehaviour:
@@ -3338,3 +3386,4 @@ SceneRoots:
   - {fileID: 71297605}
   - {fileID: 1930322980}
   - {fileID: 448788953}
+  - {fileID: 243357956}

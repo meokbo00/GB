@@ -960,6 +960,10 @@ GameObject:
   - component: {fileID: 317589183}
   - component: {fileID: 317589185}
   - component: {fileID: 317589184}
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 317589186}
+>>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
@@ -1083,6 +1087,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317589182}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
+=======
+--- !u!114 &317589186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317589182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 317589184}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+>>>>>>> Stashed changes
 --- !u!1 &337408745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3384,6 +3435,10 @@ GameObject:
   - component: {fileID: 1003034752}
   - component: {fileID: 1003034754}
   - component: {fileID: 1003034753}
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 1003034755}
+>>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3507,6 +3562,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003034751}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1003034755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003034751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1003034753}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+>>>>>>> Stashed changes
 --- !u!1 &1004423558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3960,6 +4062,10 @@ GameObject:
   - component: {fileID: 1092556052}
   - component: {fileID: 1092556054}
   - component: {fileID: 1092556053}
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 1092556055}
+>>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (TMP) (3)
   m_TagString: Untagged
@@ -4083,6 +4189,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092556051}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1092556055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092556051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1092556053}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+>>>>>>> Stashed changes
 --- !u!1 &1120717642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5490,11 +5643,22 @@ MonoBehaviour:
   ELYes: {fileID: 70267470}
   ELNo: {fileID: 876305641}
   Back: {fileID: 1322816251}
+<<<<<<< Updated upstream
   StoryBtn: {fileID: 846515032}
+=======
+  Back3: {fileID: 1092556055}
+>>>>>>> Stashed changes
   NewBtn: {fileID: 2029345027}
   ContinueBtn: {fileID: 1004423560}
+  StoryBtn: {fileID: 846515032}
+  StoryBtn2: {fileID: 1003034755}
   ChallengeBtn: {fileID: 1846456656}
+  ChallengeBtn2: {fileID: 1459665120}
   EndlessBtn: {fileID: 1686638863}
+<<<<<<< Updated upstream
+=======
+  EndlessBtn2: {fileID: 317589186}
+>>>>>>> Stashed changes
   Back2: {fileID: 1676080980}
   reallynew: {fileID: 337408745}
   reallyYes: {fileID: 1680897325}
@@ -5750,6 +5914,10 @@ GameObject:
   - component: {fileID: 1459665117}
   - component: {fileID: 1459665119}
   - component: {fileID: 1459665118}
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 1459665120}
+>>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -5873,6 +6041,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459665116}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1459665120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459665116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1459665118}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+>>>>>>> Stashed changes
 --- !u!1 &1645218843
 GameObject:
   m_ObjectHideFlags: 0
