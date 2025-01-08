@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class ShowEnemyInfo : MonoBehaviour
 {
-    public GameObject[] EnemyInfos;
-    public Transform canvasTransform;  
+    public GameObject[] KEnemyInfos;
+    public GameObject[] EEnemyInfos;
+
+    public Transform canvasTransform;
 
     void Start()
     {
         StageState stageState = FindObjectOfType<StageState>();
         StageGameManager stageGameManager = FindObjectOfType<StageGameManager>();
         float stageClearID = stageGameManager.StageClearID;
-        foreach (GameObject enemyInfo in EnemyInfos)
+
+        // KEnemyInfos 또는 EEnemyInfos 배열을 선택
+        GameObject[] activeEnemyInfos = stageGameManager.isenglish ? EEnemyInfos : KEnemyInfos;
+
+        foreach (GameObject enemyInfo in activeEnemyInfos)
         {
             if (enemyInfo != null)
             {
@@ -45,7 +51,7 @@ public class ShowEnemyInfo : MonoBehaviour
         RectTransform rectTransform = instantiatedInfo.GetComponent<RectTransform>();
         if (rectTransform != null)
         {
-            rectTransform.anchoredPosition = Vector2.zero; 
+            rectTransform.anchoredPosition = Vector2.zero;
         }
     }
 }

@@ -4971,7 +4971,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatting: {fileID: 69003478}
   ChatBox: {fileID: 1066859267}
-  JsonFile: {fileID: 4900000, guid: 345470e778d385b4da710110b9d896d2, type: 3}
+  KJsonFile: {fileID: 4900000, guid: 345470e778d385b4da710110b9d896d2, type: 3}
+  EJsonFile: {fileID: 4900000, guid: 23c33397184f38541ab9cd0335133d72, type: 3}
   logTextIndex: 0
   OnChatComplete:
     m_PersistentCalls:
