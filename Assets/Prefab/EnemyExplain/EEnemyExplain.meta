@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< Updated upstream:Assets/Resource/Space/행성 애니메이션/0기본지구.meta
-guid: a9026398417fb0f4cbb622781bc568e1
-========
 guid: e35937dd0b55456478e3e2a38eb59b4c
->>>>>>>> Stashed changes:Assets/Prefab/EnemyExplain/EEnemyExplain.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

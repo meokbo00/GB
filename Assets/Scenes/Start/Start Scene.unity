@@ -960,10 +960,7 @@ GameObject:
   - component: {fileID: 317589183}
   - component: {fileID: 317589185}
   - component: {fileID: 317589184}
-<<<<<<< Updated upstream
-=======
   - component: {fileID: 317589186}
->>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
@@ -1087,8 +1084,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317589182}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
-=======
 --- !u!114 &317589186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1133,7 +1128,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
->>>>>>> Stashed changes
 --- !u!1 &337408745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,10 +3429,7 @@ GameObject:
   - component: {fileID: 1003034752}
   - component: {fileID: 1003034754}
   - component: {fileID: 1003034753}
-<<<<<<< Updated upstream
-=======
   - component: {fileID: 1003034755}
->>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3562,8 +3553,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003034751}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
-=======
 --- !u!114 &1003034755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3608,7 +3597,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
->>>>>>> Stashed changes
 --- !u!1 &1004423558
 GameObject:
   m_ObjectHideFlags: 0
@@ -4062,10 +4050,7 @@ GameObject:
   - component: {fileID: 1092556052}
   - component: {fileID: 1092556054}
   - component: {fileID: 1092556053}
-<<<<<<< Updated upstream
-=======
   - component: {fileID: 1092556055}
->>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (TMP) (3)
   m_TagString: Untagged
@@ -4189,8 +4174,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092556051}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
-=======
 --- !u!114 &1092556055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4235,7 +4218,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
->>>>>>> Stashed changes
 --- !u!1 &1120717642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5643,11 +5625,7 @@ MonoBehaviour:
   ELYes: {fileID: 70267470}
   ELNo: {fileID: 876305641}
   Back: {fileID: 1322816251}
-<<<<<<< Updated upstream
-  StoryBtn: {fileID: 846515032}
-=======
   Back3: {fileID: 1092556055}
->>>>>>> Stashed changes
   NewBtn: {fileID: 2029345027}
   ContinueBtn: {fileID: 1004423560}
   StoryBtn: {fileID: 846515032}
@@ -5655,10 +5633,7 @@ MonoBehaviour:
   ChallengeBtn: {fileID: 1846456656}
   ChallengeBtn2: {fileID: 1459665120}
   EndlessBtn: {fileID: 1686638863}
-<<<<<<< Updated upstream
-=======
   EndlessBtn2: {fileID: 317589186}
->>>>>>> Stashed changes
   Back2: {fileID: 1676080980}
   reallynew: {fileID: 337408745}
   reallyYes: {fileID: 1680897325}
@@ -5914,10 +5889,7 @@ GameObject:
   - component: {fileID: 1459665117}
   - component: {fileID: 1459665119}
   - component: {fileID: 1459665118}
-<<<<<<< Updated upstream
-=======
   - component: {fileID: 1459665120}
->>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -6041,8 +6013,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459665116}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
-=======
 --- !u!114 &1459665120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6087,7 +6057,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
->>>>>>> Stashed changes
 --- !u!1 &1645218843
 GameObject:
   m_ObjectHideFlags: 0

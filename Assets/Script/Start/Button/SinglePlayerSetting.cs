@@ -13,18 +13,6 @@ public class SinglePlayerSetting : MonoBehaviour
     public Button ELYes;
     public Button ELNo;
     public Button Back;
-<<<<<<< Updated upstream
-    public Button StoryBtn;
-    public Button NewBtn;
-    public Button ContinueBtn;
-    public Button ChallengeBtn;
-    public Button EndlessBtn;
-    public Button Back2;
-    public GameObject reallynew;
-    public Button reallyYes;
-    public Button reallyNo;
-    ShowTutorial showTutorial;
-=======
     public Button Back3;
     public Button NewBtn;
     public Button ContinueBtn;
@@ -43,7 +31,6 @@ public class SinglePlayerSetting : MonoBehaviour
     public GameObject reallynew;
     public Button reallyYes;
     public Button reallyNo;
->>>>>>> Stashed changes
     void Start()
     {
         StageGameManager stageGameManager = FindObjectOfType<StageGameManager>();
@@ -55,26 +42,20 @@ public class SinglePlayerSetting : MonoBehaviour
         {
             neworcontinue.SetActive(true);
         });
-<<<<<<< Updated upstream
-=======
         StoryBtn2.onClick.AddListener(() =>
         {
             neworcontinue.SetActive(true);
         });
->>>>>>> Stashed changes
         Back.onClick.AddListener(() =>
         {
             SinglePlaySetting.SetActive(false);
             neworcontinue.SetActive(false);
         });
-<<<<<<< Updated upstream
-=======
         Back3.onClick.AddListener(() =>
         {
             SinglePlaySetting.SetActive(false);
             neworcontinue.SetActive(false);
         });
->>>>>>> Stashed changes
         NewBtn.onClick.AddListener(() =>
         {
             if (stageGameManager.StageClearID > 1)
@@ -105,19 +86,6 @@ public class SinglePlayerSetting : MonoBehaviour
         {
             StartFadeIn("ChallengeScene");
         });
-<<<<<<< Updated upstream
-        EndlessBtn.onClick.AddListener(() =>
-        {
-            if((stageGameManager.StageClearID == 0) || (stageGameManager.StageClearID == 1))
-            {
-                isreallyendless.SetActive(true);
-            }
-            else
-            {
-                StartFadeIn("EndlessInGame");
-            }
-        });
-=======
         ChallengeBtn2.onClick.AddListener(() =>
         {
             StartFadeIn("ChallengeScene");
@@ -144,7 +112,6 @@ public class SinglePlayerSetting : MonoBehaviour
                 StartFadeIn("EndlessInGame");
             }
         });
->>>>>>> Stashed changes
         ELYes.onClick.AddListener(() =>
         {
             StartFadeIn("EndlessInGame");

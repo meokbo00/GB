@@ -1,80 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &693465310239795913
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4609439452376687738}
-  - component: {fileID: 6955262556664484042}
-  - component: {fileID: 2787166512596059958}
-  m_Layer: 5
-  m_Name: EnemyImg (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &4609439452376687738
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693465310239795913}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7836748189357829535}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -294, y: -42}
-  m_SizeDelta: {x: 439, y: 429}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6955262556664484042
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693465310239795913}
-  m_CullTransparentMesh: 1
---- !u!114 &2787166512596059958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693465310239795913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0cb434903800dc54fa900ff9d5ee8989, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1244025774918304958
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,11 +110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream:Assets/Prefab/EnemyExplain/IEnemyInfo4 21.prefab
-  m_AnchoredPosition: {x: 0, y: -356}
-=======
   m_AnchoredPosition: {x: 0, y: -361}
->>>>>>> Stashed changes:Assets/Prefab/EnemyExplain/EEnemyExplain/IEnemyInfo5 34.prefab
   m_SizeDelta: {x: 133.33334, y: 133.33334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4372927101176009161
@@ -307,12 +228,7 @@ RectTransform:
   - {fileID: 7167552300104303459}
   - {fileID: 8774626350582838022}
   - {fileID: 6421259421091089703}
-<<<<<<< Updated upstream:Assets/Prefab/EnemyExplain/IEnemyInfo4 21.prefab
-  - {fileID: 4500398510455072414}
-  - {fileID: 4609439452376687738}
-=======
   - {fileID: 3095659820226298793}
->>>>>>> Stashed changes:Assets/Prefab/EnemyExplain/EEnemyExplain/IEnemyInfo5 34.prefab
   - {fileID: 2115970935618392160}
   - {fileID: 7262423050454211133}
   m_Father: {fileID: 0}
@@ -400,13 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-<<<<<<< Updated upstream:Assets/Prefab/EnemyExplain/IEnemyInfo4 21.prefab
-  m_text: "\uBA48\uCD94\uC9C0 \uC54A\uB294 \uCD1D\uC54C          \uC744\n\uBC1C\uC0AC\uD569\uB2C8\uB2E4\n\n    
-    \uB294 \uC801 \uC720\uB2DB\uACFC \uB2FF\uC544\uB3C4 \n\uB370\uBBF8\uC9C0\uB97C
-    \uC8FC\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4\n"
-=======
   m_text: "Fires an\n invulnerable item \n\nthat destroys \nany object it touches.\n\n\n\n\n\n"
->>>>>>> Stashed changes:Assets/Prefab/EnemyExplain/EEnemyExplain/IEnemyInfo5 34.prefab
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
   m_sharedMaterial: {fileID: 2326276519201562975, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
@@ -584,13 +494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream:Assets/Prefab/EnemyExplain/IEnemyInfo4 21.prefab
-  m_AnchoredPosition: {x: 214, y: 188}
-  m_SizeDelta: {x: 439, y: 429}
-=======
   m_AnchoredPosition: {x: 329, y: 102}
   m_SizeDelta: {x: 352, y: 341}
->>>>>>> Stashed changes:Assets/Prefab/EnemyExplain/EEnemyExplain/IEnemyInfo5 34.prefab
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7563908423057177541
 CanvasRenderer:
