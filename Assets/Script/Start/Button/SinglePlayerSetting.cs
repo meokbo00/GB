@@ -27,7 +27,7 @@ public class SinglePlayerSetting : MonoBehaviour
 
     public Button Back2;
 
-    
+
     public GameObject reallynew;
     public Button reallyYes;
     public Button reallyNo;
@@ -75,11 +75,25 @@ public class SinglePlayerSetting : MonoBehaviour
             }
             else if (stageGameManager.StageClearID <= 6.5f && stageGameManager.StageClearID >= 2)
             {
-                StartFadeIn("Stage");
+                if (!stageGameManager.isenglish)
+                {
+                    StartFadeIn("Stage");
+                }
+                else
+                {
+                    StartFadeIn("EStage");
+                }
             }
             else if (stageGameManager.StageClearID >= 7)
             {
-                StartFadeIn("Main Stage");
+                if (!stageGameManager.isenglish)
+                {
+                    StartFadeIn("Main Stage");
+                }
+                else
+                {
+                    StartFadeIn("EMain Stage");
+                }
             }
         });
         ChallengeBtn.onClick.AddListener(() =>
@@ -92,7 +106,7 @@ public class SinglePlayerSetting : MonoBehaviour
         });
         EndlessBtn.onClick.AddListener(() =>
         {
-            if((stageGameManager.StageClearID == 0) || (stageGameManager.StageClearID == 1))
+            if ((stageGameManager.StageClearID == 0) || (stageGameManager.StageClearID == 1))
             {
                 isreallyendless.SetActive(true);
             }

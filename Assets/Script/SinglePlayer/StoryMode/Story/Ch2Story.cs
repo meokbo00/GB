@@ -85,6 +85,11 @@ public class Ch2Story : MonoBehaviour
                 stageBallController.enabled = true;
             }
         }
+        //if (stageGameManager.StageClearID == 66 && showText.logTextIndex == 3)
+        //{
+        //    stageGameManager.StageClearID = 67;
+        //    stageGameManager.SaveStageClearID();
+        //}
     }
 
     IEnumerator ChangeCameraSize(float fromSize, float toSize, float duration)

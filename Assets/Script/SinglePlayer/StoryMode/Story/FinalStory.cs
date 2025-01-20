@@ -81,6 +81,13 @@ public class FinalStory : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         // Load the Ending scene
-        SceneManager.LoadScene("Ending");
+        if (!gameManager.isenglish)
+        {
+            SceneManager.LoadScene("Ending");
+        }
+        else
+        {
+            SceneManager.LoadScene("EEnding");
+        }
     }
 }

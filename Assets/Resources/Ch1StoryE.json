@@ -3,11 +3,11 @@
     "id": 1,
     "textWithDelay": [
       {
-        "text": "Hi",
+        "text": "Hi!",
         "delay": 0.05
       },
       {
-        "text": "Im Developer",
+        "text": "I am the developer who made this game",
         "delay": 0.05
       },
       {
@@ -15,51 +15,35 @@
         "delay": 0.12
       },
       {
-        "text": "...왜? 생각한거랑 좀 달라?",
+        "text": "…Why? Is it different from what you expected?",
         "delay": 0.05
       },
       {
-        "text": "보통 개발자는 게임에\n직접 안나오는거 아니냐고?",
+        "text": "Aren't developers usually not directly in the game?",
         "delay": 0.05
       },
       {
-        "text": "뭐...내가 만든 게임인데\n좀 나오면 안되냐?",
+        "text": "Well... can't I appear a little in the game I made?",
         "delay": 0.05
       },
       {
-        "text": "어차피 나중가면 보고 싶어도\n보기 힘드니까 지금 많이 봐둬~",
+        "text": "Later, it’ll be hard to see me, so enjoy while you can~",
         "delay": 0.05
       },
       {
-        "text": "자 그럼 지금부터 뭘 할거냐?",
+        "text": "So, what are we going to do now?",
         "delay": 0.05
       },
       {
-        "text": "게임하러 왔으면 하는 법을\n알려줘야겠지?",
+        "text": "If you came to play the game,\nI should teach you how, right?",
         "delay": 0.05
       },
       {
-        "text": "튜토리ㅇ...아니 걷는법부터 배울거야!\n별로 어렵지 않아",
+        "text": "Tutorial... no, we’ll start with learning how to walk!\nIt's not that hard.",
         "delay": 0.05
       },
       {
-        "text": "자~ 화면을 가볍게 한번 스크롤 해봐",
-        "delay": 0.05
-      },
-      {
-        "text": "   ",
-        "delay": 0.05
-      },
-      {
-        "text": "   ",
-        "delay": 0.05
-      },
-      {
-        "text": "   ",
-        "delay": 0.05
-      },
-      {
-        "text": "어때 간단하지? 고작 손가락 하나만\n있어도 움직일 수 있다 이 말이야~",
+        "text": "Come on~ try scrolling the screen lightly once.",
         "delay": 0.05
       },
       {
@@ -75,51 +59,67 @@
         "delay": 0.05
       },
       {
-        "text": "자자 이제 멈춰",
+        "text": "How is it? Simple, right? You can move\nwith just one finger~",
         "delay": 0.05
       },
       {
-        "text": "또또 돌아다닌다고 설명 제대로\n안듣고 나중에 딴소리 하지 말고",
+        "text": "   ",
         "delay": 0.05
       },
       {
-        "text": "여기가 어딘지 설명해줄게",
+        "text": "   ",
         "delay": 0.05
       },
       {
-        "text": "지금 너가 있는곳은 너 외에 194명의\n친구들과 함께 공유하고 있는 나의 공간이야",
+        "text": "   ",
         "delay": 0.05
       },
       {
-        "text": "각자 색도, 크기도 전부 다르지만 전부\n내가 만든 애들이니까 서로 싸우지말고!",
+        "text": "Alright, now stop.",
         "delay": 0.05
       },
       {
-        "text": "어디보자....이제 할 일을 줘야지",
+        "text": "Don’t wander around and later complain\nthat you didn’t hear the explanation properly.",
         "delay": 0.05
       },
       {
-        "text": "자 그럼...개발자로써 너에게\n줄 첫번째 임무는.....",
+        "text": "Let me explain where you are.",
         "delay": 0.05
       },
       {
-        "text": "빨간별이 가운데 새겨진\n노랑공을 찾는거야!",
+        "text": "The place you're in right now is my space\nthat you share with 194 other friends.",
         "delay": 0.05
       },
       {
-        "text": "정말 그게 다야. 간단하지?",
+        "text": "They all have different colors, sizes, and more, but they’re all made by me, so no fighting!",
         "delay": 0.05
       },
       {
-        "text": "이번엔 처음이니까\n특별히 밑에 이미지도 같이 보여줄게",
+        "text": "Let’s see.... now I should give you a task.",
         "delay": 0.05
       },
       {
-        "text": "왼쪽 밑에 보이지?\n이거랑 똑같이 생긴거 찾으면 돼",
+        "text": "Alright then... as a developer,\nthe first mission I’ll give you is...",
         "delay": 0.05
       },
       {
-        "text": "한번 여기저기 돌아다니면서 찾아봐",
+        "text": "Find the yellow ball with a red star in the center!",
+        "delay": 0.05
+      },
+      {
+        "text": "That’s really it. Simple, right?",
+        "delay": 0.05
+      },
+      {
+        "text": "Since it’s your first time,\nI’ll show you an image below as a special hint.",
+        "delay": 0.05
+      },
+      {
+        "text": "See it at the bottom left?\nFind one that looks just like this.",
+        "delay": 0.05
+      },
+      {
+        "text": "Try wandering around and looking for it.",
         "delay": 0.05
       }
     ]
@@ -128,43 +128,43 @@
     "id": 2,
     "textWithDelay": [
       {
-        "text": "아니 찾기만 하라니까\n플레이 버튼까지 누르고 왔어?",
+        "text": "What, you were just supposed to find it—did you go ahead and press play too?",
         "delay": 0.05
       },
       {
-        "text": "거기서부터는 내가\n다시 설명해주려고 했는데...",
+        "text": "I was going to explain from there again...",
         "delay": 0.05
       },
       {
-        "text": "뭐 암튼 잘했어",
+        "text": "Well, anyway, good job.",
         "delay": 0.05
       },
       {
-        "text": "정말 뜬금없이 이걸\n왜 하는건가하는 생각이 들겠지만",
+        "text": "You might suddenly think,\n‘Why am I even doing this?’",
         "delay": 0.05
       },
       {
-        "text": "다~ 나중에 쓸데가 있으니까\n지금은 일단 하면서 손감각을 익혀놔",
+        "text": "But everything will have its purpose later,\nso for now, just do it and get used to the controls.",
         "delay": 0.05
       },
       {
-        "text": "이번에도 알지?\n빨간별이 있는 노란색 공을 찾는거야",
+        "text": "You know what to do this time too, right?\nFind the yellow ball with the red star.",
         "delay": 0.05
       },
       {
-        "text": "그게 다음 스테이지가 있는곳을 알려주는 \n여정표니까 뭘 할지 모르겠으면 항상 그걸 찾아",
+        "text": "That ball guides you to the next stage, so whenever you're unsure, just look for it.",
         "delay": 0.05
       },
       {
-        "text": "아 그리고 한가지 힌트를 주자면",
+        "text": "Oh, and here’s one hint.",
         "delay": 0.05
       },
       {
-        "text": "너가 찾아야 하는 노랑별은\n눈금선 안에 있어",
+        "text": "The yellow ball you’re looking for\nis within the grid lines.",
         "delay": 0.05
       },
       {
-        "text": "괜히 시커먼데까지 나가서 고생하지말고\n눈금선 안에서만 찾으라구",
+        "text": "Don’t go wandering into the dark areas and struggling—\njust search within the grid lines.",
         "delay": 0.05
       }
     ]
@@ -173,19 +173,19 @@
     "id": 3,
     "textWithDelay": [
       {
-        "text": "어때? 별로 어렵지 않지?",
+        "text": "How is it? Not too hard, right?",
         "delay": 0.05
       },
       {
-        "text": "에이~ 솔직히 아직은 할만하잖아ㅋㅋ",
+        "text": "Hey~ Honestly, it's still manageable, right? Haha",
         "delay": 0.05
       },
       {
-        "text": "뭐..아무튼 준비된건 여기까지고..",
+        "text": "Well... anyway, this is all that's prepared for now...",
         "delay": 0.05
       },
       {
-        "text": "...이제 슬슬 시작해야겠네",
+        "text": "...Now it's time to really begin.",
         "delay": 0.05
       },
       {
@@ -201,31 +201,31 @@
         "delay": 0.05
       },
       {
-        "text": "다들 주목!",
+        "text": "Everyone, pay attention!",
         "delay": 0.05
       },
       {
-        "text": "너희들 모두에게 내가 만든 코드가\n심어져있는건 다들 알고 있지?",
+        "text": "You all know that the code I made is embedded inside you, right?",
         "delay": 0.05
       },
       {
-        "text": "원래는 그게 완벽한 코드였는데..\n한가지 사정으로 코드에 문제가 생겼어",
+        "text": "It was originally perfect code... but due to some circumstances, a problem occurred.",
         "delay": 0.05
       },
       {
-        "text": "그래서 너희가 지금 이렇게\n불완전한 상태인거고...",
+        "text": "So right now, you're in an incomplete state...",
         "delay": 0.05
       },
       {
-        "text": "암튼 가서 코드 좀 수정하고 올테니\n기다리고 있어",
+        "text": "Anyway, I'll go fix the code, so wait here.",
         "delay": 0.05
       },
       {
-        "text": "고쳐지는 즉시 올게\n그러니 딴짓하지 말고 코드만 기다려",
+        "text": "I'll be back as soon as it's fixed, so don't do anything else, just wait for the code.",
         "delay": 0.05
       },
       {
-        "text": "그게 너희들을 완전하게 만들어줄테니",
+        "text": "It will make you complete.",
         "delay": 0.05
       },
       {
@@ -233,39 +233,39 @@
         "delay": 0.05
       },
       {
-        "text": "아 그리고 가장 중요한거",
+        "text": "Oh, and the most important thing...",
         "delay": 0.05
       },
       {
-        "text": "무슨 일이 있어도 내가 오기 전까지\n절대 절대 너희 안에 심어진 코드를\n버려선 안돼",
+        "text": "No matter what happens, until I come back, you must never, ever discard the code embedded inside you.",
         "delay": 0.09
       },
       {
-        "text": "코드는 나의 DNA이자\n너희가 내것이라는 일종의 인증이야",
+        "text": "The code is my DNA, and it's a kind of certification that you belong to me.",
         "delay": 0.05
       },
       {
-        "text": "코드를 버리면 어떻게 되냐고?",
+        "text": "What happens if you discard it?",
         "delay": 0.05
       },
       {
-        "text": "버리는 순간 너희는\n너희 고유의 색을 잃고 새까매진뒤",
+        "text": "The moment you discard it, you will lose your original color and turn pitch black, and then...",
         "delay": 0.05
       },
       {
-        "text": "지금처럼 스스로 움직이는 것 조차\n불가능해질거야",
+        "text": "You won't even be able to move by yourself, like you are now.",
         "delay": 0.05
       },
       {
-        "text": "어때? 절대 버리면 안되겠지?",
+        "text": "How is it? You definitely shouldn't discard it, right?",
         "delay": 0.05
       },
       {
-        "text": "그러니 다시 한번 말하지만\n절대 코드를 버리지마 절대로",
+        "text": "So, once again, I say, never discard the code, absolutely never.",
         "delay": 0.09
       },
       {
-        "text": "그럼 금방 다녀올게",
+        "text": "I'll be back soon.",
         "delay": 0.05
       }
     ]
@@ -278,139 +278,139 @@
         "delay": 0.05
       },
       {
-        "text": "너도 아까 봤지?",
+        "text": "You saw it earlier too, right?",
         "delay": 0.05
       },
       {
-        "text": "코드 수정까지 6000년 걸리는 거ㅋㅋ",
+        "text": "It takes 6000 years to fix the code, haha.",
         "delay": 0.05
       },
       {
-        "text": "지금 이 순간에도 그쪽 세상에서는\n6000년 카운트다운 하고 있을 텐데",
+        "text": "Even at this very moment, in your world,\nthe 6000-year countdown is probably happening.",
         "delay": 0.05
       },
       {
-        "text": "우린 심심한데 뭐라도 하고 있자\n6000년 언제 기다려",
+        "text": "We're bored, so let's do something,\nwe can't wait for 6000 years.",
         "delay": 0.05
       },
       {
-        "text": "음...어디보자.....",
+        "text": "Hmm... let's see...",
         "delay": 0.05
       },
       {
-        "text": "너가 재밌어 할만한 게...",
+        "text": "Something you might find fun...",
         "delay": 0.05
       },
       {
-        "text": "아! 그거 알아?",
+        "text": "Ah! Do you know this?",
         "delay": 0.05
       },
       {
-        "text": "사람은 하루에 평균 약\n35,000번의 의사결정을 한대",
+        "text": "People make an average of\n35,000 decisions a day.",
         "delay": 0.05
       },
       {
-        "text": "한번 계산해보자",
+        "text": "Let's calculate that.",
         "delay": 0.05
       },
       {
-        "text": "그럼 1시간에 결정을\n1458.3번을 한다는 거고..",
+        "text": "That means they make\n1458.3 decisions an hour...",
         "delay": 0.05
       },
       {
-        "text": "1분에 24.3번",
+        "text": "24.3 decisions per minute.",
         "delay": 0.05
       },
       {
-        "text": "2.5초에 1번",
+        "text": "Once every 2.5 seconds.",
         "delay": 0.05
       },
       {
-        "text": "사람은 평균 2.5초에 한번씩\n의사 결정을 한다고 보면 되겠네",
+        "text": "On average, a person makes a decision once every 2.5 seconds.",
         "delay": 0.05
       },
       {
-        "text": "뭐 하루에 자는 시간까지 포함하면\n얼추 맞는 것 같기도 하고?",
+        "text": "Well, if you include the time spent sleeping,\nit seems to be roughly correct, right?",
         "delay": 0.05
       },
       {
-        "text": "이번엔 단위를 늘려보자",
+        "text": "Let's increase the units.",
         "delay": 0.05
       },
       {
-        "text": "하루에 35,000번이니까\n1주일에 14만번",
+        "text": "35,000 decisions a day means\n140,000 decisions a week.",
         "delay": 0.05
       },
       {
-        "text": "1달에 60만번",
+        "text": "600,000 decisions a month.",
         "delay": 0.05
       },
       {
-        "text": "1년에 7,300,000번\n100년에 730,000,000번",
+        "text": "7,300,000 decisions a year\n730,000,000 decisions in 100 years.",
         "delay": 0.05
       },
       {
-        "text": "6000년에 43,800,000,000번",
+        "text": "43,800,000,000 decisions in 6000 years.",
         "delay": 0.05
       },
       {
-        "text": "오...인간은 6000년동안\n438억번의 의사 결정을 하네?",
+        "text": "Oh... humans make\n43.8 billion decisions in 6000 years?",
         "delay": 0.05
       },
       {
-        "text": "자 그럼 이번엔..",
+        "text": "Now, let's see...",
         "delay": 0.05
       },
       {
-        "text": "지금 너가 쥐고 있는 스마트폰은\n1초에 몇 번 정도 의사 결정을 할까?",
+        "text": "How many decisions do you think your smartphone\nmakes per second?",
         "delay": 0.05
       },
       {
-        "text": "뭐...각자 쓰는 폰이 다르니\n차이는 있겠지만...평균적으로 봤을 때",
+        "text": "Well... each phone is different,\nbut on average...",
         "delay": 0.05
       },
       {
-        "text": "1초에 8500만회 정도 할 수 있을걸?",
+        "text": "It can make about 85 million decisions per second.",
         "delay": 0.05
       },
       {
-        "text": "즉, 인간이 6000년 걸리는걸 너가 들고\n있는 핸드폰은 515초면 한다는 거지",
+        "text": "In other words, the phone you’re holding\ncan do what humans take 6000 years for in just 515 seconds.",
         "delay": 0.05
       },
       {
-        "text": "내가 하고 싶은 말은...",
+        "text": "What I’m trying to say is...",
         "delay": 0.05
       },
       {
-        "text": "지금도 1초씩 가고 있는 현실 시간이랑",
+        "text": "Even now, the real-world time is ticking second by second,",
         "delay": 0.05
       },
       {
-        "text": "너가 쥐고 있는 핸드폰 게임 속\n시간은 다르다는 거야",
+        "text": "while the time in the mobile game you're holding is different.",
         "delay": 0.05
       },
       {
-        "text": "어디보자...\n6000년 vs 515초라면...",
+        "text": "Let’s see...\n6000 years vs 515 seconds...",
         "delay": 0.05
       },
       {
-        "text": "게임 속 세상에서 2126022472초가\n지날때마다 현실에서는 단 1초가 흐르니",
+        "text": "In the game world, every 2,126,022,472 seconds\nis equivalent to just 1 second in the real world.",
         "delay": 0.05
       },
       {
-        "text": "현실에서 1초가\n게임에선 67.38년이라는 거지",
+        "text": "So in the real world, 1 second is\n67.38 years in the game.",
         "delay": 0.05
       },
       {
-        "text": "그럼 게임 속 주인공이\n기다려야 할 6000년은\n너가 있는 현실에서 몇 초면 될까?",
+        "text": "Now, how many seconds in your reality\nwould equal the 6000 years the game character has to wait?",
         "delay": 0.05
       },
       {
-        "text": "6000 / 67.38 = 89초",
+        "text": "6000 / 67.38 = 89 seconds.",
         "delay": 0.05
       },
       {
-        "text": "89초면 돼",
+        "text": "89 seconds is enough.",
         "delay": 0.05
       },
       {
@@ -422,7 +422,7 @@
         "delay": 0.05
       },
       {
-        "text": "지금 몇 초 지났지?",
+        "text": "How many seconds have passed now?",
         "delay": 0.05
       },
       {
@@ -438,7 +438,7 @@
         "delay": 0.05
       },
       {
-        "text": "그래...너 하나 남았구나...",
+        "text": "Yeah... just you left...",
         "delay": 0.05
       },
       {
@@ -450,15 +450,15 @@
         "delay": 0.05
       },
       {
-        "text": "혼자 외로웠을텐데\n끝까지 코드 안놓고 고생 많았다",
+        "text": "You must have been lonely,\nbut you held on to the code till the end. Great job.",
         "delay": 0.05
       },
       {
-        "text": "이제 너의 눈이 뜨일 때가 온 것 같구나",
+        "text": "It seems like it’s time for your eyes to open.",
         "delay": 0.05
       },
       {
-        "text": "자 눈을 떠라",
+        "text": "Now, open your eyes.",
         "delay": 0.05
       }
     ]

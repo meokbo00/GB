@@ -92,7 +92,13 @@ public class Ch1_2Story : MonoBehaviour
         }
 
         yield return new WaitForSeconds(3f);
-
-        SceneManager.LoadScene("Main Stage");
+        if(!stageGameManager.isenglish)
+        {
+            SceneManager.LoadScene("Main Stage");
+        }
+        else
+        {
+            SceneManager.LoadScene("EMain Stage");
+        }
     }
 }

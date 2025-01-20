@@ -171,38 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee5e8c8541f9914eac16c67a406bda5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyInfos:
-  - {fileID: 5663681726111104043, guid: 2cc201e51400ac9439e8cc9edd37be12, type: 3}
-  - {fileID: 5663681726111104043, guid: 870cd0e8e076b78479e67f7877abd934, type: 3}
-  - {fileID: 5663681726111104043, guid: 3e4f24825985fe24db09e23d731dbc8b, type: 3}
-  - {fileID: 5663681726111104043, guid: 076d15e8c54d98c4ea1582da089692a3, type: 3}
-  - {fileID: 5663681726111104043, guid: 46473f02028069d44a3add0e37219371, type: 3}
-  - {fileID: 5663681726111104043, guid: fad35bd112974844eb50f3599b07e160, type: 3}
-  - {fileID: 5663681726111104043, guid: 0262cd345276d1e4f9a032fb65e67940, type: 3}
-  - {fileID: 5663681726111104043, guid: ebe3d70428701aa43b065089a501ee2b, type: 3}
-  - {fileID: 5663681726111104043, guid: 4b51793b17659c74895f0028f4c963e6, type: 3}
-  - {fileID: 5663681726111104043, guid: f9789264fd17a2a43acca2b00b0ead94, type: 3}
-  - {fileID: 5663681726111104043, guid: 6b973b115c4793c4d89976c73ac5403a, type: 3}
-  - {fileID: 5663681726111104043, guid: e2bb21970832a7c4aad993cec2afe09f, type: 3}
-  - {fileID: 5663681726111104043, guid: 0ee16bd0a64d5864a91aca874b3479f7, type: 3}
-  - {fileID: 5663681726111104043, guid: 271a3178a0799464d9889f3034d5961b, type: 3}
-  - {fileID: 5663681726111104043, guid: 4ec40b252f2ed7743b47326e97004a7b, type: 3}
-  - {fileID: 5663681726111104043, guid: 683f12f2ad676b64a9067fa662de90eb, type: 3}
-  - {fileID: 5663681726111104043, guid: ab2fe8201a23329458cb4ff122639ab5, type: 3}
-  - {fileID: 5663681726111104043, guid: 1440db0a4220e7f4badf3913eaf43af3, type: 3}
-  - {fileID: 5663681726111104043, guid: a169967dee229e74a9c0306159b5a055, type: 3}
-  - {fileID: 5663681726111104043, guid: 3c1d2b636bece544f912a52626cb4ff8, type: 3}
-  - {fileID: 5663681726111104043, guid: 840caf13d7b5ae545a4ecd42087f5c8f, type: 3}
-  - {fileID: 5663681726111104043, guid: 8d6e9683675ec914790c931e16cacc10, type: 3}
-  - {fileID: 5663681726111104043, guid: 97c330eebb2e71246af544262e9e0cb3, type: 3}
-  - {fileID: 5663681726111104043, guid: f3e215362f59f4f44bd10ee7758ea72c, type: 3}
-  - {fileID: 5663681726111104043, guid: 4c3953cdd7c5fe14eb625184dafb75a8, type: 3}
-  - {fileID: 5663681726111104043, guid: 7a88c388c49d52c48ad05837a27e66af, type: 3}
-  - {fileID: 5663681726111104043, guid: 1655ffa428e5dbd43b973f2e2de53a9e, type: 3}
-  - {fileID: 5663681726111104043, guid: 2b293a9b27aaaf14ab53effc6ffbbbf1, type: 3}
-  - {fileID: 5663681726111104043, guid: cd03ce6c11b44e2469306e9aff910bd9, type: 3}
-  - {fileID: 5663681726111104043, guid: 2541d58c6b0a3c74dab0ebc3e9070a82, type: 3}
-  - {fileID: 5663681726111104043, guid: 50b6377f669d3dd43901249e195d800b, type: 3}
+  KEnemyInfos: []
+  EEnemyInfos: []
   canvasTransform: {fileID: 1619867829}
 --- !u!1 &86123951
 GameObject:
@@ -3785,7 +3755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatting: {fileID: 1200105864}
   ChatBox: {fileID: 1680047084}
-  JsonFile: {fileID: 4900000, guid: 4fae3427cc19d2b49a4cc599e72d993b, type: 3}
+  KJsonFile: {fileID: 4900000, guid: 7f219da68ef568f4f8a10ab32169b7c1, type: 3}
   logTextIndex: 0
   OnChatComplete:
     m_PersistentCalls:

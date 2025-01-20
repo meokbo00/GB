@@ -56,7 +56,7 @@ public class StageBallController : MonoBehaviour
         switch (cameraReduction.gear)
         {
             case 1:
-                forcepower = 0.9f; break;
+                forcepower = 0.7f; break;
             case 2:
                 forcepower = 0.9f; break;
             case 3:

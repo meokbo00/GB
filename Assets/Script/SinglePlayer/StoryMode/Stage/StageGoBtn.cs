@@ -26,7 +26,14 @@ public class StageGoBtn : MonoBehaviour
             }
             if (gameManager.StageClearID == 65 && StageState.chooseStage == 65)
             {
-                SceneManager.LoadScene("Final-InGame");
+                if (!gameManager.isenglish)
+                {
+                    SceneManager.LoadScene("Final-InGame");
+                }
+                else
+                {
+                    SceneManager.LoadScene("EFinal-InGame");
+                }
             }
             else
             {

@@ -39,19 +39,47 @@ public class ClearBall : MonoBehaviour
     {
         if (gameManager.StageClearID <= 6)
         {
-            SceneManager.LoadScene("Stage");
+            if (!gameManager.isenglish)
+            {
+                SceneManager.LoadScene("Stage");
+            }
+            else
+            {
+                SceneManager.LoadScene("EStage");
+            }
         }
         else if (gameManager.StageClearID > 6 && gameManager.StageClearID <= 65)
         {
-            SceneManager.LoadScene("Main Stage");
+            if (!gameManager.isenglish)
+            {
+                SceneManager.LoadScene("Main Stage");
+            }
+            else
+            {
+                SceneManager.LoadScene("EMain Stage");
+            }
         }
         else if (gameManager.StageClearID == 66 && !gameManager.isending)
         {
-            SceneManager.LoadScene("Final");
+            if (!gameManager.isenglish)
+            {
+                SceneManager.LoadScene("Final");
+            }
+            else
+            {
+                SceneManager.LoadScene("EFinal");
+            }
         }
         else if (gameManager.StageClearID == 66 && gameManager.isending)
         {
-            SceneManager.LoadScene("Main Stage");
+            if (!gameManager.isenglish)
+            {
+                SceneManager.LoadScene("Main Stage");
+            }
+            else
+            {
+                SceneManager.LoadScene("EMain Stage");
+            }
         }
     }
 }

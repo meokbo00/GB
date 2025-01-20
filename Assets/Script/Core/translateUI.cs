@@ -19,7 +19,7 @@ public class TranslateUI : MonoBehaviour
         { "뒤로가기", "Back" },
         { "새 게임", "New" },
         { "이어하기", "Con\ntinue" },
-        { "기존 저장정보를 덮어씁니다. 계속하시겠습니까?", "This will overwrite your existing save." },
+        { "기존 저장정보를 덮어씁니다. 계속하시겠습니까?", "This will overwrite your existing saving File." },
         { "스토리모드를 먼저 플레이 후 즐기시는 것을 추천 드립니다.", "Try story mode first\r\nfor the best experience" },
         { "계속하기", "Resume" },
         { "재시작", "Retry" },

@@ -29,7 +29,7 @@ public class EndingCredit : MonoBehaviour
         }
         endingcredit.transform.Translate(Vector3.up * scrollSpeed * Time.deltaTime);
 
-        if (endingcredit.transform.position.y >= 13000f)
+        if (endingcredit.transform.position.y >= 14500f)
         {
             stageGameManager.isending = true;
             stageGameManager.SaveIsEnding(); // isending 값을 저장

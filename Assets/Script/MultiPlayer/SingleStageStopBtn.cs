@@ -56,11 +56,25 @@ public class SingleStageStopBtn : MonoBehaviour
 
             if (StageGameManager.StageClearID <= 5)
             {
-                SceneManager.LoadScene("Stage");
+                if(!StageGameManager.isenglish)
+                {
+                    SceneManager.LoadScene("Stage");
+                }
+                else
+                {
+                    SceneManager.LoadScene("EStage");
+                }
             }
             else if(StageGameManager.StageClearID >= 6)
             {
-                SceneManager.LoadScene("Main Stage");
+                if(!StageGameManager.isenglish)
+                {
+                    SceneManager.LoadScene("Main Stage");
+                }
+                else
+                {
+                    SceneManager.LoadScene("EMain Stage");
+                }
             }
         });
         this.Main_menu.onClick.AddListener(() =>

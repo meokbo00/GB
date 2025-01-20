@@ -22,25 +22,22 @@ public class ShowText : MonoBehaviour
     public TMP_Text chatting;
     public GameObject ChatBox;
     public TextAsset KJsonFile;
-    public TextAsset EJsonFile;
     private List<Chat> chats;
     private int currentChatIndex = 0;
     private int currentTextIndex = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
     private int chatIdToDisplay = -1;
-    StageGameManager stageGameManager;
     public int logTextIndex = 0; // 로그용 변수 추가
 
     public UnityEvent<int> OnChatComplete = new UnityEvent<int>();
 
     void Awake()
     {
-        stageGameManager = FindAnyObjectByType<StageGameManager>();
         ChatBox.SetActive(true);
 
-        // stageGameManager.isenglish 값에 따라 JSON 파일 선택
-        TextAsset selectedJsonFile = stageGameManager.isenglish ? EJsonFile : KJsonFile;
+        // 무조건 KJsonFile 사용
+        TextAsset selectedJsonFile = KJsonFile;
 
         if (selectedJsonFile != null)
         {
@@ -51,14 +48,11 @@ public class ShowText : MonoBehaviour
             }
             catch (JsonReaderException e)
             {
-                Debug.LogError("Failed to parse JSON: " + e.Message);
+                Debug.LogError("JSON 파싱 실패: " + e.Message);
             }
         }
-        else
-        {
-            Debug.LogError("No JSON file assigned.");
-        }
     }
+
 
     void OnEnable()
     {
