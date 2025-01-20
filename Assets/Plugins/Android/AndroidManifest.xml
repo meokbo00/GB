@@ -99,7 +99,7 @@
             android:value="true" />
                 <meta-data
     android:name="com.google.android.gms.ads.APPLICATION_ID"
-    android:value="YOUR_ADMOB_APP_ID" />
+    android:value="ca-app-pub-9423690097160181~3698483145" />
 
         <activity
             android:name="com.unity3d.player.UnityPlayerActivity"
